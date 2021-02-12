@@ -107,7 +107,7 @@ const CoCreateOrganization = {
 
 CoCreateOrganization.init();
 
-CoCreate.actions.add({
+CoCreate.action.init({
 	action: "createOrg",
 	endEvent: "createdOrg",
 	callback: (btn, data) => {
@@ -115,7 +115,7 @@ CoCreate.actions.add({
 	},
 })
 
-CoCreate.actions.add({
+CoCreate.action.init({
 	action: "createUser",
 	endEvent: "createdUser",
 	callback: (btn, data) => {
