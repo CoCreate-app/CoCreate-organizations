@@ -1,3 +1,8 @@
+import observer from '@cocreate/observer'
+import {socket} from '../../../CoCreateJS/src';
+import input from '@cocreate/input'
+import action from '@cocreate/action'
+
 const CoCreateOrganization = {
 	masterDB: '5ae0cfac6fb8c4e656fdaf92', // '5ae0cfac6fb8c4e656fdaf92' /** masterDB **/,
 	init: function() {
@@ -6,14 +11,14 @@ const CoCreateOrganization = {
 			this.masterDB = config.organization_Id;
 		}
 		const self = this;
-		CoCreate.socket.listen('createOrg', function(data) {
+		socket.listen('createOrg', function(data) {
 			self.setDocumentId('organizations', data.document_id);
 			document.dispatchEvent(new CustomEvent('createdOrg', {
 				detail: data
 			}))
 		})
 		
-		CoCreate.socket.listen('createUser', function(data) {
+		socket.listen('createUser', function(data) {
 			self.setDocumentId('users', data.document_id);
 			document.dispatchEvent(new CustomEvent('createdUser', {
 				detail: data
@@ -31,7 +36,7 @@ const CoCreateOrganization = {
 		//. get form data
 		elements.forEach(el => {
 			let name = el.getAttribute('name')
-			let value = CoCreate.input.getValue(el) || el.getAttribute('value')
+			let value = input.getValue(el) || el.getAttribute('value')
 			if (!name || !value) return;
 			if (el.getAttribute('data-type') == 'array') {
 				value = [value];
@@ -40,7 +45,7 @@ const CoCreateOrganization = {
 		})
 		const room = config.organization_Id;
 		
-		CoCreate.socket.send('createOrg', {
+		socket.send('createOrg', {
 			apiKey: config.apiKey,
 			securityKey: config.securityKey,
 			organization_id: config.organization_Id,
@@ -78,7 +83,7 @@ const CoCreateOrganization = {
 		//. get form data
 		elements.forEach(el => {
 			let name = el.getAttribute('name')
-			let value = CoCreate.input.getValue(el) || el.getAttribute('value')
+			let value = input.getValue(el) || el.getAttribute('value')
 			if (!name || !value) return;
 			
 			if (el.getAttribute('data-type') == 'array') {
@@ -92,7 +97,7 @@ const CoCreateOrganization = {
 		
 		const room = config.organization_Id;
 
-		CoCreate.socket.send('createUser', {
+		socket.send('createUser', {
 			apiKey: config.apiKey,
 			securityKey: config.securityKey,
 			organization_id: config.organization_Id,
@@ -107,7 +112,7 @@ const CoCreateOrganization = {
 
 CoCreateOrganization.init();
 
-CoCreate.action.init({
+action.init({
 	action: "createOrg",
 	endEvent: "createdOrg",
 	callback: (btn, data) => {
@@ -115,7 +120,7 @@ CoCreate.action.init({
 	},
 })
 
-CoCreate.action.init({
+action.init({
 	action: "createUser",
 	endEvent: "createdUser",
 	callback: (btn, data) => {
