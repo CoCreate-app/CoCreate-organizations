@@ -1,5 +1,5 @@
 import observer from '@cocreate/observer'
-import {socket} from '@cocreate/cocreatejs';
+import message from '@cocreate/message';
 import input from '@cocreate/input'
 import action from '@cocreate/action'
 
@@ -11,14 +11,14 @@ const CoCreateOrganization = {
 			this.masterDB = config.organization_Id;
 		}
 		const self = this;
-		socket.listen('createOrg', function(data) {
+		message.listen('createOrg', function(data) {
 			self.setDocumentId('organizations', data.document_id);
 			document.dispatchEvent(new CustomEvent('createdOrg', {
 				detail: data
 			}))
 		})
 		
-		socket.listen('createUser', function(data) {
+		message.listen('createUser', function(data) {
 			self.setDocumentId('users', data.document_id);
 			document.dispatchEvent(new CustomEvent('createdUser', {
 				detail: data
@@ -45,7 +45,7 @@ const CoCreateOrganization = {
 		})
 		const room = config.organization_Id;
 		
-		socket.send('createOrg', {
+		message.send('createOrg', {
 			apiKey: config.apiKey,
 			securityKey: config.securityKey,
 			organization_id: config.organization_Id,
@@ -97,7 +97,7 @@ const CoCreateOrganization = {
 		
 		const room = config.organization_Id;
 
-		socket.send('createUser', {
+		message.send('createUser', {
 			apiKey: config.apiKey,
 			securityKey: config.securityKey,
 			organization_id: config.organization_Id,
