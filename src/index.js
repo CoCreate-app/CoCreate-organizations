@@ -1,5 +1,5 @@
 import observer from '@cocreate/observer'
-import {socket} from '../../../CoCreateJS/src';
+import {socket} from '@cocreate/cocreatejs';
 import input from '@cocreate/input'
 import action from '@cocreate/action'
 
