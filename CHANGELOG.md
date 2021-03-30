@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.0.1...v1.0.2) (2021-03-30)
+
+
+### Bug Fixes
+
+* cocreatejs from npm ([10c217a](https://github.com/CoCreate-app/CoCreate-organizations/commit/10c217a5b131da559e1667cdf0f6cb3434c58a00))
+
 ## [1.0.1](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.0.0...v1.0.1) (2021-03-29)
 
 
