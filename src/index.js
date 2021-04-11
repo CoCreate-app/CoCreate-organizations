@@ -1,5 +1,5 @@
 import observer from '@cocreate/observer'
-import message from '@cocreate/message';
+import message from '@cocreate/message-client';
 import input from '@cocreate/input'
 import action from '@cocreate/action'
 
