@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.0.3...v1.0.4) (2021-04-12)
+
+
+### Bug Fixes
+
+* add new message-client ([a446713](https://github.com/CoCreate-app/CoCreate-organizations/commit/a4467135021545f204a60c0af48cb44e746468f5))
+
 ## [1.0.3](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.0.2...v1.0.3) (2021-03-30)
 
 
