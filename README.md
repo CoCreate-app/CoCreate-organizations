@@ -9,7 +9,7 @@ A simple organizations component in vanilla javascript. Easily configured using 
 
 ![CoCreate-organizations](https://cdn.cocreate.app/docs/CoCreate-organizations.gif)
 
-## [Docs & Demo](https://cocreate.app/docs/clone)
+## [Docs & Demo](https://cocreate.app/docs/organizations)
 
 For a complete guide and working demo refer to the [doumentation](https://cocreate.app/docs/organizations)
 
