@@ -46,7 +46,6 @@ const CoCreateOrganization = {
 		
 		crud.socket.send('createOrg', {
 			apiKey: config.apiKey,
-			securityKey: config.securityKey,
 			organization_id: config.organization_Id,
 			db: this.masterDB,
 			collection: 'organizations',
@@ -98,7 +97,6 @@ const CoCreateOrganization = {
 
 		crud.socket.send('createUser', {
 			apiKey: config.apiKey,
-			securityKey: config.securityKey,
 			organization_id: config.organization_Id,
 			db: this.masterDB,
 			collection: 'users',

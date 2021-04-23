@@ -1,3 +1,20 @@
+## [1.0.6](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.0.5...v1.0.6) (2021-04-23)
+
+
+### Bug Fixes
+
+* remove securityKey ([1a5f54c](https://github.com/CoCreate-app/CoCreate-organizations/commit/1a5f54c001eeda091cba0d23215d8e3ed157fa19))
+
+## [1.0.5](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.0.4...v1.0.5) (2021-04-23)
+
+
+### Bug Fixes
+
+* add missing packages ([a6b7bec](https://github.com/CoCreate-app/CoCreate-organizations/commit/a6b7becff3e584da129ad76af4cf5968c1740e79))
+* add missing packages ([d42d2c7](https://github.com/CoCreate-app/CoCreate-organizations/commit/d42d2c70633e72a1dab93b07c1cd589fcb2c82eb))
+* ci and build process ([2cae466](https://github.com/CoCreate-app/CoCreate-organizations/commit/2cae4663d3b8c9455ab12172e2cf72351e9aeb62))
+* npm publish and cdn deployment ([e1d2403](https://github.com/CoCreate-app/CoCreate-organizations/commit/e1d24030b77e6b9eb6af494280e19ca5bc68795b))
+
 ## [1.0.4](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.0.3...v1.0.4) (2021-04-12)
 
 
