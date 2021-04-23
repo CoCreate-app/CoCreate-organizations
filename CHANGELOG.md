@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.0.5...v1.0.6) (2021-04-23)
+
+
+### Bug Fixes
+
+* remove securityKey ([1a5f54c](https://github.com/CoCreate-app/CoCreate-organizations/commit/1a5f54c001eeda091cba0d23215d8e3ed157fa19))
+
 ## [1.0.5](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.0.4...v1.0.5) (2021-04-23)
 
 
