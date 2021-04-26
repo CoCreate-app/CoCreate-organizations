@@ -1,22 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Industry Form | CoCreateJS</title>
+    
+    <!-- CoCreate Favicon -->
     <link rel="icon" href="https://cdn.cocreate.app/favicon.ico" type="image/ico" sizes="16x16">
-    <title>Industry Form | CoCreate</title>
-      
-    <!-- CoCreate CSS -->
-    <link rel="stylesheet" href="https://cdn.cocreate.app/latest/CoCreate.min.css" type="text/css"/>
-  
-       
   </head>
-  
   <body>
     
-   <!--<a href="login.html" target="" data-pass_to="me1234" class="redirectLink" style="display: none"></a>-->
     <div id="modal-viewport" class="hidden"></div>
       <div class="nav display:flex align-items:center background:whitesmoke"
         data-main_content_id="content" 
@@ -71,40 +62,24 @@
         <input  data-document_id="" data-pass_id="form-fields" name="name" placeholder="Industry Name" class="floating-label">
        
         <textarea data-document_id="" data-pass_id="form-fields" name="description" placeholder="Description"  class="floating-label"/></textarea>
-        <!--<cocreate-select class="floating-label" data-collection="test" data-document_id="5e8ff00e8c3af32574df80cb" name="selectField7" placeholder="Collection Select" multiple>-->
-        <!--  <input class="search-options" placeholder="Search" data-search_id="search_05" data-item_selector=".selectable">-->
-        <!--  <ul data-fetch_collection="" -->
-        <!--    data-fetch_value_type="collection"-->
-        <!--    data-template_id="collection-list" -->
-        <!--    class="template-wrapper selectable--list cocreate-scroll" -->
-        <!--    data-pass_to="me1234"-->
-        <!--    data-search_id="search_05">-->
-    				<!--<li class="selectable template" data-template_id="collection-list" data-value="{{data.name}}" data-pass_id="me1234" data-render_array="data">-->
-    				<!--  <a data-pass_to="document-select" data-pass_id="me1234">-->
-    				<!--    <h5 name="name" data-pass_id="me1234" value="{{data.name}}"></h5>-->
-    				<!--  </a>-->
-    				<!--</li>-->
-        <!--  </ul>-->
-        <!--</cocreate-select>-->
 
-        <!--<button class="industryCreateBtn submitBtn">Submit</button>-->
-        <button class="submitBtn industryCreateBtn position:fixed bottom:15px right:15px padding:15px background:dodgerblue grow-hover round">Create Industry <i class="far fa-save"></i></button>
+        <button data-actions="createIndustry" class="position:fixed bottom:15px right:15px padding:15px background:dodgerblue grow-hover round">
+          Create Industry 
+          <i class="far fa-save"></i>
+        </button>
     
       </form>
     </div>
 
-    <script>
-      var config = {
-        apiKey: 'c2b08663-06e3-440c-ef6f-13978b42883a',
-                organization_Id: '5de0387b12e200ea63204d6c'
-      }
-    </script>
-   
-    <script src="https://cdn.cocreate.app/latest/CoCreate.min.js" ></script>
-
-    <!--CoCreate Plugins-->
-    <script src="https://server.cocreate.app/CoCreate-components/CoCreate-industry/src/CoCreate-industry.js"></script>
-
-
+		<script>
+			var config = {
+			  apiKey: '2061acef-0451-4545-f754-60cf8160',
+			  securityKey: '073daff2-5142-4402-cf59-48e205ef',
+			  organization_Id: '5ff747727005da1c272740ab'
+			}
+		</script>
+    
+    <!-- CoCreate JS CDN -->
+  	<script src="https://cdn.cocreate.app/organizations/latest/CoCreate-organizations.min.js" ></script>
   </body>
 </html>

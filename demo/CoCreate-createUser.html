@@ -1,49 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Forms | CoCreate</title>
+	<title>User Forms | CoCreateJS</title>
 
-
-  <link rel="stylesheet" href="https://cdn.cocreate.app/latest/CoCreate.min.css" type="text/css"/>
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" crossorigin="anonymous" />    
+	<!-- CoCreate Favicon -->
+	<link rel="icon" href="https://cdn.cocreate.app/favicon.ico" type="image/ico" sizes="16x16">	
 </head>
 <body class="padding:20px">
-
 
   <form>
     <input  data-collection="organizations" class="floating-label" name='name' data-document_id="" placeholder="org name">
     <input  data-collection="users" class="floating-label" name='name' data-document_id="" placeholder="user name">
     
-        <!--        <input type="email" id="user-email"-->
-								<!--	data-collection="users"-->
-								<!--	data-unique="false" -->
-								<!--	data-document_id="" -->
-								<!--	name='email'  -->
-								<!--	placeholder="Email" -->
-								<!--	class="floating-label">-->
-							 <!--		<small id="errorUemail" class="text-danger"></small>-->
-							
-								<!--<input type="password" id="password"-->
-								<!--	data-collection="users"-->
-							 <!--   	data-document_id=""-->
-							 <!--   	name="password" -->
-							 <!--   	placeholder="Password" -->
-							 <!--   	class="floating-label">-->
-							 <!--   	<small id="errorUpassword" class="text-danger"></small>-->
-							
-								<!--<input type="password"-->
-							 <!--   	data-validate_equal_to="#password" -->
-							 <!--   	placeholder="Confirm Password" -->
-							 <!--   	class="floating-label">-->
-							 <!--   	<small id="errorUconfirmpassword" class="text-danger"></small>-->
-									
-								<!-- Organiztion_id will be used to copy document from current org and create new orgdb and orgdocument-->
 								<input type="hidden" id="org_id"
 									data-collection="organizations"
 									data-document_id=""
@@ -84,19 +52,7 @@
     }
   </script>
  
- 
- 
-  <script src="https://cdn.cocreate.app/latest/CoCreate.min.js" ></script>
-  
-  <script type="text/javascript">
-    var btn = document.getElementById('change_btn')
-    var a  = 1;
-    btn.addEventListener('click', function() {
-      a++;
-      var input = document.getElementById('text_area');
-      input.setAttribute('name', 'name' + a);
-    })
-  </script>
-
+  <!-- CoCreate JS CDN -->
+  <script src="https://cdn.cocreate.app/organizations/latest/CoCreate-organizations.min.js" ></script>
 </body>
 </html>
