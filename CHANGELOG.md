@@ -1,3 +1,10 @@
+## [1.0.8](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.0.7...v1.0.8) (2021-04-27)
+
+
+### Bug Fixes
+
+* Update to readme, demo, added cdn scripts ([03e69dd](https://github.com/CoCreate-app/CoCreate-organizations/commit/03e69ddcfce5faaaf3a75b3b1431733a811dd54e))
+
 ## [1.0.7](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.0.6...v1.0.7) (2021-04-23)
 
 
