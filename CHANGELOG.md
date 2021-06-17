@@ -1,3 +1,10 @@
+## [1.0.11](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.0.10...v1.0.11) (2021-06-16)
+
+
+### Bug Fixes
+
+* added header for seo ([7a2f722](https://github.com/CoCreate-app/CoCreate-organizations/commit/7a2f72259b0b1dd32bccecd7ee5d69aa32990fb8))
+
 ## [1.0.10](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.0.9...v1.0.10) (2021-05-08)
 
 
