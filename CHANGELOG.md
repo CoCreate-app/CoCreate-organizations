@@ -1,3 +1,10 @@
+## [1.0.15](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.0.14...v1.0.15) (2021-06-30)
+
+
+### Bug Fixes
+
+* automated and manual workflows ([6f03efe](https://github.com/CoCreate-app/CoCreate-organizations/commit/6f03efe642be1c14cd0422c22a29626744238dbd))
+
 ## [1.0.14](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.0.13...v1.0.14) (2021-06-25)
 
 
