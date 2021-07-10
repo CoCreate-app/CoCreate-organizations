@@ -1,3 +1,10 @@
+## [1.0.18](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.0.17...v1.0.18) (2021-07-10)
+
+
+### Bug Fixes
+
+* gitignore all logs ([6d5a1c3](https://github.com/CoCreate-app/CoCreate-organizations/commit/6d5a1c3ef351f35df52efe136e26562726828c06))
+
 ## [1.0.17](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.0.16...v1.0.17) (2021-07-07)
 
 
