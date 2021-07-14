@@ -1,6 +1,6 @@
 {
   "name": "@cocreate/organizations",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "A simple organizations component in vanilla javascript. Easily configured using HTML5 data-attributes and/or JavaScript API.",
   "keywords": [
     "organizations",
