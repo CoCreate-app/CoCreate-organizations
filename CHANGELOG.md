@@ -1,3 +1,11 @@
+## [1.0.21](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.0.20...v1.0.21) (2021-07-17)
+
+
+### Bug Fixes
+
+* init and update demos scripts ([ab4470b](https://github.com/CoCreate-app/CoCreate-organizations/commit/ab4470bfa4f997c4d5f6ed08e3f27f29e7af7c83))
+* workflows ([e331010](https://github.com/CoCreate-app/CoCreate-organizations/commit/e3310107b57983e405e55e31a027e34825338c9a))
+
 ## [1.0.20](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.0.19...v1.0.20) (2021-07-14)
 
 
