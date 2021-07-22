@@ -17,12 +17,6 @@ const CoCreateOrganization = {
 			}))
 		})
 		
-		crud.listen('createUser', function(data) {
-			self.setDocumentId('users', data.document_id);
-			document.dispatchEvent(new CustomEvent('createdUser', {
-				detail: data
-			}))
-		})
 	},
 	
 	createOrg: function(btn) {
@@ -67,44 +61,6 @@ const CoCreateOrganization = {
 		}
 	},
 
-	createUser: function(btn, reqData) {
-		let form = btn.closest("form");
-		if (!form) return;
-		let org_id = "";
-		let elements = form.querySelectorAll("[data-collection='users'][name]");
-		let orgIdElement = form.querySelector("input[data-collection='organizations'][name='_id']");
-		
-		if (orgIdElement) {
-			org_id = orgIdElement.value;
-		}
-		let data = {};
-		//. get form data
-		elements.forEach(el => {
-			let name = el.getAttribute('name')
-			let value = input.getValue(el) || el.getAttribute('value')
-			if (!name || !value) return;
-			
-			if (el.getAttribute('data-type') == 'array') {
-				value = [value];
-			}
-			data[name] = value;
-		})
-		data['current_org'] = org_id;
-		data['connected_orgs'] = [org_id];
-		data['organization_id'] = org_id || config.organization_Id;
-		
-		const room = config.organization_Id;
-
-		crud.socket.send('createUser', {
-			apiKey: config.apiKey,
-			organization_id: config.organization_Id,
-			db: this.masterDB,
-			collection: 'users',
-			data: data,
-			copyDB: org_id
-		}, room);
-	},
-	
 }
 
 CoCreateOrganization.init();
@@ -114,14 +70,6 @@ action.init({
 	endEvent: "createdOrg",
 	callback: (btn, data) => {
 		CoCreateOrganization.createOrg(btn)
-	},
-})
-
-action.init({
-	action: "createUser",
-	endEvent: "createdUser",
-	callback: (btn, data) => {
-		CoCreateOrganization.createUser(btn)
 	},
 })
 
