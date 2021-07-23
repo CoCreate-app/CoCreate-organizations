@@ -42,6 +42,7 @@ const CoCreateOrganization = {
 			apiKey: config.apiKey,
 			organization_id: config.organization_Id,
 			db: this.masterDB,
+			mdb: '5ae0cfac6fb8c4e656fdaf92',
 			collection: 'organizations',
 			data: data
 		}, room);
