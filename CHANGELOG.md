@@ -1,3 +1,11 @@
+## [1.0.22](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.0.21...v1.0.22) (2021-07-23)
+
+
+### Bug Fixes
+
+* passed masterdb to server to create new org in ([daf2bdf](https://github.com/CoCreate-app/CoCreate-organizations/commit/daf2bdf5c896bf821cc81ce54bb0dd8d14235e38))
+* removed createUser function and relocated to user component ([9d5426c](https://github.com/CoCreate-app/CoCreate-organizations/commit/9d5426c3be46c9d0bb7e9612d448756f1e404ded))
+
 ## [1.0.21](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.0.20...v1.0.21) (2021-07-17)
 
 
