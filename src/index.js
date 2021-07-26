@@ -3,20 +3,36 @@ import input from '@cocreate/input'
 import action from '@cocreate/action'
 
 const CoCreateOrganization = {
-	masterDB: '5ae0cfac6fb8c4e656fdaf92', // '5ae0cfac6fb8c4e656fdaf92' /** masterDB **/,
+	// masterDB: '5ae0cfac6fb8c4e656fdaf92', // '5ae0cfac6fb8c4e656fdaf92' /** masterDB **/,
 	init: function() {
-		
-		if (config.organization_Id) {
-			this.masterDB = config.organization_Id;
-		}
 		const self = this;
+		crud.listen('createOrgNew', function(data) {
+			document.dispatchEvent(new CustomEvent('createdOrg', {
+				detail: data
+			}))
+		})
 		crud.listen('createOrg', function(data) {
 			self.setDocumentId('organizations', data.document_id);
 			document.dispatchEvent(new CustomEvent('createdOrg', {
 				detail: data
 			}))
 		})
-		
+	},
+	
+	createOrgNew: function(btn) {
+		let form = btn.closest("form");
+		if (!form) return;
+		let newOrg_id = form.querySelector("input[data-collection='organizations'][name='_id']");
+
+		const room = config.organization_Id;
+
+		crud.socket.send('createOrgNew', {
+			apiKey: config.apiKey,
+			organization_id: config.organization_Id,
+			collection: 'organizations',
+			newOrg_id: newOrg_id,
+		}, room);
+
 	},
 	
 	createOrg: function(btn) {
@@ -41,7 +57,7 @@ const CoCreateOrganization = {
 		crud.socket.send('createOrg', {
 			apiKey: config.apiKey,
 			organization_id: config.organization_Id,
-			db: this.masterDB,
+			// orgDb: newOrg,
 			mdb: '5ae0cfac6fb8c4e656fdaf92',
 			collection: 'organizations',
 			data: data
@@ -66,6 +82,13 @@ const CoCreateOrganization = {
 
 CoCreateOrganization.init();
 
+action.init({
+	action: "createOrgNew",
+	endEvent: "createdOrg",
+	callback: (btn, data) => {
+		CoCreateOrganization.createOrg(btn)
+	},
+})
 action.init({
 	action: "createOrg",
 	endEvent: "createdOrg",
