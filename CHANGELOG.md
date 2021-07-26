@@ -1,3 +1,10 @@
+## [1.0.23](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.0.22...v1.0.23) (2021-07-26)
+
+
+### Bug Fixes
+
+* refactored to newOrg_id convention ([06bae00](https://github.com/CoCreate-app/CoCreate-organizations/commit/06bae00ddd70c5b57ea2f1016388025e67b7ddf9))
+
 ## [1.0.22](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.0.21...v1.0.22) (2021-07-23)
 
 
