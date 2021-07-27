@@ -86,7 +86,7 @@ action.init({
 	action: "createOrgNew",
 	endEvent: "createdOrg",
 	callback: (btn, data) => {
-		CoCreateOrganization.createOrg(btn)
+		CoCreateOrganization.createOrgNew(btn)
 	},
 })
 action.init({
