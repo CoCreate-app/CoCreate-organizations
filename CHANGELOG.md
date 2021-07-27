@@ -1,3 +1,10 @@
+## [1.0.24](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.0.23...v1.0.24) (2021-07-27)
+
+
+### Bug Fixes
+
+* listener for createrrgNew ([820d556](https://github.com/CoCreate-app/CoCreate-organizations/commit/820d556c9f1d0a1d75b616bbbdad095a2823e812))
+
 ## [1.0.23](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.0.22...v1.0.23) (2021-07-26)
 
 
