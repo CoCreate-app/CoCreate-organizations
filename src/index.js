@@ -22,7 +22,7 @@ const CoCreateOrganization = {
 	createOrgNew: function(btn) {
 		let form = btn.closest("form");
 		if (!form) return;
-		let newOrg_id = form.querySelector("input[data-collection='organizations'][name='_id']");
+		let newOrg_id = form.querySelector("input[collection='organizations'][name='_id']");
 
 		const room = config.organization_Id;
 
@@ -39,7 +39,7 @@ const CoCreateOrganization = {
 		let form = btn.closest("form");
 		if (!form) return;
 		
-		let elements = form.querySelectorAll("[data-collection='organizations'][name]");
+		let elements = form.querySelectorAll("[collection='organizations'][name]");
 		
 		let data = {};
 		//. get form data
@@ -65,11 +65,11 @@ const CoCreateOrganization = {
 	},
 	
 	setDocumentId: function(collection, id) {
-		let orgIdElements = document.querySelectorAll(`[data-collection='${collection}']`);
+		let orgIdElements = document.querySelectorAll(`[collection='${collection}']`);
 		if (orgIdElements && orgIdElements.length > 0) {
 			orgIdElements.forEach((el) => {
-				if (!el.getAttribute('data-document_id')) {
-					el.setAttribute('data-document_id', id);
+				if (!el.getAttribute('document_id')) {
+					el.setAttribute('document_id', id);
 				}
 				if (el.getAttribute('name') == "_id") {
 					el.value = id;

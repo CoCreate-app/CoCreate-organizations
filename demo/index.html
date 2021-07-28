@@ -27,10 +27,10 @@
         <div class="main-container justify-content:center align-items:center overflow:overlay display:flex flex-wrap:wrap position:absolute width:100% height:100%">
         	<div class="display:flex flex-wrap:wrap align-items:flex-end justify-content:center align-items:center">
                 <div class="flex-grow:1 height:fit-content width:55% min-width:300px max-width:600px margin:10px">
-              <form  data-realtime="false">
+              <form  realtime="false">
 						    	<input type="text" id="org-name"
-						    		data-collection="organizations"
-						    		data-document_id=""  
+						    		collection="organizations"
+						    		document_id=""  
 						    		name="name" 
 						    		placeholder="Organization Name" 
 						    		class="floating-label">
@@ -38,32 +38,32 @@
 						    	<p>User Information</p>
 						    	
 						    	<input type="text"
-						    		data-collection="users"
-						    		data-document_id=""  
+						    		collection="users"
+						    		document_id=""  
 						    		name="name" 
 						    		placeholder="User Name" 
 						    		class="floating-label">
 
 								<!-- Organiztion_id  -->
 								<input type="hidden" id="org_id"
-									data-collection="organizations"
-									data-document_id=""
+									collection="organizations"
+									document_id=""
 									name="_id"
 									value=""
 									placeholder="OrganizationId">
 								
 								<!-- API key  -->
 								<input type="hidden" id="apiKey"
-									data-collection="organizations"
-									data-document_id=""
+									collection="organizations"
+									document_id=""
 									name="apiKey"
 									placeholder="API Key" 
 									data-uuid="32" readonly>
 								
 								<!-- Security key  -->
 								<input type="hidden" id="securityKey"
-									data-collection="organizations"
-									data-document_id=""  
+									collection="organizations"
+									document_id=""  
 									name="securityKey"  
 									placeholder="security Key" 
 									data-uuid="32" readonly>
@@ -71,13 +71,13 @@
 		                        <div class="padding:25px background:gainsboro text-align:left">
 	
 	                           <!-- Industry select -->
-	                            <cocreate-select class="sortable floating-label" data-collection="organizations" name="industry" placeholder="Industry" data-realtime="false" data-save_value="false">
+	                            <cocreate-select class="sortable floating-label" collection="organizations" name="industry" placeholder="Industry" realtime="false" data-save_value="false">
 	  					          	  <input class="template-search" placeholder="Search" data-template_id="industries">
 									<ul data-fetch_collection="industries" 
 									    data-template_id="industries"
 									    class="options overflow:overlay">
 										<li class="template option" data-template_id="industries" value="{{data._id}}">
-											<h4 data-collection="industries" data-document_id="{{data._id}}" name="name">industry name</h4>
+											<h4 collection="industries" document_id="{{data._id}}" name="name">industry name</h4>
 										</li>
 									</ul>
 	                            </cocreate-select>

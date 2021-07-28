@@ -9,35 +9,35 @@
 <body class="padding:20px">
 
   <form>
-    <input  data-collection="organizations" class="floating-label" name='name' data-document_id="" placeholder="org name">
-    <input  data-collection="users" class="floating-label" name='name' data-document_id="" placeholder="user name">
+    <input  collection="organizations" class="floating-label" name='name' document_id="" placeholder="org name">
+    <input  collection="users" class="floating-label" name='name' document_id="" placeholder="user name">
     
 								<input type="hidden" id="org_id"
-									data-collection="organizations"
-									data-document_id=""
+									collection="organizations"
+									document_id=""
 									name="_id"
 									placeholder="OrganizationId" readonly>
 
 								<!-- User_id  will be used to copy user document from current organizion and insert orgdb defined above-->
 								<input type="hidden" id="user_id"
-									data-collection="users"
-									data-document_id=""
+									collection="users"
+									document_id=""
 									name="_id"
 									placeholder="UserId" readonly>
 								
 								
 								<!-- API key  -->
 								<input type="hidden" id="apiKey"
-									data-collection="organizations"
-									data-document_id=""
+									collection="organizations"
+									document_id=""
 									name="apiKey"
 									placeholder="API Key" 
 									data-uuid="32" readonly>
 								
 								<!-- Security key  -->
 								<input type="hidden" id="securityKey"
-									data-collection="organizations"
-									data-document_id=""  
+									collection="organizations"
+									document_id=""  
 									name="securityKey"  
 									placeholder="security Key" 
 									data-uuid="32" readonly>
