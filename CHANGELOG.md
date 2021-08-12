@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.1.2...v1.1.3) (2021-08-12)
+
+
+### Bug Fixes
+
+* update data-module_id to document_id ([3649580](https://github.com/CoCreate-app/CoCreate-organizations/commit/3649580799972fcbc64f85b2900d9bae3dea008f))
+
 ## [1.1.2](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.1.1...v1.1.2) (2021-08-02)
 
 
