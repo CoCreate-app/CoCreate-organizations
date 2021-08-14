@@ -1,3 +1,11 @@
+## [1.1.4](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.1.3...v1.1.4) (2021-08-14)
+
+
+### Bug Fixes
+
+* replace data-transform with toggle ([bf94bb9](https://github.com/CoCreate-app/CoCreate-organizations/commit/bf94bb90c61d5a615e479f6c4caf8f33e8eddd86))
+* update to  docs ([bbd2303](https://github.com/CoCreate-app/CoCreate-organizations/commit/bbd2303537f149845e79a87aaf317b000df33445))
+
 ## [1.1.3](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.1.2...v1.1.3) (2021-08-12)
 
 
