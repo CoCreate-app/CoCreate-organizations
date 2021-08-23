@@ -1,3 +1,10 @@
+## [1.1.8](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.1.7...v1.1.8) (2021-08-23)
+
+
+### Bug Fixes
+
+* update package versions ([4e21c91](https://github.com/CoCreate-app/CoCreate-organizations/commit/4e21c91db408e455a4d7d96db911c3aefaf25cc8))
+
 ## [1.1.7](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.1.6...v1.1.7) (2021-08-22)
 
 
