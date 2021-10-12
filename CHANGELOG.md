@@ -1,3 +1,10 @@
+## [1.1.28](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.1.27...v1.1.28) (2021-10-12)
+
+
+### Bug Fixes
+
+* updte to crud.send ([97bdc1f](https://github.com/CoCreate-app/CoCreate-organizations/commit/97bdc1f8237de562600a0b66c1a4819190229d73))
+
 ## [1.1.27](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.1.26...v1.1.27) (2021-10-06)
 
 
