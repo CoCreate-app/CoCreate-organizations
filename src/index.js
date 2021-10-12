@@ -26,7 +26,7 @@ const CoCreateOrganization = {
 
 		const room = config.organization_Id;
 
-		crud.socket.send('createOrgNew', {
+		crud.send('createOrgNew', {
 			apiKey: config.apiKey,
 			organization_id: config.organization_Id,
 			collection: 'organizations',
@@ -54,7 +54,7 @@ const CoCreateOrganization = {
 		})
 		const room = config.organization_Id;
 		
-		crud.socket.send('createOrg', {
+		crud.send('createOrg', {
 			apiKey: config.apiKey,
 			organization_id: config.organization_Id,
 			// orgDb: newOrg,
