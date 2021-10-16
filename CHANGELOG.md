@@ -1,3 +1,10 @@
+## [1.1.34](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.1.33...v1.1.34) (2021-10-16)
+
+
+### Bug Fixes
+
+* update socket package to fix bug in docs ([da9abd1](https://github.com/CoCreate-app/CoCreate-organizations/commit/da9abd194d89023bf730e07329e886fb1d839648))
+
 ## [1.1.33](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.1.32...v1.1.33) (2021-10-15)
 
 
