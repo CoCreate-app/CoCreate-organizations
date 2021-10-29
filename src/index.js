@@ -1,5 +1,5 @@
 import crud from '@cocreate/crud-client';
-import input from '@cocreate/input'
+import input from '@cocreate/elements'
 import action from '@cocreate/action'
 
 const CoCreateOrganization = {
