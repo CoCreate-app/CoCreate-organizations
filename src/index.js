@@ -1,6 +1,6 @@
 import crud from '@cocreate/crud-client';
-import input from '@cocreate/elements'
-import action from '@cocreate/action'
+// import input from '@cocreate/elements'
+import action from '@cocreate/action';
 
 const CoCreateOrganization = {
 	// masterDB: '5ae0cfac6fb8c4e656fdaf92', // '5ae0cfac6fb8c4e656fdaf92' /** masterDB **/,
@@ -45,7 +45,7 @@ const CoCreateOrganization = {
 		//. get form data
 		elements.forEach(el => {
 			let name = el.getAttribute('name')
-			let value = input.getValue(el) || el.getAttribute('value')
+			let value = el.getValue(el) || el.getAttribute('value')
 			if (!name || !value) return;
 			if (el.getAttribute('data-type') == 'array') {
 				value = [value];
