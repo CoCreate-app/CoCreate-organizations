@@ -1,3 +1,10 @@
+## [1.1.41](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.1.40...v1.1.41) (2021-11-05)
+
+
+### Bug Fixes
+
+* element for getValue was not defined correctly ([a3e9c32](https://github.com/CoCreate-app/CoCreate-organizations/commit/a3e9c32a473fbd9e431a898ff9d2fa173aa5bef5))
+
 ## [1.1.40](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.1.39...v1.1.40) (2021-11-04)
 
 
