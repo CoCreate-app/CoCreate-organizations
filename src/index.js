@@ -9,14 +9,14 @@ const CoCreateOrganization = {
 		crud.listen('createOrgNew', function(data) {
 			document.dispatchEvent(new CustomEvent('createdOrg', {
 				detail: data
-			}))
-		})
+			}));
+		});
 		crud.listen('createOrg', function(data) {
 			self.setDocumentId('organizations', data.document_id);
 			document.dispatchEvent(new CustomEvent('createdOrg', {
 				detail: data
-			}))
-		})
+			}));
+		});
 	},
 	
 	createOrgNew: function(btn) {
@@ -44,14 +44,14 @@ const CoCreateOrganization = {
 		let data = {};
 		//. get form data
 		elements.forEach(el => {
-			let name = el.getAttribute('name')
-			let value = el.getValue(el) || el.getAttribute('value')
+			let name = el.getAttribute('name');
+			let value = el.getValue(el) || el.getAttribute('value');
 			if (!name || !value) return;
 			if (el.getAttribute('data-type') == 'array') {
 				value = [value];
 			}
 			data[name] = value;
-		})
+		});
 		const room = config.organization_Id;
 		
 		crud.send('createOrg', {
@@ -74,27 +74,28 @@ const CoCreateOrganization = {
 				if (el.getAttribute('name') == "_id") {
 					el.value = id;
 				}
-			})
+			});
 		}
 	},
 
-}
-
-CoCreateOrganization.init();
+};
 
 action.init({
 	action: "createOrgNew",
 	endEvent: "createdOrg",
 	callback: (btn, data) => {
-		CoCreateOrganization.createOrgNew(btn)
+		CoCreateOrganization.createOrgNew(btn);
 	},
-})
+});
+
 action.init({
 	action: "createOrg",
 	endEvent: "createdOrg",
 	callback: (btn, data) => {
-		CoCreateOrganization.createOrg(btn)
+		CoCreateOrganization.createOrg(btn);
 	},
-})
+});
+
+CoCreateOrganization.init();
 
 export default CoCreateOrganization;
