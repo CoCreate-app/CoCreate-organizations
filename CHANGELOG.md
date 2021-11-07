@@ -1,3 +1,10 @@
+## [1.1.43](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.1.42...v1.1.43) (2021-11-07)
+
+
+### Bug Fixes
+
+* add init() directly above export default to fix bug in firefox ([1a941a2](https://github.com/CoCreate-app/CoCreate-organizations/commit/1a941a2cb5469ca567192a81a13624f80e3a5c01))
+
 ## [1.1.42](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.1.41...v1.1.42) (2021-11-06)
 
 
