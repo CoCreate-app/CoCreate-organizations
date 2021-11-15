@@ -1,3 +1,10 @@
+## [1.1.44](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.1.43...v1.1.44) (2021-11-11)
+
+
+### Bug Fixes
+
+* update readme ([fc1cb91](https://github.com/CoCreate-app/CoCreate-organizations/commit/fc1cb916ce383dfc52edf36374df198cc18177ea))
+
 ## [1.1.43](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.1.42...v1.1.43) (2021-11-07)
 
 
