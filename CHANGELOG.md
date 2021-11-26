@@ -1,3 +1,11 @@
+## [1.1.52](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.1.51...v1.1.52) (2021-11-26)
+
+
+### Bug Fixes
+
+* docs sidenav width ([16139a6](https://github.com/CoCreate-app/CoCreate-organizations/commit/16139a661772cfbd4da8490ce82ccdf876665808))
+* updated action dependency to actions ([2dae3fe](https://github.com/CoCreate-app/CoCreate-organizations/commit/2dae3fe641b18486f59cc50c538a496b4d7727e8))
+
 ## [1.1.51](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.1.50...v1.1.51) (2021-11-26)
 
 
