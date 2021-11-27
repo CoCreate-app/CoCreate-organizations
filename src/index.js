@@ -1,6 +1,6 @@
 import crud from '@cocreate/crud-client';
 // import input from '@cocreate/elements'
-import action from '@cocreate/action';
+import action from '@cocreate/actions';
 
 const CoCreateOrganization = {
 	// masterDB: '5ae0cfac6fb8c4e656fdaf92', // '5ae0cfac6fb8c4e656fdaf92' /** masterDB **/,
