@@ -1,3 +1,11 @@
+## [1.1.55](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.1.54...v1.1.55) (2021-11-27)
+
+
+### Bug Fixes
+
+* actions import typo ([06c4193](https://github.com/CoCreate-app/CoCreate-organizations/commit/06c41933d9346cc5581692414365df254dbae08e))
+* update dependencies ([a57dda4](https://github.com/CoCreate-app/CoCreate-organizations/commit/a57dda4ecc89bbaeeb2f3f4d9299d5744e279efc))
+
 ## [1.1.54](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.1.53...v1.1.54) (2021-11-27)
 
 
