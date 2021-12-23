@@ -1,3 +1,10 @@
+## [1.1.58](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.1.57...v1.1.58) (2021-12-23)
+
+
+### Bug Fixes
+
+* renamed filter-value_type to filter-value-type ([c6cd3bb](https://github.com/CoCreate-app/CoCreate-organizations/commit/c6cd3bb2631dd12f0deb0c7ed0c7126814ad62a5))
+
 ## [1.1.57](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.1.56...v1.1.57) (2021-12-15)
 
 
