@@ -1,3 +1,10 @@
+## [1.1.59](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.1.58...v1.1.59) (2021-12-24)
+
+
+### Bug Fixes
+
+* add action deleteDocuments ([5d6ea08](https://github.com/CoCreate-app/CoCreate-organizations/commit/5d6ea087519a33dba5441048793aff3d20e7109a))
+
 ## [1.1.58](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.1.57...v1.1.58) (2021-12-23)
 
 
