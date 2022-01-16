@@ -1,3 +1,10 @@
+## [1.1.61](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.1.60...v1.1.61) (2022-01-16)
+
+
+### Bug Fixes
+
+* update class overflow:overlay to overflow:auto ([1994a67](https://github.com/CoCreate-app/CoCreate-organizations/commit/1994a6754c5d29e858dac18e6fe4f4e7f01229d0))
+
 ## [1.1.60](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.1.59...v1.1.60) (2022-01-01)
 
 
