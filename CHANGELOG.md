@@ -1,3 +1,10 @@
+## [1.1.64](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.1.63...v1.1.64) (2022-02-07)
+
+
+### Bug Fixes
+
+* bump dependency versions ([2e16b78](https://github.com/CoCreate-app/CoCreate-organizations/commit/2e16b781643067155ac4fba41ee23aaa4579ccaa))
+
 ## [1.1.63](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.1.62...v1.1.63) (2022-02-03)
 
 
