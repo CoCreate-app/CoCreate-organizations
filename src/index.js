@@ -81,7 +81,7 @@ const CoCreateOrganization = {
 };
 
 action.init({
-	action: "createOrgNew",
+	name: "createOrgNew",
 	endEvent: "createdOrg",
 	callback: (btn, data) => {
 		CoCreateOrganization.createOrgNew(btn);
@@ -89,7 +89,7 @@ action.init({
 });
 
 action.init({
-	action: "createOrg",
+	name: "createOrg",
 	endEvent: "createdOrg",
 	callback: (btn, data) => {
 		CoCreateOrganization.createOrg(btn);
