@@ -1,3 +1,10 @@
+## [1.1.66](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.1.65...v1.1.66) (2022-02-16)
+
+
+### Bug Fixes
+
+* update action param to name ([b76e4c2](https://github.com/CoCreate-app/CoCreate-organizations/commit/b76e4c2a6a821c50eca1cb7573fa44f1e63eebdf))
+
 ## [1.1.65](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.1.64...v1.1.65) (2022-02-10)
 
 
