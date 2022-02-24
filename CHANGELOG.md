@@ -1,3 +1,10 @@
+## [1.1.68](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.1.67...v1.1.68) (2022-02-24)
+
+
+### Bug Fixes
+
+* CoCreate.config replace CoCreate.app with * ([58bf615](https://github.com/CoCreate-app/CoCreate-organizations/commit/58bf6157589b0ce90942533f8718565715840be2))
+
 ## [1.1.67](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.1.66...v1.1.67) (2022-02-16)
 
 
