@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.1.68...v1.2.0) (2022-03-03)
+
+
+### Features
+
+* manage server and client scripts ([3084e7e](https://github.com/CoCreate-app/CoCreate-organizations/commit/3084e7e0d6096905dd3c6bdeb21d56fb43039e51))
+
 ## [1.1.68](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.1.67...v1.1.68) (2022-02-24)
 
 
