@@ -9,9 +9,9 @@ class CoCreateOrganization {
 	
 	init() {
 		if (this.wsManager) {
-			this.wsManager.on('createOrgNew',	(socket, data, roomInfo) => this.createOrgNew(socket, data));
-			this.wsManager.on('createOrg',		(socket, data, roomInfo) => this.createOrg(socket, data));
-			this.wsManager.on('deleteOrg',		(socket, data, roomInfo) => this.deleteOrg(socket, data));
+			this.wsManager.on('createOrgNew',	(socket, data, socketInfo) => this.createOrgNew(socket, data));
+			this.wsManager.on('createOrg',		(socket, data, socketInfo) => this.createOrg(socket, data));
+			this.wsManager.on('deleteOrg',		(socket, data, socketInfo) => this.deleteOrg(socket, data));
 		}
 	}
 
