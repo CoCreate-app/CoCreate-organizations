@@ -62,11 +62,7 @@ class CoCreateOrganization {
 					const response  = { ...data, document_id: result.ops[0]._id, data: result.ops[0] }
 
 					self.wsManager.send(socket, 'createOrg', response );
-					if (data.room) {
-						self.wsManager.broadcast(socket, data.namespace || data['organization_id'] , data.room, 'createDocument', response, true);
-					} else {
-						self.wsManager.broadcast(socket, data.namespace || data['organization_id'], null, 'createDocument', response)	
-					}
+					self.wsManager.broadcast(socket, data.namespace || data['organization_id'] , data.room, 'createDocument', response);
 				}
 					// add new org to masterDb
 					const masterOrgDb = self.dbClient.db(data.mdb).collection(data['collection']);
