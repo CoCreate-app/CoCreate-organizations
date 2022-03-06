@@ -1,3 +1,11 @@
+## [1.2.1](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.2.0...v1.2.1) (2022-03-06)
+
+
+### Bug Fixes
+
+* removed param isExact from broadcast as it can be handled by param room ([241b0fe](https://github.com/CoCreate-app/CoCreate-organizations/commit/241b0fec1bd0251604bd43b7cc0d6273c23d4342))
+* update param roomInfo to socketInfo ([fadc197](https://github.com/CoCreate-app/CoCreate-organizations/commit/fadc197cd647b0e951895f787bee6f4f2c92f6d6))
+
 # [1.2.0](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.1.68...v1.2.0) (2022-03-03)
 
 
