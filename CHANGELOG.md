@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.2.1...v1.2.2) (2022-03-21)
+
+
+### Bug Fixes
+
+* update class sortable to attribute sortable ([8257806](https://github.com/CoCreate-app/CoCreate-organizations/commit/825780670c4a40eac352e5c83067df9dcea686bd))
+
 ## [1.2.1](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.2.0...v1.2.1) (2022-03-06)
 
 
