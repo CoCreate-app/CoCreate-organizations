@@ -1,3 +1,11 @@
+## [1.2.3](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.2.2...v1.2.3) (2022-05-06)
+
+
+### Bug Fixes
+
+* replace ObjectID with ObjectId due to mongodb depreciation ([675f499](https://github.com/CoCreate-app/CoCreate-organizations/commit/675f49949d338e735e5d6df8a1be01b9b5f71751))
+* update config organization_Id to organization_id ([be77abe](https://github.com/CoCreate-app/CoCreate-organizations/commit/be77abe662b7839f3f97ad1dcc54835d85dc67c1))
+
 ## [1.2.2](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.2.1...v1.2.2) (2022-03-21)
 
 
