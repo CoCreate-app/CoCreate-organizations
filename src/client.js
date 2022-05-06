@@ -3,7 +3,6 @@ import crud from '@cocreate/crud-client';
 import action from '@cocreate/actions';
 
 const CoCreateOrganization = {
-	// masterDB: '5ae0cfac6fb8c4e656fdaf92', // '5ae0cfac6fb8c4e656fdaf92' /** masterDB **/,
 	init: function() {
 		const self = this;
 		crud.listen('createOrgNew', function(data) {

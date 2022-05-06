@@ -1,4 +1,4 @@
-const {ObjectID} = require("mongodb");
+const {ObjectId} = require("mongodb");
 
 class CoCreateOrganization {
 	constructor(wsManager, dbClient) {
@@ -24,7 +24,7 @@ class CoCreateOrganization {
 				const db = this.dbClient.db(req_data['organization_id']);
 				const collection = db.collection(req_data["collection"]);
 					const query = {
-					"_id": new ObjectID(newOrg_id)
+					"_id": new ObjectId(newOrg_id)
 				};
 			
 				collection.find(query).toArray(function(error, result) {
