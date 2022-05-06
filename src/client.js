@@ -23,11 +23,11 @@ const CoCreateOrganization = {
 		if (!form) return;
 		let newOrg_id = form.querySelector("input[collection='organizations'][name='_id']");
 
-		const room = config.organization_Id;
+		const room = config.organization_id;
 
 		crud.send('createOrgNew', {
 			apiKey: config.apiKey,
-			organization_id: config.organization_Id,
+			organization_id: config.organization_id,
 			collection: 'organizations',
 			newOrg_id: newOrg_id,
 		}, room);
@@ -51,11 +51,11 @@ const CoCreateOrganization = {
 			}
 			data[name] = value;
 		});
-		const room = config.organization_Id;
+		const room = config.organization_id;
 		
 		crud.send('createOrg', {
 			apiKey: config.apiKey,
-			organization_id: config.organization_Id,
+			organization_id: config.organization_id,
 			// orgDb: newOrg,
 			mdb: '5ae0cfac6fb8c4e656fdaf92',
 			collection: 'organizations',
