@@ -33,7 +33,7 @@ class CoCreateOrganization {
 						// Create new user in config db users collection
 						newOrgDb.insertOne({...result.ops[0], organization_id : newOrg_id}, function(error, result) {
 							if(!error && result){
-								const response  = { ...data, document_id: result.ops[0]._id, data: result.ops[0]}
+								const response  = { ...data, document_id: `${result.insertedId}`, data: result.ops[0]}
 								self.wsManager.send(socket, 'createOrgNew', response, data['organization_id']);
 							}
 						});
@@ -54,20 +54,23 @@ class CoCreateOrganization {
 			// create new org in config db organization collection
 			collection.insertOne({ ...data.data, organization_id: data.organization_id }, function(error, result) {
 				if(!error && result){
-					const orgId = result.ops[0]._id + "";
+					const orgId = `${result.insertedId}`
+					data.data['_id'] = result.insertedId
 					const anotherCollection = self.dbClient.db(orgId).collection(data['collection']);
 					// Create new org db and insert organization
-					anotherCollection.insertOne({...result.ops[0], organization_id : orgId});
+					anotherCollection.insertOne({...data.data, organization_id : orgId});
 					
-					const response  = { ...data, document_id: result.ops[0]._id, data: result.ops[0] }
+					const response  = { ...data, document_id: orgId }
 
 					self.wsManager.send(socket, 'createOrg', response );
 					self.wsManager.broadcast(socket, data.namespace || data['organization_id'] , data.room, 'createDocument', response);
-				}
-					// add new org to masterDb
-					const masterOrgDb = self.dbClient.db(data.mdb).collection(data['collection']);
-					masterOrgDb.insertOne({...result.ops[0], organization_id : data['mdb']});
 
+					// add new org to platformDB
+					if (data.organization_id != process.env.organization_id) {	
+						const platformDB = self.dbClient.db(process.env.organization_id).collection(data['collection']);
+						platformDB.insertOne({...data.data, organization_id: process.env.organization_id});
+					}	
+				}
 			});
 		}catch(error){
 			console.log('createDocument error', error);

@@ -56,8 +56,6 @@ const CoCreateOrganization = {
 		crud.send('createOrg', {
 			apiKey: config.apiKey,
 			organization_id: config.organization_id,
-			// orgDb: newOrg,
-			mdb: '5ae0cfac6fb8c4e656fdaf92',
 			collection: 'organizations',
 			data: data
 		}, room);
