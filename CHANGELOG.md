@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.2.3...v1.2.4) (2022-05-09)
+
+
+### Bug Fixes
+
+* insert returns insertedId instead of [0]._id ([3a604ed](https://github.com/CoCreate-app/CoCreate-organizations/commit/3a604ed3759f3d607243b29b9ee568bb459ab40f))
+
 ## [1.2.3](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.2.2...v1.2.3) (2022-05-06)
 
 
