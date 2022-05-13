@@ -1,3 +1,10 @@
+## [1.2.5](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.2.4...v1.2.5) (2022-05-13)
+
+
+### Bug Fixes
+
+* remove dead code ([b8b78fb](https://github.com/CoCreate-app/CoCreate-organizations/commit/b8b78fba6b8d0ab661d29d96a03a2dca5a1b9d38))
+
 ## [1.2.4](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.2.3...v1.2.4) (2022-05-09)
 
 
