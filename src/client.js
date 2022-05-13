@@ -5,11 +5,6 @@ import action from '@cocreate/actions';
 const CoCreateOrganization = {
 	init: function() {
 		const self = this;
-		crud.listen('createOrgNew', function(data) {
-			document.dispatchEvent(new CustomEvent('createdOrg', {
-				detail: data
-			}));
-		});
 		crud.listen('createOrg', function(data) {
 			self.setDocumentId('organizations', data.document_id);
 			document.dispatchEvent(new CustomEvent('createdOrg', {
@@ -17,23 +12,7 @@ const CoCreateOrganization = {
 			}));
 		});
 	},
-	
-	createOrgNew: function(btn) {
-		let form = btn.closest("form");
-		if (!form) return;
-		let newOrg_id = form.querySelector("input[collection='organizations'][name='_id']");
-
-		const room = config.organization_id;
-
-		crud.send('createOrgNew', {
-			apiKey: config.apiKey,
-			organization_id: config.organization_id,
-			collection: 'organizations',
-			newOrg_id: newOrg_id,
-		}, room);
-
-	},
-	
+		
 	createOrg: function(btn) {
 		let form = btn.closest("form");
 		if (!form) return;
@@ -76,14 +55,6 @@ const CoCreateOrganization = {
 	},
 
 };
-
-action.init({
-	name: "createOrgNew",
-	endEvent: "createdOrg",
-	callback: (btn, data) => {
-		CoCreateOrganization.createOrgNew(btn);
-	},
-});
 
 action.init({
 	name: "createOrg",

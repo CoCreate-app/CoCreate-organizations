@@ -9,39 +9,8 @@ class CoCreateOrganization {
 	
 	init() {
 		if (this.wsManager) {
-			this.wsManager.on('createOrgNew',	(socket, data, socketInfo) => this.createOrgNew(socket, data));
 			this.wsManager.on('createOrg',		(socket, data, socketInfo) => this.createOrg(socket, data));
 			this.wsManager.on('deleteOrg',		(socket, data, socketInfo) => this.deleteOrg(socket, data));
-		}
-	}
-
-	async createOrgNew(socket, data) {
-		const self = this;
-		if(!data) return;
-		const newOrg_id = data.newOrg_id;
-		if (newOrg_id != data.organization_id) {
-			try{
-				const db = this.dbClient.db(req_data['organization_id']);
-				const collection = db.collection(req_data["collection"]);
-					const query = {
-					"_id": new ObjectId(newOrg_id)
-				};
-			
-				collection.find(query).toArray(function(error, result) {
-					if(!error && result){
-						const newOrgDb = self.dbClient.db(newOrg_id).collection(data['collection']);
-						// Create new user in config db users collection
-						newOrgDb.insertOne({...result.ops[0], organization_id : newOrg_id}, function(error, result) {
-							if(!error && result){
-								const response  = { ...data, document_id: `${result.insertedId}`, data: result.ops[0]}
-								self.wsManager.send(socket, 'createOrgNew', response, data['organization_id']);
-							}
-						});
-					}
-				});
-			}catch(error){
-				console.log('createDocument error', error);
-			}
 		}
 	}
 
@@ -52,10 +21,12 @@ class CoCreateOrganization {
 		try{
 			const collection = this.dbClient.db(data.organization_id).collection(data.collection);
 			// create new org in config db organization collection
+			// ToDo: if data.data._id create org in platformDB
 			collection.insertOne({ ...data.data, organization_id: data.organization_id }, function(error, result) {
 				if(!error && result){
 					const orgId = `${result.insertedId}`
 					data.data['_id'] = result.insertedId
+					
 					const anotherCollection = self.dbClient.db(orgId).collection(data['collection']);
 					// Create new org db and insert organization
 					anotherCollection.insertOne({...data.data, organization_id : orgId});
