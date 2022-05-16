@@ -9,12 +9,12 @@ class CoCreateOrganization {
 	
 	init() {
 		if (this.wsManager) {
-			this.wsManager.on('createOrg',		(socket, data, socketInfo) => this.createOrg(socket, data));
-			this.wsManager.on('deleteOrg',		(socket, data, socketInfo) => this.deleteOrg(socket, data));
+			this.wsManager.on('createOrg',		(socket, data, socketInfo) => this.createOrg(socket, data, socketInfo));
+			this.wsManager.on('deleteOrg',		(socket, data, socketInfo) => this.deleteOrg(socket, data, socketInfo));
 		}
 	}
 
-	async createOrg(socket, data) {
+	async createOrg(socket, data, socketInfo) {
 		const self = this;
 		if(!data.data) return;
 		
@@ -33,7 +33,7 @@ class CoCreateOrganization {
 					
 					const response  = { ...data, document_id: orgId }
 
-					self.wsManager.send(socket, 'createOrg', response );
+					self.wsManager.send(socket, 'createOrg', response, socketInfo);
 					self.wsManager.broadcast(socket, data.namespace || data['organization_id'] , data.room, 'createDocument', response);
 
 					// add new org to platformDB
@@ -49,7 +49,7 @@ class CoCreateOrganization {
 	}
 	
 	
-	async deleteOrg(socket, data) {
+	async deleteOrg(socket, data, socketInfo) {
 		const self = this;
 		if(!data.data) return;
 		try{
