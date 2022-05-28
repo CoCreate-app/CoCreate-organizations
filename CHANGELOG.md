@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.3.2...v1.4.0) (2022-05-28)
+
+
+### Features
+
+* deleteOrg will delete db and org from from platformDB ([0fcb1bc](https://github.com/CoCreate-app/CoCreate-organizations/commit/0fcb1bc2ecdbb1948733c240ce7adfaceaa2b5e6))
+
 ## [1.3.2](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.3.1...v1.3.2) (2022-05-23)
 
 
