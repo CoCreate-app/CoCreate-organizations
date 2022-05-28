@@ -52,8 +52,33 @@ class CoCreateOrganization {
 	async deleteOrg(socket, data, socketInfo) {
 		const self = this;
 		if(!data.data) return;
+		const organization_id = data.data.organization_id
+		if(!organization_id || organization_id == process.env.organization_id) return;
+
 		try{
-			// ToDo: Delete DB and delete org and user from masterDB
+			const db = this.dbClient.db(organization_id);
+			db.dropDatabase().then(response => {
+				if (response === true){
+					console.log('deleteOrg response', response)
+				}
+
+				// delete org from platformDB
+				// if (organization_id != process.env.organization_id) {	
+					const platformDB = self.dbClient.db(process.env.organization_id).collection(data['collection']);
+					const query = {
+						"_id": new ObjectId(organization_id)
+					};
+		
+					platformDB.deleteOne(query, function(error, result) {
+						if (!error) {
+							let response = { ...data }
+							self.broadcast(socket, 'deleteDocument', response, socketInfo)
+						} else {
+							self.wsManager.send(socket, 'ServerError', error, socketInfo);
+						}
+					})
+				// }	
+			})
 		}catch(error){
 			console.log('deleteOrg error', error);
 		}
