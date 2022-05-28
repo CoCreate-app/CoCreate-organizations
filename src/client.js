@@ -30,14 +30,11 @@ const CoCreateOrganization = {
 			}
 			data[name] = value;
 		});
-		const room = config.organization_id;
 		
 		crud.send('createOrg', {
-			apiKey: config.apiKey,
-			organization_id: config.organization_id,
 			collection: 'organizations',
 			data: data
-		}, room);
+		});
 	},
 	
 	setDocumentId: function(collection, id) {
@@ -53,14 +50,46 @@ const CoCreateOrganization = {
 			});
 		}
 	},
+	
+	deleteOrg: async function(btn) {
+		const { collection, document_id } = crud.getAttr(btn);
+		const organization_id = document_id;
+
+		if(crud.checkAttrValue(collection) && crud.checkAttrValue(document_id)) {
+
+			crud.send('deleteOrg', {
+				collection,
+				document_id,
+				data: {
+					organization_id,
+				},
+				'metadata': 'deleteOrg-action'
+			}).then(response => {
+
+				// ToDo: replace with custom event
+				document.dispatchEvent(new CustomEvent('deletedOrg', {
+					detail: {}
+				}));
+			})
+		}
+	},
 
 };
+
 
 action.init({
 	name: "createOrg",
 	endEvent: "createdOrg",
 	callback: (btn, data) => {
 		CoCreateOrganization.createOrg(btn);
+	},
+});
+
+action.init({
+	name: "deleteOrg",
+	endEvent: "deletedOrg",
+	callback: (btn, data) => {
+		CoCreateOrganization.deleteOrg(btn);
 	},
 });
 
