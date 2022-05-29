@@ -9,8 +9,12 @@ class CoCreateOrganization {
 	
 	init() {
 		if (this.wsManager) {
-			this.wsManager.on('createOrg',		(socket, data, socketInfo) => this.createOrg(socket, data, socketInfo));
-			this.wsManager.on('deleteOrg',		(socket, data, socketInfo) => this.deleteOrg(socket, data, socketInfo));
+			this.wsManager.on('createOrg', (socket, data, socketInfo) => 
+				this.createOrg(socket, data, socketInfo)
+			);
+			this.wsManager.on('deleteOrg', (socket, data, socketInfo) => 
+				this.deleteOrg(socket, data, socketInfo)
+			);
 		}
 	}
 
@@ -54,10 +58,12 @@ class CoCreateOrganization {
 		if(!data.data) return;
 		const organization_id = data.data.organization_id
 		if(!organization_id || organization_id == process.env.organization_id) return;
+		if(data.organization_id != process.env.organization_id) return;
 		try{
 			const db = this.dbClient.db(organization_id);
 			db.dropDatabase().then(response => {
 				if (response === true){
+					process.emit('deleteOrg', organization_id)
 
 					// delete org from platformDB
 					const platformDB = self.dbClient.db(process.env.organization_id).collection(data['collection']);
