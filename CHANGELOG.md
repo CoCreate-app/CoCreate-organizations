@@ -1,3 +1,11 @@
+# [1.5.0](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.4.0...v1.5.0) (2022-05-29)
+
+
+### Features
+
+* deleteDocument broadcasted after orgDeleted ([be1ecee](https://github.com/CoCreate-app/CoCreate-organizations/commit/be1ecee732ce71a3877dfbb06df9b19c0148eb16))
+* deleteOrgs action to select and delete many organizations ([0abaa20](https://github.com/CoCreate-app/CoCreate-organizations/commit/0abaa2061ac7575c51314f5011aa6031022b6d7f))
+
 # [1.4.0](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.3.2...v1.4.0) (2022-05-28)
 
 
