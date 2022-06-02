@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.5.0...v1.5.1) (2022-06-02)
+
+
+### Bug Fixes
+
+* update padding of datables td element ([4adf0fe](https://github.com/CoCreate-app/CoCreate-organizations/commit/4adf0fe02212df759b333da837c616e473b1d9b1))
+
 # [1.5.0](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.4.0...v1.5.0) (2022-05-29)
 
 
