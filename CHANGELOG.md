@@ -1,3 +1,11 @@
+## [1.5.2](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.5.1...v1.5.2) (2022-06-12)
+
+
+### Bug Fixes
+
+* update dependencies ([e67c74d](https://github.com/CoCreate-app/CoCreate-organizations/commit/e67c74df65e782adc22b19ea3dbca226e795b695))
+* update modal btn to actions ([e40a303](https://github.com/CoCreate-app/CoCreate-organizations/commit/e40a303710dc73dd614c659c084d339d5797dc16))
+
 ## [1.5.1](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.5.0...v1.5.1) (2022-06-02)
 
 
