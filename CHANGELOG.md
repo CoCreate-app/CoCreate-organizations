@@ -1,3 +1,10 @@
+## [1.5.5](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.5.4...v1.5.5) (2022-07-03)
+
+
+### Bug Fixes
+
+* update pass-fetch and pass-filter attributes ([0a7cbcb](https://github.com/CoCreate-app/CoCreate-organizations/commit/0a7cbcba3c8a2a56b4940085f8c287cdc6c3d6e9))
+
 ## [1.5.4](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.5.3...v1.5.4) (2022-06-18)
 
 
