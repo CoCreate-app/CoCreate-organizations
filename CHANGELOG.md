@@ -1,3 +1,10 @@
+## [1.5.6](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.5.5...v1.5.6) (2022-08-19)
+
+
+### Bug Fixes
+
+* renamed order-by and order-type to filter-order-name and filter-order-type ([cb6a59b](https://github.com/CoCreate-app/CoCreate-organizations/commit/cb6a59b9d78ef556f732f0a80b5ab1281927b7f7))
+
 ## [1.5.5](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.5.4...v1.5.5) (2022-07-03)
 
 
