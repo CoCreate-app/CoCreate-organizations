@@ -1,6 +1,7 @@
 import crud from '@cocreate/crud-client';
 // import input from '@cocreate/elements'
 import action from '@cocreate/actions';
+import uuid from '@cocreate/uuid';
 
 const CoCreateOrganization = {
 	init: function() {
@@ -19,7 +20,7 @@ const CoCreateOrganization = {
 		
 		let elements = form.querySelectorAll("[collection='organizations'][name]");
 		
-		let data = {};
+		let data = {data: {}};
 		//. get form data
 		elements.forEach(el => {
 			let name = el.getAttribute('name');
@@ -28,13 +29,33 @@ const CoCreateOrganization = {
 			if (el.getAttribute('data-type') == 'array') {
 				value = [value];
 			}
-			data[name] = value;
+			data.data[name] = value;
 		});
 		
-		crud.send('createOrg', {
-			collection: 'organizations',
-			data: data
-		});
+		const socket = crud.socket.getSocket({})
+		if (!socket || !socket.connected || window && !window.navigator.onLine) {
+			data.collection = 'organizations'
+			data.data['_id'] = ObjectId()
+			data.data['name'] = 'untitled'
+			window.localStorage.setItem('apiKey', uuid(32));
+			window.localStorage.setItem('organization_id', data['_id']);	
+			crud.createDocument(data).then((response) => {
+				data.database = data.data['_id']
+				data.organization_id = data.data['_id']
+				crud.createDocument(data).then((response) => {
+					
+					document.dispatchEvent(new CustomEvent('createOrg', {
+						detail: response
+					}));
+		
+				})	
+			})
+		} else {
+			crud.send('createOrg', {
+				collection: 'organizations',
+				data: data
+			});
+		}
 	},
 	
 	setDocumentId: function(collection, id) {
@@ -106,6 +127,8 @@ const CoCreateOrganization = {
 
 };
 
+const ObjectId = (rnd = r16 => Math.floor(r16).toString(16)) =>
+    rnd(Date.now()/1000) + ' '.repeat(16).replace(/./g, () => rnd(Math.random()*16));
 
 action.init({
 	name: "createOrg",
