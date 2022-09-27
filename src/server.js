@@ -9,16 +9,16 @@ class CoCreateOrganization {
 	
 	init() {
 		if (this.wsManager) {
-			this.wsManager.on('createOrg', (socket, data, socketInfo) => 
-				this.createOrg(socket, data, socketInfo)
+			this.wsManager.on('createOrg', (socket, data) => 
+				this.createOrg(socket, data)
 			);
-			this.wsManager.on('deleteOrg', (socket, data, socketInfo) => 
-				this.deleteOrg(socket, data, socketInfo)
+			this.wsManager.on('deleteOrg', (socket, data) => 
+				this.deleteOrg(socket, data)
 			);
 		}
 	}
 
-	async createOrg(socket, data, socketInfo) {
+	async createOrg(socket, data) {
 		const self = this;
 		if(!data.data) return;
 		
@@ -37,7 +37,7 @@ class CoCreateOrganization {
 					
 					const response  = { ...data, document_id: orgId }
 
-					self.wsManager.send(socket, 'createOrg', response, socketInfo);
+					self.wsManager.send(socket, 'createOrg', response);
 					self.wsManager.broadcast(socket, data.namespace || data['organization_id'] , data.room, 'createDocument', response);
 
 					// add new org to platformDB
@@ -53,7 +53,7 @@ class CoCreateOrganization {
 	}
 	
 	
-	async deleteOrg(socket, data, socketInfo) {
+	async deleteOrg(socket, data) {
 		const self = this;
 		if(!data.data) return;
 		const organization_id = data.data.organization_id
@@ -74,10 +74,10 @@ class CoCreateOrganization {
 					platformDB.deleteOne(query, function(error, result) {
 						if (!error) {
 							let response = { ...data }
-							self.wsManager.send(socket, 'deleteOrg', response, socketInfo);
-							self.wsManager.broadcast(socket, response.namespace || response['organization_id'], response.room, 'deleteDocument', response, socketInfo);
+							self.wsManager.send(socket, 'deleteOrg', response);
+							self.wsManager.broadcast(socket, response.namespace || response['organization_id'], response.room, 'deleteDocument', response);
 						} else {
-							self.wsManager.send(socket, 'ServerError', error, socketInfo);
+							self.wsManager.send(socket, 'ServerError', error);
 						}
 					})
 				}	
