@@ -1,3 +1,16 @@
+# [1.6.0](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.5.8...v1.6.0) (2022-09-28)
+
+
+### Bug Fixes
+
+* broadcast params reduced to socket, message, data ([f90ea9c](https://github.com/CoCreate-app/CoCreate-organizations/commit/f90ea9cf92e9e5a03c66bf40d2525699102d11a7))
+
+
+### Features
+
+* config is accessible from socket.config ([c64dacf](https://github.com/CoCreate-app/CoCreate-organizations/commit/c64dacf3ef279c61e682c099c8801ff18567fc30))
+* create new org while offline ([dc4223c](https://github.com/CoCreate-app/CoCreate-organizations/commit/dc4223c2e60c9ede79c040508bdc635b26f69fe6))
+
 ## [1.5.8](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.5.7...v1.5.8) (2022-09-01)
 
 
