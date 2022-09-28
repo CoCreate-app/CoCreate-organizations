@@ -38,7 +38,7 @@ class CoCreateOrganization {
 					const response  = { ...data, document_id: orgId }
 
 					self.wsManager.send(socket, 'createOrg', response);
-					self.wsManager.broadcast(socket, data.namespace || data['organization_id'] , data.room, 'createDocument', response);
+					self.wsManager.broadcast(socket, 'createDocument', response);
 
 					// add new org to platformDB
 					if (data.organization_id != process.env.organization_id) {	
@@ -75,7 +75,7 @@ class CoCreateOrganization {
 						if (!error) {
 							let response = { ...data }
 							self.wsManager.send(socket, 'deleteOrg', response);
-							self.wsManager.broadcast(socket, response.namespace || response['organization_id'], response.room, 'deleteDocument', response);
+							self.wsManager.broadcast(socket, 'deleteDocument', response);
 						} else {
 							self.wsManager.send(socket, 'ServerError', error);
 						}
