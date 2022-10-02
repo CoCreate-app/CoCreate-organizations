@@ -1,3 +1,10 @@
+## [1.6.11](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.6.10...v1.6.11) (2022-10-02)
+
+
+### Bug Fixes
+
+* minor bug fixes ([beb8960](https://github.com/CoCreate-app/CoCreate-organizations/commit/beb89600967b91122a4afb3ba1ff0a2163f7ae0e))
+
 ## [1.6.10](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.6.9...v1.6.10) (2022-10-02)
 
 
