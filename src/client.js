@@ -1,5 +1,5 @@
 import CRUD from '@cocreate/crud-client';
-// import input from '@cocreate/elements'
+import '@cocreate/element-prototype';
 import action from '@cocreate/actions';
 import uuid from '@cocreate/uuid';
 
