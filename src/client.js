@@ -26,7 +26,7 @@ const CoCreateOrganization = {
 		
 		let elements = form.querySelectorAll("[collection='organizations'][name]");
 		
-		let data = {data: {}};
+		let data = {document: {}};
 		//. get form data
 		elements.forEach(el => {
 			let name = el.getAttribute('name');
@@ -35,19 +35,19 @@ const CoCreateOrganization = {
 			if (el.getAttribute('data-type') == 'array') {
 				value = [value];
 			}
-			data.data[name] = value;
+			data.document[name] = value;
 		});
 		
 		const socket = crud.socket.getSocket()
 		if (!socket || !socket.connected || window && !window.navigator.onLine) {
 			data.collection = 'organizations'
-			data.data['_id'] = ObjectId()
-			data.data['name'] = 'untitled'
+			data.document['_id'] = ObjectId()
+			data.document['name'] = 'untitled'
 			window.localStorage.setItem('apiKey', uuid(32));
 			window.localStorage.setItem('organization_id', data['_id']);	
 			crud.createDocument(data).then((response) => {
-				data.database = data.data['_id']
-				data.organization_id = data.data['_id']
+				data.database = data.document['_id']
+				data.organization_id = data.document['_id']
 				crud.createDocument(data).then((response) => {
 					
 					document.dispatchEvent(new CustomEvent('createOrg', {
