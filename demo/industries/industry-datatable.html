@@ -55,12 +55,12 @@
     					  <div>
       						<a target="modal" href="render.html" 
       						   pass-collection="module_activity"
-      						   pass-document_id="{{data._id}}"
+      						   pass-document_id="{{document._id}}"
       						   pass-prefix="form_"
       						   pass_to="form-fields" 
       						   modal-width="320px" 
       						   modal-color="#229954">
-      						  <h4 collection="{{collection}}" pass-document_id="{{data._id}}" name="name">Name</h4>
+      						  <h4 collection="{{document.collection}}" pass-document_id="{{document._id}}" name="name">Name</h4>
       						  <div pass-collection="modules"
           						   pass-document_id=""
       						       pass-prefix="form_"
@@ -69,7 +69,7 @@
       						    
       						  </div>
       						</a>
-      						  <h5 collection="{{collection}}" pass-document_id="{{data._id}}" name="description"></h5>
+      						  <h5 collection="{{document.collection}}" pass-document_id="{{document._id}}" name="description"></h5>
     					  </div>
   					  </div>
   					</td>
@@ -81,7 +81,7 @@
   						   pass_to="form-fields" 
   						   modal-width="320px" 
   						   modal-color="#229954">
-  					     <b collection="{{collection}}" pass-document_id="{{data._id}}" name="_id">Industry Id</b>
+  					     <b collection="{{document.collection}}" pass-document_id="{{document._id}}" name="_id">Industry Id</b>
   						    <div pass-collection="module_activity"
       						   pass-document_id=""
   						       pass-prefix="form_"
