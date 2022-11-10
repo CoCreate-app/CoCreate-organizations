@@ -38,7 +38,7 @@ const CoCreateOrganization = {
 			data.document[name] = value;
 		});
 		
-		const socket = crud.socket.getSocket()
+		const socket = crud.socket.getSockets()
 		if (!socket || !socket.connected || window && !window.navigator.onLine) {
 			data.collection = 'organizations'
 			data.document['_id'] = ObjectId()
