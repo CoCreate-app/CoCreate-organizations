@@ -79,7 +79,7 @@ const CoCreateOrganization = {
 	},
 	
 	deleteOrg: async function(btn) {
-		const { collection, document_id } = crud.getAttr(btn);
+		const { collection, document_id } = crud.getAttributes(btn);
 		const organization_id = document_id;
 
 		if(crud.checkAttrValue(collection) && crud.checkAttrValue(document_id)) {
