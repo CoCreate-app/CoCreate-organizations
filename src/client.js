@@ -82,7 +82,7 @@ const CoCreateOrganization = {
 		const { collection, document_id } = crud.getAttributes(btn);
 		const organization_id = document_id;
 
-		if(crud.checkAttrValue(collection) && crud.checkAttrValue(document_id)) {
+		if(crud.checkValue(collection) && crud.checkValue(document_id)) {
 
 			crud.socket.send('deleteOrg', {
 				collection,
@@ -103,7 +103,7 @@ const CoCreateOrganization = {
 
 	deleteOrgs: async function(btn) {
 		const collection = btn.getAttribute('collection');
-		if(crud.checkAttrValue(collection)) {
+		if(crud.checkValue(collection)) {
 			const dataTemplateid = btn.getAttribute('template_id');
 			if(!dataTemplateid) return;
 
@@ -113,7 +113,7 @@ const CoCreateOrganization = {
 				const document_id = el.getAttribute('document_id');
 				const organization_id = document_id;
 
-				if(crud.checkAttrValue(document_id)) {
+				if(crud.checkValue(document_id)) {
 					crud.socket.send('deleteOrg', {
 						collection,
 						document_id,
