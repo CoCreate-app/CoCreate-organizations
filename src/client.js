@@ -13,7 +13,7 @@ const CoCreateOrganization = {
 	init: function() {
 		const self = this;
 		crud.listen('createOrg', function(data) {
-			self.setDocumentId('organizations', data.document_id);
+			self.setDocumentId('organizations', data.document[0]._id);
 			document.dispatchEvent(new CustomEvent('createdOrg', {
 				detail: data
 			}));
@@ -39,15 +39,15 @@ const CoCreateOrganization = {
 		});
 		
 		const socket = crud.socket.getSockets()
-		if (!socket || !socket.connected || window && !window.navigator.onLine) {
+		if (!socket[0] || !socket[0].connected || window && !window.navigator.onLine) {
 			data.collection = 'organizations'
 			data.document['_id'] = ObjectId()
 			data.document['name'] = 'untitled'
 			window.localStorage.setItem('apiKey', uuid(32));
 			window.localStorage.setItem('organization_id', data['_id']);	
 			crud.createDocument(data).then((response) => {
-				data.database = data.document['_id']
-				data.organization_id = data.document['_id']
+				data.database = data.document[0]['_id']
+				data.organization_id = data.document[0]['_id']
 				crud.createDocument(data).then((response) => {
 					
 					document.dispatchEvent(new CustomEvent('createOrg', {
@@ -57,9 +57,9 @@ const CoCreateOrganization = {
 				})	
 			})
 		} else {
-			crud.send('createOrg', {
+			crud.socket.send('createOrg', {
 				collection: 'organizations',
-				data: data
+				...data
 			});
 		}
 	},
@@ -84,7 +84,7 @@ const CoCreateOrganization = {
 
 		if(crud.checkAttrValue(collection) && crud.checkAttrValue(document_id)) {
 
-			crud.send('deleteOrg', {
+			crud.socket.send('deleteOrg', {
 				collection,
 				document_id,
 				data: {
@@ -114,7 +114,7 @@ const CoCreateOrganization = {
 				const organization_id = document_id;
 
 				if(crud.checkAttrValue(document_id)) {
-					crud.send('deleteOrg', {
+					crud.socket.send('deleteOrg', {
 						collection,
 						document_id,
 						data: {

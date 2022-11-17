@@ -1,9 +1,7 @@
-const {ObjectId} = require("mongodb");
-
 class CoCreateOrganization {
-	constructor(wsManager, dbClient) {
+	constructor(wsManager, crud) {
 		this.wsManager = wsManager
-		this.dbClient = dbClient
+		this.crud = crud
 		this.init()
 	}
 	
@@ -20,33 +18,24 @@ class CoCreateOrganization {
 
 	async createOrg(socket, data) {
 		const self = this;
-		if(!data.data) return;
 		
 		try{
-			const collection = this.dbClient.db(data.organization_id).collection(data.collection);
 			// create new org in config db organization collection
-			// ToDo: if data.data._id create org in platformDB
-			collection.insertOne({ ...data.data, organization_id: data.organization_id }, function(error, result) {
-				if(!error && result){
-					const orgId = `${result.insertedId}`
-					data.data['_id'] = result.insertedId
-					
-					const anotherCollection = self.dbClient.db(orgId).collection(data['collection']);
-					// Create new org db and insert organization
-					anotherCollection.insertOne({...data.data, organization_id : orgId});
-					
-					const response  = { ...data, document_id: orgId }
+			this.crud.createDocument(data).then((data) => {
+				const orgId = `${data.document[0]._id}`
+				
+				// Create new org db and insert organization
+				self.crud.createDocument({...data, database: orgId, organization_id: orgId}).then((data) => {
+					self.wsManager.send(socket, 'createOrg', data);
+					self.wsManager.broadcast(socket, 'createDocument', data);	
+				})
 
-					self.wsManager.send(socket, 'createOrg', response);
-					self.wsManager.broadcast(socket, 'createDocument', response);
-
-					// add new org to platformDB
-					if (data.organization_id != process.env.organization_id) {	
-						const platformDB = self.dbClient.db(process.env.organization_id).collection(data['collection']);
-						platformDB.insertOne({...data.data, organization_id: process.env.organization_id});
-					}	
+				// add new org to platformDB
+				if (data.organization_id != process.env.organization_id) {	
+					self.crud.createDocument({ ...data, database: process.env.organization_id, organization_id: process.env.organization_id })
 				}
-			});
+	
+			})
 		}catch(error){
 			console.log('createDocument error', error);
 		}
@@ -55,33 +44,33 @@ class CoCreateOrganization {
 	
 	async deleteOrg(socket, data) {
 		const self = this;
-		if(!data.data) return;
 		const organization_id = data.data.organization_id
-		if(!organization_id || organization_id == process.env.organization_id) return;
-		if(data.organization_id != process.env.organization_id) return;
-		try{
-			const db = this.dbClient.db(organization_id);
-			db.dropDatabase().then(response => {
+		if (!organization_id || organization_id == process.env.organization_id) return;
+		if (data.organization_id != process.env.organization_id) return;
+
+		try {
+			this.crud.deleteDatabase(data).then((response) => {
 				if (response === true){
 					process.emit('deleteOrg', organization_id)
-
+					self.wsManager.send(socket, 'deleteOrg', data);
+					
 					// delete org from platformDB
-					const platformDB = self.dbClient.db(process.env.organization_id).collection(data['collection']);
-					const query = {
-						"_id": new ObjectId(organization_id)
+					const request = {
+						database: process.env.organization_id, 
+						collection: 'organization',
+						document: {
+							_id: organization_id
+						},
+						organization_id: process.env.organization_id
 					};
 		
-					platformDB.deleteOne(query, function(error, result) {
-						if (!error) {
-							let response = { ...data }
-							self.wsManager.send(socket, 'deleteOrg', response);
-							self.wsManager.broadcast(socket, 'deleteDocument', response);
-						} else {
-							self.wsManager.send(socket, 'ServerError', error);
-						}
+					self.crud.deleteDocument(request).then((data) => {
+						self.wsManager.broadcast(socket, 'deleteDocument', data)
 					})
 				}	
+
 			})
+			
 		}catch(error){
 			console.log('deleteOrg error', error);
 		}
