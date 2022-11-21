@@ -1,3 +1,22 @@
+# [1.7.0](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.6.12...v1.7.0) (2022-11-21)
+
+
+### Bug Fixes
+
+* crud.getAttr renamed to crud.getAttributes ([10ea025](https://github.com/CoCreate-app/CoCreate-organizations/commit/10ea025048686e6b3bceeb0a675d5ff0d3370ca1))
+* filter-order attributes renamed to filter-sort ([e116902](https://github.com/CoCreate-app/CoCreate-organizations/commit/e11690208f46517364e6594b3343a76a06a89bd4))
+* renamed {{data.key}} to {{document.key}} ([f4712a5](https://github.com/CoCreate-app/CoCreate-organizations/commit/f4712a5d77b4525ff5544315f32013dc07c13d33))
+* renamed crud.checkAttrValue to crud.checkValue ([62e99ce](https://github.com/CoCreate-app/CoCreate-organizations/commit/62e99ce433928ce3200ba75b811e0b288f1bf964))
+* renamed data.data to data.document ([50b924c](https://github.com/CoCreate-app/CoCreate-organizations/commit/50b924cddcf93bef9c473072967a0b2fa1dc7dd7))
+* renamed getSocket to getSockets ([02a2dc5](https://github.com/CoCreate-app/CoCreate-organizations/commit/02a2dc583ebfe9754a2518729d998c42b9d96a2b))
+* update crud functions to receive an array of objects as the response ([1b07d3d](https://github.com/CoCreate-app/CoCreate-organizations/commit/1b07d3d90be082114db5ac96b1d0c6c13918e0f5))
+
+
+### Features
+
+* Add @cocreate/element-prototype ([a0b71df](https://github.com/CoCreate-app/CoCreate-organizations/commit/a0b71dfaed1204836eea9f32a111d6bb8b6594e4))
+* updated to use new crud which has the abilty to use multiple databases ([b405e32](https://github.com/CoCreate-app/CoCreate-organizations/commit/b405e321d89859f624ad99d23581ca767d3eba88))
+
 ## [1.6.12](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.6.11...v1.6.12) (2022-10-02)
 
 
