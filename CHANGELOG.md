@@ -1,3 +1,10 @@
+## [1.7.4](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.7.3...v1.7.4) (2022-11-21)
+
+
+### Bug Fixes
+
+* replaced document_id with document._id ([ce9a860](https://github.com/CoCreate-app/CoCreate-organizations/commit/ce9a8606bde0256aaff1e92129e7e370e1138900))
+
 ## [1.7.3](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.7.2...v1.7.3) (2022-11-21)
 
 
