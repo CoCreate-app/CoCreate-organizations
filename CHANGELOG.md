@@ -1,3 +1,10 @@
+## [1.7.7](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.7.6...v1.7.7) (2022-11-22)
+
+
+### Bug Fixes
+
+* workflow docs ([49f85a8](https://github.com/CoCreate-app/CoCreate-organizations/commit/49f85a83d81a7cfbda89627ca8a369782df9ca9e))
+
 ## [1.7.6](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.7.5...v1.7.6) (2022-11-22)
 
 
