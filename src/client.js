@@ -4,7 +4,7 @@ import action from '@cocreate/actions';
 import uuid from '@cocreate/uuid';
 
 let crud
-if(CRUD && CRUD.default)
+if (CRUD && CRUD.default)
 	crud = CRUD.default
 else
 	crud = CRUD
@@ -82,7 +82,7 @@ const CoCreateOrganization = {
 		const { collection, document_id } = crud.getAttributes(btn);
 		const organization_id = document_id;
 
-		if(crud.checkValue(collection) && crud.checkValue(document_id)) {
+		if (crud.checkValue(collection) && crud.checkValue(document_id)) {
 
 			crud.socket.send('deleteOrg', {
 				collection,
@@ -103,9 +103,9 @@ const CoCreateOrganization = {
 
 	deleteOrgs: async function(btn) {
 		const collection = btn.getAttribute('collection');
-		if(crud.checkValue(collection)) {
+		if (crud.checkValue(collection)) {
 			const dataTemplateid = btn.getAttribute('template_id');
-			if(!dataTemplateid) return;
+			if (!dataTemplateid) return;
 
 			const selectedEls = document.querySelectorAll(`.selected[templateid="${dataTemplateid}"]`);
 
@@ -113,7 +113,7 @@ const CoCreateOrganization = {
 				const document_id = el.getAttribute('document_id');
 				const organization_id = document_id;
 
-				if(crud.checkValue(document_id)) {
+				if (crud.checkValue(document_id)) {
 					crud.socket.send('deleteOrg', {
 						collection,
 						document_id,
