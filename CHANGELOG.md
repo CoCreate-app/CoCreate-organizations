@@ -1,3 +1,11 @@
+## [1.7.10](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.7.9...v1.7.10) (2022-11-25)
+
+
+### Bug Fixes
+
+* bump dependencies ([bcf1b85](https://github.com/CoCreate-app/CoCreate-organizations/commit/bcf1b85a5d5723c407c3745fcb0217f8546574b7))
+* CoCreate.crud.default removed bug causing default object ([48c810d](https://github.com/CoCreate-app/CoCreate-organizations/commit/48c810dfa5c110f52e0b190d2fe31d81814440be))
+
 ## [1.7.9](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.7.8...v1.7.9) (2022-11-24)
 
 
