@@ -1,13 +1,7 @@
-import CRUD from '@cocreate/crud-client';
+import crud from '@cocreate/crud-client';
 import '@cocreate/element-prototype';
 import action from '@cocreate/actions';
 import uuid from '@cocreate/uuid';
-
-let crud
-if (CRUD && CRUD.default)
-	crud = CRUD.default
-else
-	crud = CRUD
 
 const CoCreateOrganization = {
 	init: function() {
