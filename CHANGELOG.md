@@ -1,3 +1,11 @@
+## [1.7.11](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.7.10...v1.7.11) (2022-11-26)
+
+
+### Bug Fixes
+
+* bump dependencies ([7d75157](https://github.com/CoCreate-app/CoCreate-organizations/commit/7d75157ee4e3192232c8b12da345f62dfb9ad251))
+* toggle-order renamed to filter-sort-toggle ([cdbf1a1](https://github.com/CoCreate-app/CoCreate-organizations/commit/cdbf1a1c40add6ae98b6285ec862ba11d4246199))
+
 ## [1.7.10](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.7.9...v1.7.10) (2022-11-25)
 
 
