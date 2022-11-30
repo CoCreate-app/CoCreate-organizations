@@ -53,7 +53,8 @@ const CoCreateOrganization = {
 		} else {
 			crud.socket.send('createOrg', {
 				collection: 'organizations',
-				...data
+				...data,
+				broadcastBrowser: false
 			});
 		}
 	},
