@@ -1,3 +1,12 @@
+## [1.7.15](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.7.14...v1.7.15) (2022-12-02)
+
+
+### Bug Fixes
+
+* bump dependencies ([1058409](https://github.com/CoCreate-app/CoCreate-organizations/commit/1058409d015584389e9e7ac3671028a2e3cce39a))
+* renamed filter-sort-type to filter-sort-direction ([890f786](https://github.com/CoCreate-app/CoCreate-organizations/commit/890f7868a64af6548c76904fa57467afc51507fa))
+* set broadcastBrowser to false ([d1a03d3](https://github.com/CoCreate-app/CoCreate-organizations/commit/d1a03d32392a02fdfa7dbf763f41ffb1bf58fc3c))
+
 ## [1.7.14](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.7.13...v1.7.14) (2022-11-28)
 
 
