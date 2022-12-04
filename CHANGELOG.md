@@ -1,3 +1,11 @@
+## [1.7.17](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.7.16...v1.7.17) (2022-12-04)
+
+
+### Bug Fixes
+
+* bump dependencies ([dbb361e](https://github.com/CoCreate-app/CoCreate-organizations/commit/dbb361e025b00df08eda821f5660cfd9ec57b902))
+* crud.ObjectId ([61f2158](https://github.com/CoCreate-app/CoCreate-organizations/commit/61f2158abc23c00c5116386b82ceda9b25130f34))
+
 ## [1.7.16](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.7.15...v1.7.16) (2022-12-02)
 
 
