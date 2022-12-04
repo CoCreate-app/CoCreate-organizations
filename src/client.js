@@ -35,7 +35,7 @@ const CoCreateOrganization = {
 		const socket = crud.socket.getSockets()
 		if (!socket[0] || !socket[0].connected || window && !window.navigator.onLine) {
 			data.collection = 'organizations'
-			data.document['_id'] = ObjectId()
+			data.document['_id'] = crud.ObjectId()
 			data.document['name'] = 'untitled'
 			window.localStorage.setItem('apiKey', uuid(32));
 			window.localStorage.setItem('organization_id', data['_id']);	
@@ -127,9 +127,6 @@ const CoCreateOrganization = {
 	}
 
 };
-
-const ObjectId = (rnd = r16 => Math.floor(r16).toString(16)) =>
-    rnd(Date.now()/1000) + ' '.repeat(16).replace(/./g, () => rnd(Math.random()*16));
 
 action.init({
 	name: "createOrg",
