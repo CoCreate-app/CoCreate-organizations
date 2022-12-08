@@ -1,3 +1,10 @@
+## [1.7.19](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.7.18...v1.7.19) (2022-12-08)
+
+
+### Bug Fixes
+
+* removed mongodb dependency ([b9f503b](https://github.com/CoCreate-app/CoCreate-organizations/commit/b9f503b80082f8d80067bdef6be046f836e6a2f7))
+
 ## [1.7.18](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.7.17...v1.7.18) (2022-12-07)
 
 
