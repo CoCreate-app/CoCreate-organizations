@@ -1,3 +1,10 @@
+## [1.7.25](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.7.24...v1.7.25) (2022-12-13)
+
+
+### Bug Fixes
+
+* removed un used devDependencies ([620c400](https://github.com/CoCreate-app/CoCreate-organizations/commit/620c400362796b8918a9becb1fbd693592d30794))
+
 ## [1.7.24](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.7.23...v1.7.24) (2022-12-13)
 
 
