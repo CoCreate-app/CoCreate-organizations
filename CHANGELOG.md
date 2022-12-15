@@ -1,3 +1,10 @@
+## [1.7.26](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.7.25...v1.7.26) (2022-12-15)
+
+
+### Bug Fixes
+
+* add missing dev dependency style-loader ([b171f8b](https://github.com/CoCreate-app/CoCreate-organizations/commit/b171f8bc59c00aeb1fadc09096d2f885150c0253))
+
 ## [1.7.25](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.7.24...v1.7.25) (2022-12-13)
 
 
