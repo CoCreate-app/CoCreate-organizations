@@ -1,3 +1,11 @@
+## [1.7.32](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.7.31...v1.7.32) (2022-12-25)
+
+
+### Bug Fixes
+
+* bump dependencies ([9c22e34](https://github.com/CoCreate-app/CoCreate-organizations/commit/9c22e34fd478eb7f765bbb52393e07061f991677))
+* type="modal" and pass_to updated to action="pass, openModal" ([8e06641](https://github.com/CoCreate-app/CoCreate-organizations/commit/8e06641db440df3f04b098c441fef02c10858edd))
+
 ## [1.7.31](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.7.30...v1.7.31) (2022-12-23)
 
 
