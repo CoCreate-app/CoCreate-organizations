@@ -1,3 +1,12 @@
+## [1.7.33](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.7.32...v1.7.33) (2022-12-27)
+
+
+### Bug Fixes
+
+* bump dependecies ([3378fde](https://github.com/CoCreate-app/CoCreate-organizations/commit/3378fde2fea7976b7d544912b7c0ea853a968eca))
+* bump dependencies ([a702150](https://github.com/CoCreate-app/CoCreate-organizations/commit/a702150c9fbdedb3a888f0be60e65edecbc8db53))
+* modal href updated to modal-src ([4c70e2b](https://github.com/CoCreate-app/CoCreate-organizations/commit/4c70e2b55cd50cdac002e041679545a52cb9c3a1))
+
 ## [1.7.32](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.7.31...v1.7.32) (2022-12-25)
 
 
