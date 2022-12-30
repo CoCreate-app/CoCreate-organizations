@@ -1,3 +1,10 @@
+## [1.7.35](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.7.34...v1.7.35) (2022-12-30)
+
+
+### Bug Fixes
+
+* update config sources to use template  braces with entry on src ([4078a69](https://github.com/CoCreate-app/CoCreate-organizations/commit/4078a6970dfdd79b98d68c5d7b9f0ee8108fbb89))
+
 ## [1.7.34](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.7.33...v1.7.34) (2022-12-29)
 
 
