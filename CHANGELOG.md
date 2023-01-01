@@ -1,3 +1,10 @@
+## [1.7.37](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.7.36...v1.7.37) (2023-01-01)
+
+
+### Bug Fixes
+
+* docs sanbox overflow ([d3f4295](https://github.com/CoCreate-app/CoCreate-organizations/commit/d3f429574cf15795f2483810198ff6f7f7891403))
+
 ## [1.7.36](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.7.35...v1.7.36) (2022-12-31)
 
 
