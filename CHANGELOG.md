@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.7.37...v1.8.0) (2023-01-02)
+
+
+### Features
+
+* class="template" template_id="id" replaced with template="id" ([6bfa9b1](https://github.com/CoCreate-app/CoCreate-organizations/commit/6bfa9b14d3bf61afb788e66436bc7918f006ba0b))
+
 ## [1.7.37](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.7.36...v1.7.37) (2023-01-01)
 
 
