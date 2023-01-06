@@ -1,3 +1,11 @@
+## [1.8.2](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.8.1...v1.8.2) (2023-01-06)
+
+
+### Bug Fixes
+
+* bump dependencies, worklow [@v3](https://github.com/v3) ([ab687e1](https://github.com/CoCreate-app/CoCreate-organizations/commit/ab687e1b0a8ceec08127b2cf8a0ba3d13d1176d0))
+* edit in github btn styles ([976b115](https://github.com/CoCreate-app/CoCreate-organizations/commit/976b11535557e3fc759a7fb9365cac3fdd6a526d))
+
 ## [1.8.1](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.8.0...v1.8.1) (2023-01-05)
 
 
