@@ -2,6 +2,7 @@ import crud from '@cocreate/crud-client';
 import '@cocreate/element-prototype';
 import action from '@cocreate/actions';
 import uuid from '@cocreate/uuid';
+import localStorage from '@cocreate/local-storage';
 
 const CoCreateOrganization = {
 	init: function() {
@@ -37,8 +38,8 @@ const CoCreateOrganization = {
 			data.collection = 'organizations'
 			data.document['_id'] = crud.ObjectId()
 			data.document['name'] = 'untitled'
-			window.localStorage.setItem('apiKey', uuid(32));
-			window.localStorage.setItem('organization_id', data['_id']);	
+			localStorage.setItem('apiKey', uuid(32));
+			localStorage.setItem('organization_id', data['_id']);	
 			crud.createDocument(data).then((response) => {
 				data.database = data.document[0]['_id']
 				data.organization_id = data.document[0]['_id']
