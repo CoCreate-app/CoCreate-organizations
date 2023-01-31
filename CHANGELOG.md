@@ -1,3 +1,10 @@
+## [1.9.4](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.9.3...v1.9.4) (2023-01-31)
+
+
+### Bug Fixes
+
+* bump dependencies ([17d9c82](https://github.com/CoCreate-app/CoCreate-organizations/commit/17d9c820cc4ee920bbaa39045bb19071e73fdf95))
+
 ## [1.9.3](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.9.2...v1.9.3) (2023-01-30)
 
 
