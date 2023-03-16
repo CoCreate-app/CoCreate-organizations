@@ -1,3 +1,10 @@
+## [1.10.2](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.10.1...v1.10.2) (2023-03-16)
+
+
+### Bug Fixes
+
+* filter-sort-direction ([64281a8](https://github.com/CoCreate-app/CoCreate-organizations/commit/64281a8a40a0eec917c50bd0c7c539b66e9daddf))
+
 ## [1.10.1](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.10.0...v1.10.1) (2023-03-16)
 
 
