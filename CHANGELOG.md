@@ -1,3 +1,11 @@
+## [1.10.5](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.10.4...v1.10.5) (2023-04-11)
+
+
+### Bug Fixes
+
+* comment code that adds org as a db in platform ([8d92605](https://github.com/CoCreate-app/CoCreate-organizations/commit/8d92605b628da738c829e69ebf38c07c0aa1d3fe))
+* renamed domans to hosts ([68a0252](https://github.com/CoCreate-app/CoCreate-organizations/commit/68a0252c7705768814ddb3474bdb954eae47105b))
+
 ## [1.10.4](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.10.3...v1.10.4) (2023-03-30)
 
 
