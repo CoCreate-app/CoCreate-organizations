@@ -22,13 +22,13 @@ class CoCreateOrganization {
 		try{
 			// create new org in config db organization collection
 			this.crud.createDocument(data).then((data) => {
-				const orgId = `${data.document[0]._id}`
+				// const orgId = `${data.document[0]._id}`
 				
 				// Create new org db and insert organization
-				self.crud.createDocument({...data, database: orgId, organization_id: orgId}).then((data) => {
-					self.wsManager.send(socket, 'createOrg', data);
-					self.wsManager.broadcast(socket, 'createDocument', data);	
-				})
+				// self.crud.createDocument({...data, database: orgId, organization_id: orgId}).then((data) => {
+				// 	self.wsManager.send(socket, 'createOrg', data);
+				// 	self.wsManager.broadcast(socket, 'createDocument', data);	
+				// })
 
 				// add new org to platformDB
 				if (data.organization_id != process.env.organization_id) {	
