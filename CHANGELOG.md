@@ -1,3 +1,10 @@
+## [1.10.8](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.10.7...v1.10.8) (2023-04-12)
+
+
+### Bug Fixes
+
+* uuid typo ([9af90b3](https://github.com/CoCreate-app/CoCreate-organizations/commit/9af90b3f9adc53d29085a09c35759db51c133108))
+
 ## [1.10.7](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.10.6...v1.10.7) (2023-04-11)
 
 
