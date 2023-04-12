@@ -38,7 +38,7 @@ const CoCreateOrganization = {
 			data.collection = 'organizations'
 			data.document['_id'] = crud.ObjectId()
 			data.document['name'] = 'untitled'
-			localStorage.setItem('apiKey', uuid(32));
+			localStorage.setItem('apiKey', uuid.generate(32));
 			localStorage.setItem('organization_id', data['_id']);	
 			crud.createDocument(data).then((response) => {
 				data.database = data.document[0]['_id']
