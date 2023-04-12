@@ -1,3 +1,10 @@
+## [1.10.9](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.10.8...v1.10.9) (2023-04-12)
+
+
+### Bug Fixes
+
+* uncomment sending createOrg ([24c19ce](https://github.com/CoCreate-app/CoCreate-organizations/commit/24c19ce512dc42c263c30d3e28acfdcb36b81f9d))
+
 ## [1.10.8](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.10.7...v1.10.8) (2023-04-12)
 
 
