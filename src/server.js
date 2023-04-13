@@ -29,6 +29,8 @@ class CoCreateOrganization {
 				// 	self.wsManager.send(socket, 'createOrg', data);
 				// 	self.wsManager.broadcast(socket, 'createDocument', data);	
 				// })
+
+				self.wsManager.broadcast(socket, 'updateDocument', data);	
 				self.wsManager.send(socket, 'createOrg', data);
 
 				// add new org to platformDB
