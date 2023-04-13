@@ -1,3 +1,11 @@
+## [1.10.10](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.10.9...v1.10.10) (2023-04-13)
+
+
+### Bug Fixes
+
+* broadcast user doc ([20175d4](https://github.com/CoCreate-app/CoCreate-organizations/commit/20175d4d1e7c624e0ca4334ef0e7c89b1c9c027b))
+* commented code that was related to creating new db ([147b1dd](https://github.com/CoCreate-app/CoCreate-organizations/commit/147b1dd54cdbf0a41fe724b5d138d3b3a449047d))
+
 ## [1.10.9](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.10.8...v1.10.9) (2023-04-12)
 
 
