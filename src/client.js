@@ -22,42 +22,38 @@ const CoCreateOrganization = {
 		let elements = form.querySelectorAll("[collection='organizations'][name]");
 		
 		let data = {document: {}};
-		//. get form data
 		elements.forEach(el => {
 			let name = el.getAttribute('name');
 			let value = el.getValue();
 			if (!name || !value) return;
-			if (el.getAttribute('data-type') == 'array') {
-				value = [value];
-			}
 			data.document[name] = value;
 		});
 		
-		const socket = crud.socket.getSockets()
-		if (!socket[0] || !socket[0].connected || window && !window.navigator.onLine) {
+		// const socket = crud.socket.getSockets()
+		// if (!socket[0] || !socket[0].connected || window && !window.navigator.onLine) {
 			data.collection = 'organizations'
-			data.document['_id'] = crud.ObjectId()
-			data.document['name'] = 'untitled'
-			localStorage.setItem('apiKey', uuid.generate(32));
-			localStorage.setItem('organization_id', data['_id']);	
+			// data.document['_id'] = crud.ObjectId()
+			// data.document['name'] = 'untitled'
+			// localStorage.setItem('apiKey', uuid.generate(32));
+			// localStorage.setItem('organization_id', data['_id']);	
 			crud.createDocument(data).then((response) => {
-				data.database = data.document[0]['_id']
-				data.organization_id = data.document[0]['_id']
-				crud.createDocument(data).then((response) => {
+				// data.database = data.document[0]['_id']
+				// data.organization_id = data.document[0]['_id']
+				// crud.createDocument(data).then((response) => {
 					
-					document.dispatchEvent(new CustomEvent('createOrg', {
+					document.dispatchEvent(new CustomEvent('createdOrg', {
 						detail: response
 					}));
 		
-				})	
+				// })	
 			})
-		} else {
-			crud.socket.send('createOrg', {
-				collection: 'organizations',
-				...data,
-				broadcastBrowser: false
-			});
-		}
+		// } else {
+		// 	crud.socket.send('createOrg', {
+		// 		collection: 'organizations',
+		// 		...data,
+		// 		broadcastBrowser: false
+		// 	});
+		// }
 	},
 	
 	setDocumentId: function(collection, id) {
