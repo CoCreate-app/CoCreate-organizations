@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.10.10...v1.11.0) (2023-04-24)
+
+
+### Features
+
+* added pwa manifest ([711f7a2](https://github.com/CoCreate-app/CoCreate-organizations/commit/711f7a22c2f3f224f956c93a3a4019a383226c37))
+
 ## [1.10.10](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.10.9...v1.10.10) (2023-04-13)
 
 
