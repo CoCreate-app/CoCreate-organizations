@@ -1,3 +1,10 @@
+## [1.11.5](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.11.4...v1.11.5) (2023-05-01)
+
+
+### Bug Fixes
+
+* replace fontawesome with svg ([41ed410](https://github.com/CoCreate-app/CoCreate-organizations/commit/41ed410fc12be047e9f138a46ba190f520d8c493))
+
 ## [1.11.4](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.11.3...v1.11.4) (2023-04-30)
 
 
