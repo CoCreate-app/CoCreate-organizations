@@ -1,3 +1,10 @@
+## [1.11.6](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.11.5...v1.11.6) (2023-05-01)
+
+
+### Bug Fixes
+
+* update manifest.json to manifest.webmanifest ([df7cb9d](https://github.com/CoCreate-app/CoCreate-organizations/commit/df7cb9d6750a85afc813311f8d67841164a6cb72))
+
 ## [1.11.5](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.11.4...v1.11.5) (2023-05-01)
 
 
