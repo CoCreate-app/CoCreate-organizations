@@ -1,3 +1,10 @@
+## [1.11.7](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.11.6...v1.11.7) (2023-05-01)
+
+
+### Bug Fixes
+
+* replaced icon toggles with new svg ([069f7eb](https://github.com/CoCreate-app/CoCreate-organizations/commit/069f7ebc6eb6f6601bd61dd8a789a52844af155b))
+
 ## [1.11.6](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.11.5...v1.11.6) (2023-05-01)
 
 
