@@ -1,3 +1,11 @@
+## [1.11.8](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.11.7...v1.11.8) (2023-05-06)
+
+
+### Bug Fixes
+
+* bump [@cocreate](https://github.com/cocreate) dependencies ([921e716](https://github.com/CoCreate-app/CoCreate-organizations/commit/921e716b855895e2a2bdef253dce3b6144c5dae7))
+* filter-sort icon ([0175966](https://github.com/CoCreate-app/CoCreate-organizations/commit/0175966879d975e466907cfc7ef670fd132fc8a0))
+
 ## [1.11.7](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.11.6...v1.11.7) (2023-05-01)
 
 
