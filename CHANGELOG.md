@@ -1,3 +1,10 @@
+## [1.11.9](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.11.8...v1.11.9) (2023-05-07)
+
+
+### Bug Fixes
+
+* crud.wsManger ([88c9be9](https://github.com/CoCreate-app/CoCreate-organizations/commit/88c9be98665f6f29fdf2212fac27634471e6996e))
+
 ## [1.11.8](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.11.7...v1.11.8) (2023-05-06)
 
 
