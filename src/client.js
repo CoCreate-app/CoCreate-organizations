@@ -1,16 +1,16 @@
 import crud from '@cocreate/crud-client';
 import indexeddb from '@cocreate/indexeddb';
 import action from '@cocreate/actions';
-import { getData, setDocumentId } from '@cocreate/form';
+import form from '@cocreate/form';
 
 const CoCreateOrganization = {
 		
 	createOrg: async function(btn) {
-		let form = btn.closest("form");
-		if (!form) return;
+		let formEl = btn.closest("form");
+		if (!formEl) return;
 
-		let organization = getData(form, 'organizations')
-		let user = getData(form, 'users')
+		let organization = form.getData(formEl, 'organizations')
+		let user = form.getData(formEl, 'users')
 		
 		let documents = indexeddb.generateDB(organization, user)
 		
@@ -19,8 +19,8 @@ const CoCreateOrganization = {
 			broadcastBrowser: false
 		});
 
-		setDocumentId(form, organization)
-		setDocumentId(form, user)
+		form.setDocumentId(formEl, organization)
+		form.setDocumentId(formEl, user)
 
 		document.dispatchEvent(new CustomEvent('createdOrg', {
 			detail: response
@@ -106,7 +106,5 @@ action.init({
 		CoCreateOrganization.deleteOrgs(btn);
 	},
 });
-
-CoCreateOrganization.init();
 
 export default CoCreateOrganization;
