@@ -1,3 +1,11 @@
+## [1.13.2](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.13.1...v1.13.2) (2023-05-10)
+
+
+### Bug Fixes
+
+* apikey renamed to key ([1de6e5f](https://github.com/CoCreate-app/CoCreate-organizations/commit/1de6e5fa2105b9b7a3185c08577eebbb30cd3a67))
+* apikey renamed to key ([7a67ebd](https://github.com/CoCreate-app/CoCreate-organizations/commit/7a67ebd3da8be66259632ede4ebb492455bc94bf))
+
 ## [1.13.1](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.13.0...v1.13.1) (2023-05-10)
 
 
