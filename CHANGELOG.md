@@ -1,3 +1,10 @@
+## [1.13.1](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.13.0...v1.13.1) (2023-05-10)
+
+
+### Bug Fixes
+
+* setDocumentId ([6e52b99](https://github.com/CoCreate-app/CoCreate-organizations/commit/6e52b99ba52703c89d4ff04bda89eced3ebd01fd))
+
 # [1.13.0](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.12.0...v1.13.0) (2023-05-10)
 
 
