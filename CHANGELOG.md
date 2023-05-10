@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.12.0...v1.13.0) (2023-05-10)
+
+
+### Features
+
+* form getData and setDocumentId ([5ed4371](https://github.com/CoCreate-app/CoCreate-organizations/commit/5ed4371103578249764add885bcc0cd7e896ab7d))
+
 # [1.12.0](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.11.9...v1.12.0) (2023-05-10)
 
 
