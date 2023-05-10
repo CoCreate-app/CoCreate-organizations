@@ -10,9 +10,6 @@ class CoCreateOrganization {
 			this.wsManager.on('createOrg', (socket, data) => 
 				this.createOrg(socket, data)
 			);
-			this.wsManager.on('deleteOrg', (socket, data) => 
-				this.deleteOrg(socket, data)
-			);
 		}
 	}
 
@@ -36,41 +33,6 @@ class CoCreateOrganization {
 		}
 	}
 	
-	
-	async deleteOrg(socket, data) {
-		const self = this;
-		const organization_id = data.data.organization_id
-		if (!organization_id || organization_id == process.env.organization_id) return;
-		if (data.organization_id != process.env.organization_id) return;
-
-		try {
-			this.crud.deleteDatabase(data).then((response) => {
-				if (response === true){
-					process.emit('deleteOrg', organization_id)
-					self.wsManager.send(socket, 'deleteOrg', data);
-					
-					// delete org from platformDB
-					const request = {
-						database: process.env.organization_id, 
-						collection: 'organization',
-						document: {
-							_id: organization_id
-						},
-						organization_id: process.env.organization_id
-					};
-		
-					self.crud.deleteDocument(request).then((data) => {
-						self.wsManager.broadcast(socket, 'deleteDocument', data)
-					})
-				}	
-
-			})
-			
-		}catch(error){
-			console.log('deleteOrg error', error);
-		}
-	}
-
 }
 
 module.exports = CoCreateOrganization;
