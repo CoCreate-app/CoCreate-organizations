@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.11.9...v1.12.0) (2023-05-10)
+
+
+### Features
+
+* createOrg in local and platform ([85f62ed](https://github.com/CoCreate-app/CoCreate-organizations/commit/85f62ed74f511f3f15acbe3aa6825c314abde46d))
+
 ## [1.11.9](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.11.8...v1.11.9) (2023-05-07)
 
 
