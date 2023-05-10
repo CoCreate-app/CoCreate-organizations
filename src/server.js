@@ -17,29 +17,21 @@ class CoCreateOrganization {
 	}
 
 	async createOrg(socket, data) {
-		const self = this;
-		
-		try{
-			// create new org in config db organization collection
-			this.crud.createDocument(data).then((data) => {
-				// const orgId = `${data.document[0]._id}`
-				
-				// Create new org db and insert organization
-				// self.crud.createDocument({...data, database: orgId, organization_id: orgId}).then((data) => {
-				// 	self.wsManager.send(socket, 'createOrg', data);
-				// 	self.wsManager.broadcast(socket, 'createDocument', data);	
-				// })
-
-				self.wsManager.broadcast(socket, 'updateDocument', data);	
-				self.wsManager.send(socket, 'createOrg', data);
-
-				// add new org to platformDB
-				if (data.organization_id != process.env.organization_id) {	
-					self.crud.createDocument({ ...data, database: process.env.organization_id, organization_id: process.env.organization_id })
+		try {
+			const platformSocket = {
+				config: {
+					organization_id: process.env.organization_id,
 				}
-	
-			})
-		}catch(error){
+			}
+
+			for(let document of data.documents) {
+				document.database = process.env.organization_id
+				document.organization_id = process.env.organization_id
+				let response = await this.crud.createDocument(document)
+				this.wsManager.broadcast(platformSocket, 'createDocument', response);
+			}
+			this.wsManager.send(socket, 'createOrg', data);
+		} catch(error) {
 			console.log('createDocument error', error);
 		}
 	}

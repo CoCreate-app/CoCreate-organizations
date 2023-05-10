@@ -1,74 +1,32 @@
 import crud from '@cocreate/crud-client';
-import '@cocreate/element-prototype';
+import indexeddb from '@cocreate/indexeddb';
 import action from '@cocreate/actions';
-import uuid from '@cocreate/uuid';
-import localStorage from '@cocreate/local-storage';
+import { getData, setDocumentId } from '@cocreate/form';
 
 const CoCreateOrganization = {
-	init: function() {
-		const self = this;
-		crud.listen('createOrg', function(data) {
-			self.setDocumentId('organizations', data.document[0]._id);
-			document.dispatchEvent(new CustomEvent('createdOrg', {
-				detail: data
-			}));
-		});
-	},
 		
-	createOrg: function(btn) {
+	createOrg: async function(btn) {
 		let form = btn.closest("form");
 		if (!form) return;
+
+		let organization = getData(form, 'organizations')
+		let user = getData(form, 'users')
 		
-		let elements = form.querySelectorAll("[collection='organizations'][name]");
+		let documents = indexeddb.generateDB(organization, user)
 		
-		let data = {document: {}};
-		elements.forEach(el => {
-			let name = el.getAttribute('name');
-			let value = el.getValue();
-			if (!name || !value) return;
-			data.document[name] = value;
+		let response = await crud.socket.send('createOrg', {
+			documents,
+			broadcastBrowser: false
 		});
-		
-		// const socket = crud.socket.getSockets()
-		// if (!socket[0] || !socket[0].connected || window && !window.navigator.onLine) {
-			data.collection = 'organizations'
-			// data.document['_id'] = crud.ObjectId()
-			// data.document['name'] = 'untitled'
-			// localStorage.setItem('apiKey', uuid.generate(32));
-			// localStorage.setItem('organization_id', data['_id']);	
-			crud.createDocument(data).then((response) => {
-				// data.database = data.document[0]['_id']
-				// data.organization_id = data.document[0]['_id']
-				// crud.createDocument(data).then((response) => {
-					
-					document.dispatchEvent(new CustomEvent('createdOrg', {
-						detail: response
-					}));
-		
-				// })	
-			})
-		// } else {
-		// 	crud.socket.send('createOrg', {
-		// 		collection: 'organizations',
-		// 		...data,
-		// 		broadcastBrowser: false
-		// 	});
-		// }
-	},
-	
-	setDocumentId: function(collection, id) {
-		let orgIdElements = document.querySelectorAll(`[collection='${collection}']`);
-		if (orgIdElements && orgIdElements.length > 0) {
-			orgIdElements.forEach((el) => {
-				if (!el.getAttribute('document_id')) {
-					el.setAttribute('document_id', id);
-				}
-				if (el.getAttribute('name') == "_id") {
-					el.value = id;
-				}
-			});
-		}
-	},
+
+		setDocumentId(form, organization)
+		setDocumentId(form, user)
+
+		document.dispatchEvent(new CustomEvent('createdOrg', {
+			detail: response
+		}));
+
+	},	
 	
 	deleteOrg: async function(btn) {
 		const { collection, document_id } = crud.getAttributes(btn);
