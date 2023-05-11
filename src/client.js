@@ -21,8 +21,8 @@ const CoCreateOrganization = {
 			let organization_id = org._id	
 			let key = org.key
 
-			if (!crud.socket.status) {
-				crud.socket.status = true
+			if (crud.socket.organization !== true) {
+				crud.socket.organization = true
 				crud.socket.create({organization_id, key})
 			}
 
