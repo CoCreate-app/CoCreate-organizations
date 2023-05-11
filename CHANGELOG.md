@@ -1,3 +1,11 @@
+## [1.13.3](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.13.2...v1.13.3) (2023-05-11)
+
+
+### Bug Fixes
+
+* minor bugs ([66f84c0](https://github.com/CoCreate-app/CoCreate-organizations/commit/66f84c009616d1cc929e82b05117807cf44ef875))
+* removed deleteOrgs and deleteOrg. now handeled by delete documents ([ab17992](https://github.com/CoCreate-app/CoCreate-organizations/commit/ab1799247711262bfdf82f2b763ead6ff34103e7))
+
 ## [1.13.2](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.13.1...v1.13.2) (2023-05-10)
 
 
