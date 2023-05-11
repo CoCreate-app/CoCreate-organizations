@@ -9,33 +9,33 @@ const CoCreateOrganization = {
 		let formEl = btn.closest("form");
 		if (!formEl) return;
 
-		let organization = {
-			collection: 'organizations',
-			document: [{
-				_id: crud.socket.config.organization_id,
-				key: crud.socket.config.key
-			}]
-		}
-		
-		let user = {
-			collection: 'users',
-			document: [{
-				_id: crud.socket.config.user_id
-			}]
-		}
+		let organization = form.getData(formEl, 'organizations')
+		let user = form.getData(formEl, 'users')
 
-		form.setDocumentId(formEl, organization)
-		form.setDocumentId(formEl, user)
-
-		organization = form.getData(formEl, 'organizations')
-		user = form.getData(formEl, 'users')
-
+		let response
 		let documents = await indexeddb.generateDB(organization, user)
 		
-		let response = await crud.socket.send('createOrg', {
-			documents,
-			broadcastBrowser: false
-		});
+		if (documents) {
+			if(!organization || !organization.document || !organization.document[0]) return
+			let org = organization.document[0]
+			let organization_id = org._id	
+			let key = org.key
+
+			if (!crud.socket.status) {
+				crud.socket.status = true
+				crud.socket.create({organization_id, key})
+			}
+
+			form.setDocumentId(formEl, organization)
+			form.setDocumentId(formEl, user)
+
+			response = await crud.socket.send('createOrg', {
+				documents,
+				broadcastBrowser: false,
+				organization_id,
+				key
+			});
+		}
 
 		document.dispatchEvent(new CustomEvent('createdOrg', {
 			detail: response
