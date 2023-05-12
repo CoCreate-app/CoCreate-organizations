@@ -1,3 +1,10 @@
+## [1.13.4](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.13.3...v1.13.4) (2023-05-12)
+
+
+### Bug Fixes
+
+* socket.status renamed to socket.organization ([6eb9919](https://github.com/CoCreate-app/CoCreate-organizations/commit/6eb9919f1b41da5dc1891f3801c6dcf93301cdb5))
+
 ## [1.13.3](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.13.2...v1.13.3) (2023-05-11)
 
 
