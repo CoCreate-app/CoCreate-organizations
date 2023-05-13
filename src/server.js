@@ -12,7 +12,7 @@ class CoCreateOrganization {
 
     init() {
         if (this.wsManager) {
-            this.wsManager.on('createOrg', (socket, data) =>
+            this.wsManager.on('createOrganization', (socket, data) =>
                 this.createOrganization(socket, data)
             );
         }
