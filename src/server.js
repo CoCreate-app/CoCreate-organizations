@@ -1,38 +1,60 @@
 class CoCreateOrganization {
-	constructor(crud) {
-		this.wsManager = crud.wsManager
-		this.crud = crud
-		this.init()
-	}
-	
-	init() {
-		if (this.wsManager) {
-			this.wsManager.on('createOrg', (socket, data) => 
-				this.createOrg(socket, data)
-			);
-		}
-	}
+    constructor(crud) {
+        this.wsManager = crud.wsManager
+        this.crud = crud
+        this.platformSocket = {
+            config: {
+                organization_id: process.env.organization_id,
+            }
+        }
+        this.init()
+    }
 
-	async createOrg(socket, data) {
-		try {
-			const platformSocket = {
-				config: {
-					organization_id: process.env.organization_id,
-				}
-			}
+    init() {
+        if (this.wsManager) {
+            this.wsManager.on('createOrg', (socket, data) =>
+                this.createOrganization(socket, data)
+            );
+        }
+    }
 
-			for(let document of data.documents) {
-				document.database = process.env.organization_id
-				document.organization_id = process.env.organization_id
-				let response = await this.crud.createDocument(document)
-				this.wsManager.broadcast(platformSocket, 'createDocument', response);
-			}
-			this.wsManager.send(socket, 'createOrg', data);
-		} catch(error) {
-			console.log('createDocument error', error);
-		}
-	}
-	
+    async createOrganization(socket, data) {
+        try {
+            if (!data.organization || data.organization._id) return
+            if (data.user || !data.user._id || data.user.email || data.user.password) return
+
+            const organization = {
+                _id: data.organization._id,
+                name: data.organization.name || 'untitled',
+                hosts: data.organization.hosts || [],
+                owener: data.user._id
+            }
+
+            const user = {
+                _id: data.user._id,
+                name: data.user.name || 'Admin',
+                email: data.user.email,
+                password: data.user.password,
+            }
+
+            const Data = {}
+            Data.database = process.env.organization_id
+            Data.organization_id = process.env.organization_id
+
+            if (organization) {
+                const response = await this.crud.createDocument({ ...Data, document: organization })
+                this.wsManager.broadcast(this.platformSocket, 'createDocument', response);
+            }
+            if (user) {
+                const response = await this.crud.createDocument({ ...Data, document: user })
+                this.wsManager.broadcast(this.platformSocket, 'createDocument', response);
+            }
+
+            this.wsManager.send(socket, 'createOrganization', data);
+        } catch (error) {
+            console.log('createDocument error', error);
+        }
+    }
 }
 
 module.exports = CoCreateOrganization;
