@@ -20,14 +20,14 @@ class CoCreateOrganization {
 
     async createOrganization(socket, data) {
         try {
-            if (!data.organization || data.organization._id) return
-            if (data.user || !data.user._id || data.user.email || data.user.password) return
+            if (!data.organization || !data.organization._id) return
+            if (!data.user || !data.user._id || !data.user.email || !data.user.password) return
 
             const organization = {
                 _id: data.organization._id,
                 name: data.organization.name || 'untitled',
                 hosts: data.organization.hosts || [],
-                owener: data.user._id
+                owner: data.user._id
             }
 
             const user = {
@@ -35,6 +35,8 @@ class CoCreateOrganization {
                 name: data.user.name || 'Admin',
                 email: data.user.email,
                 password: data.user.password,
+                currentOrg: data.organization._id,
+                connectedOrgs: [data.organization._id]
             }
 
             const Data = {}
@@ -42,11 +44,11 @@ class CoCreateOrganization {
             Data.organization_id = process.env.organization_id
 
             if (organization) {
-                const response = await this.crud.createDocument({ ...Data, document: organization })
+                const response = await this.crud.createDocument({ ...Data, collection: 'organizations', document: organization })
                 this.wsManager.broadcast(this.platformSocket, 'createDocument', response);
             }
             if (user) {
-                const response = await this.crud.createDocument({ ...Data, document: user })
+                const response = await this.crud.createDocument({ ...Data, collection: 'users', document: user })
                 this.wsManager.broadcast(this.platformSocket, 'createDocument', response);
             }
 
