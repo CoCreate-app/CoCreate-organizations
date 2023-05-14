@@ -12,12 +12,12 @@ const CoCreateOrganization = {
         let organization = form.getData(formEl, 'organizations')
         let user = form.getData(formEl, 'users')
 
-        if (!organization || !organization.document || !organization.document[0])
+        if (!organization || !organization.document)
             return
-        if (!user || !user.document || !user.document[0])
+        if (!user || !user.document)
             return
 
-        if (!organization.document[0]._id && !user.document[0]._id) {
+        if (!organization.document._id && !user.document._id) {
             let documents = await indexeddb.generateDB(organization, user)
             if (!documents)
                 return
