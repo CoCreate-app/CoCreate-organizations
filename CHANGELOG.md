@@ -1,3 +1,16 @@
+# [1.14.0](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.13.4...v1.14.0) (2023-05-18)
+
+
+### Bug Fixes
+
+*  websocket event listener for organizational creation ([bdbec1f](https://github.com/CoCreate-app/CoCreate-organizations/commit/bdbec1f4cf3e536607765561b4a74159d1d1c353))
+* createOrganization method to correctly save data to the serverDB ([c0f574f](https://github.com/CoCreate-app/CoCreate-organizations/commit/c0f574f662c777e1b663cc35bec5a0de8438a33f))
+
+
+### Features
+
+* Create or add an exisitng organization using createOrganization() function. ([311efee](https://github.com/CoCreate-app/CoCreate-organizations/commit/311efee025bcdb4323466e38f211f746faf252bb))
+
 ## [1.13.4](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.13.3...v1.13.4) (2023-05-12)
 
 
