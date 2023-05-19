@@ -30,6 +30,7 @@ class CoCreateOrganization {
                 owner: data.user._id
             }
 
+            // TODO: check if user exist and check if credentials match
             const user = {
                 _id: data.user._id,
                 name: data.user.name || 'Admin',
