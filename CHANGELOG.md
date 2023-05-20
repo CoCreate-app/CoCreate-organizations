@@ -1,3 +1,10 @@
+## [1.14.1](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.14.0...v1.14.1) (2023-05-20)
+
+
+### Bug Fixes
+
+* update packages to latest version. This commit updates various packages in the dependencies section of the package.json file to their latest published versions, thereby fixing multiple bugs and improving overall performance. ([0350a07](https://github.com/CoCreate-app/CoCreate-organizations/commit/0350a07f26027496324961c70da3350f42315b5a))
+
 # [1.14.0](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.13.4...v1.14.0) (2023-05-18)
 
 
