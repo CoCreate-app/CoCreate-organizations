@@ -1,3 +1,10 @@
+# [1.15.0](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.14.3...v1.15.0) (2023-05-21)
+
+
+### Features
+
+* socket event broadcasting and added user key creation ([cdfe4df](https://github.com/CoCreate-app/CoCreate-organizations/commit/cdfe4df8f217823cfbaff8e5187813cb3a8a4827))
+
 ## [1.14.3](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.14.2...v1.14.3) (2023-05-20)
 
 
