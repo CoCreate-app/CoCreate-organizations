@@ -30,19 +30,17 @@ const CoCreateOrganization = {
         user = user.document[0]
 
         let organization_id = organization._id
-        let key = organization.key
 
         if (crud.socket.organization !== true) {
             crud.socket.organization = true
-            crud.socket.create({ organization_id, key })
+            crud.socket.create({ organization_id })
         }
 
         let response = await crud.socket.send('createOrganization', {
             organization,
             user,
             broadcastBrowser: false,
-            organization_id,
-            key
+            organization_id
         });
 
         document.dispatchEvent(new CustomEvent('createdOrganization', {
