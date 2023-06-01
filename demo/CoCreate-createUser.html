@@ -1,46 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<title>User Forms | CoCreateJS</title>
+    <head>
+        <title>User Forms | CoCreateJS</title>
 
-	<!-- CoCreate Favicon -->
-	<link rel="icon" href="https://cdn.cocreate.app/favicon.ico" type="image/ico" sizes="16x16">	
-    <link rel="manifest" href="/manifest.webmanifest">
-</head>
-<body class="padding:20px">
+        <!-- CoCreate Favicon -->
+        <link
+            rel="icon"
+            href="https://cdn.cocreate.app/favicon.ico"
+            type="image/ico"
+            sizes="16x16" />
+        <link rel="manifest" href="/manifest.webmanifest" />
+    </head>
+    <body class="padding:20px">
+        <form>
+            <input
+                collection="organizations"
+                class="floating-label"
+                name="name"
+                document_id=""
+                placeholder="org name" />
+            <input
+                collection="users"
+                class="floating-label"
+                name="name"
+                document_id=""
+                placeholder="user name" />
 
-  <form>
-    <input  collection="organizations" class="floating-label" name='name' document_id="" placeholder="org name">
-    <input  collection="users" class="floating-label" name='name' document_id="" placeholder="user name">
-    
-								<input type="hidden" id="org_id"
-									collection="organizations"
-									document_id=""
-									name="_id"
-									placeholder="OrganizationId" readonly>
+            <input
+                type="hidden"
+                id="org_id"
+                collection="organizations"
+                document_id=""
+                name="_id"
+                placeholder="OrganizationId"
+                readonly />
 
-								<!-- User_id  will be used to copy user document from current organizion and insert orgdb defined above-->
-								<input type="hidden" id="user_id"
-									collection="users"
-									document_id=""
-									name="_id"
-									placeholder="UserId" readonly>
-								
-								
-								<!-- API key  -->
-								<input type="hidden" id="key"
-									collection="organizations"
-									document_id=""
-									name="key"
-									placeholder="API Key" 
-									uuid="32" readonly>
-								
-							
-									
-    <button actions="createNewOrg, createUser">signup</button>
-  </form>
- 
-  <!-- CoCreate JS CDN -->
-  <script src="https://cdn.cocreate.app/organizations/latest/CoCreate-organizations.min.js" ></script>
-</body>
+            <!-- User_id  will be used to copy user document from current organizion and insert orgdb defined above-->
+            <input
+                type="hidden"
+                id="user_id"
+                collection="users"
+                document_id=""
+                name="_id"
+                placeholder="UserId"
+                readonly />
+
+            <!-- API key  -->
+            <input
+                type="hidden"
+                id="key"
+                collection="organizations"
+                document_id=""
+                name="key"
+                placeholder="API Key"
+                uuid="32"
+                readonly />
+
+            <button actions="createNewOrg, createUser">signup</button>
+        </form>
+
+        <!-- CoCreate JS CDN -->
+        <script src="https://cdn.cocreate.app/organizations/latest/CoCreate-organizations.min.js"></script>
+    </body>
 </html>
