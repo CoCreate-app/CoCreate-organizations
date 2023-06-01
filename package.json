@@ -63,6 +63,6 @@
     "@cocreate/crud-client": "^1.21.5",
     "@cocreate/docs": "^1.7.13",
     "@cocreate/form": "^1.14.12",
-    "@cocreate/indexeddb": "^1.10.1"
+    "@cocreate/indexeddb": "^1.10.2"
   }
 }
