@@ -1,3 +1,11 @@
+## [1.15.2](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.15.1...v1.15.2) (2023-06-02)
+
+
+### Bug Fixes
+
+* format demo html ([43344d8](https://github.com/CoCreate-app/CoCreate-organizations/commit/43344d87b5be7d82b9ce5c67eef099cc35dd4075))
+* Update dependencies versions for [@cocreate](https://github.com/cocreate) libraries ([de8a924](https://github.com/CoCreate-app/CoCreate-organizations/commit/de8a92433a006b84e0f9f97909b344cbc9f67d8d))
+
 ## [1.15.1](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.15.0...v1.15.1) (2023-05-21)
 
 
