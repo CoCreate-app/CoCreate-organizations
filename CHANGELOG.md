@@ -1,3 +1,10 @@
+## [1.15.4](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.15.3...v1.15.4) (2023-06-04)
+
+
+### Bug Fixes
+
+* [@v3](https://github.com/v3) ([8df3ebe](https://github.com/CoCreate-app/CoCreate-organizations/commit/8df3ebea43fece56e206e957e96deed395ad07a3))
+
 ## [1.15.3](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.15.2...v1.15.3) (2023-06-04)
 
 
