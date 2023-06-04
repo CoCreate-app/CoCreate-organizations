@@ -1,3 +1,10 @@
+## [1.15.3](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.15.2...v1.15.3) (2023-06-04)
+
+
+### Bug Fixes
+
+* **semantic-release:** worklow error solved by running node version 14 ([f023376](https://github.com/CoCreate-app/CoCreate-organizations/commit/f023376281f31479f9a27166ef0fa6d8ccca492c))
+
 ## [1.15.2](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.15.1...v1.15.2) (2023-06-02)
 
 
