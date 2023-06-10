@@ -26,7 +26,7 @@ class CoCreateOrganization {
             const organization = {
                 _id: data.organization._id,
                 name: data.organization.name || 'untitled',
-                hosts: data.organization.hosts || [],
+                host: data.organization.host || [],
                 owner: data.user._id
             }
 
