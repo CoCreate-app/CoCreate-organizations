@@ -1,3 +1,10 @@
+## [1.15.13](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.15.12...v1.15.13) (2023-06-11)
+
+
+### Bug Fixes
+
+* testing workflow ([c54f09f](https://github.com/CoCreate-app/CoCreate-organizations/commit/c54f09ff54ee5b6e0bdb345034ebbddc09135cd4))
+
 ## [1.15.12](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.15.11...v1.15.12) (2023-06-11)
 
 
