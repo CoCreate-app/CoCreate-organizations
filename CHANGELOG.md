@@ -1,3 +1,10 @@
+## [1.15.11](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.15.10...v1.15.11) (2023-06-11)
+
+
+### Bug Fixes
+
+* @cocreate/cli moved to dependencies ([e920df8](https://github.com/CoCreate-app/CoCreate-organizations/commit/e920df8f1499d6357438b63c7150017b0484bb99))
+
 ## [1.15.10](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.15.9...v1.15.10) (2023-06-11)
 
 
