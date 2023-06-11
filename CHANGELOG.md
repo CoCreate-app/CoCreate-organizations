@@ -1,3 +1,10 @@
+## [1.15.17](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.15.16...v1.15.17) (2023-06-11)
+
+
+### Bug Fixes
+
+* Update dependencies versions for [@cocreate](https://github.com/cocreate) libraries ([6bb6322](https://github.com/CoCreate-app/CoCreate-organizations/commit/6bb632264cbb1d2b2a5321182070f3c1c972ac67))
+
 ## [1.15.16](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.15.15...v1.15.16) (2023-06-11)
 
 
