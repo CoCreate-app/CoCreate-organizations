@@ -1,3 +1,11 @@
+## [1.15.12](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.15.11...v1.15.12) (2023-06-11)
+
+
+### Bug Fixes
+
+* postintall error ([27181bd](https://github.com/CoCreate-app/CoCreate-organizations/commit/27181bd8d50e61d058374c5a9a189e1339ccb8f2))
+* Update dependencies versions for [@cocreate](https://github.com/cocreate) libraries ([8ffcee0](https://github.com/CoCreate-app/CoCreate-organizations/commit/8ffcee0562bef7141aae6743f7918c9f548ce3ba))
+
 ## [1.15.11](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.15.10...v1.15.11) (2023-06-11)
 
 
