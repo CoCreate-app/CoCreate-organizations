@@ -52,8 +52,8 @@ const CoCreateOrganization = {
 action.init({
     name: "createOrganization",
     endEvent: "createdOrganization",
-    callback: (btn) => {
-        CoCreateOrganization.createOrganization(btn);
+    callback: (data) => {
+        CoCreateOrganization.createOrganization(data.element);
     }
 });
 
