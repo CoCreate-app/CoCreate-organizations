@@ -88,14 +88,14 @@
                                 save="false">
                                 <input
                                     placeholder="Search"
-                                    template_id="industries" />
+                                    filter-parent="[collection]" />
                                 <ul
-                                    fetch-collection="industries"
-                                    template_id="industries"
+                                    collection="industries"
+                                    render-selector="[template]"
                                     class="options overflow:auto">
                                     <li
                                         class="template option"
-                                        template_id="industries"
+                                        template
                                         value="{{document._id}}">
                                         <h4
                                             collection="industries"

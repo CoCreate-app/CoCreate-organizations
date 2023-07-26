@@ -22,7 +22,7 @@
                             type="text"
                             class="floating-label"
                             filter-name="name"
-                            template_id="datatable"
+                            filter-closest="table; tbody"
                             placeholder="Industry Name" />
                         <span
                             class="position:absolute bottom:20px right:20px float:right z-index:6">
@@ -30,7 +30,7 @@
                             <a
                                 filter-sort-name="name"
                                 filter-sort-toggle
-                                template_id="datatable">
+                                filter-closest="table; tbody">
                                 <i></i>
                             </a>
                         </span>
@@ -41,7 +41,7 @@
                             type="text"
                             class="floating-label"
                             filter-name="_id"
-                            template_id="datatable"
+                            filter-closest="table; tbody"
                             placeholder="Industry_id" />
                         <span
                             class="position:absolute bottom:20px right:20px float:right z-index:6">
@@ -51,24 +51,25 @@
                                 filter-sort-direction="asc"
                                 click-value="desc, asc"
                                 click-attribute="filter-sort-direction"
-                                template_id="datatable">
+                                filter-closest="table; tbody">
                             </a>
                         </span>
                     </td>
                 </tr>
 
                 <tbody
-                    fetch-collection="industry_documents"
-                    fetch-name=""
+                    collection="industry_documents"
+                    name=""
                     filter-value=""
                     filter-value-type="or"
                     filter-limit=""
                     filter-sort-name="name"
                     filter-sort-direction="asc"
-                    template_id="datatable"
+                    render-selector="[template]"
                     pass_to="me1234">
                     <tr
-                        class="template background:gainsboro:hover border-bottom:1px_solid_darkgray">
+                        template
+                        class="background:gainsboro:hover border-bottom:1px_solid_darkgray">
                         <td class="padding:10px">
                             <div class="min-width:200px">
                                 <div class="icon-wrapper">
