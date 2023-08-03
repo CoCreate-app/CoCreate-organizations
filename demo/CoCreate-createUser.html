@@ -14,23 +14,23 @@
     <body class="padding:20px">
         <form>
             <input
-                collection="organizations"
+                array="organizations"
                 class="floating-label"
                 name="name"
-                document_id=""
+                object=""
                 placeholder="org name" />
             <input
-                collection="users"
+                array="users"
                 class="floating-label"
                 name="name"
-                document_id=""
+                object=""
                 placeholder="user name" />
 
             <input
                 type="hidden"
                 id="org_id"
-                collection="organizations"
-                document_id=""
+                array="organizations"
+                object=""
                 name="_id"
                 placeholder="OrganizationId"
                 readonly />
@@ -39,8 +39,8 @@
             <input
                 type="hidden"
                 id="user_id"
-                collection="users"
-                document_id=""
+                array="users"
+                object=""
                 name="_id"
                 placeholder="UserId"
                 readonly />
@@ -49,8 +49,8 @@
             <input
                 type="hidden"
                 id="key"
-                collection="organizations"
-                document_id=""
+                array="organizations"
+                object=""
                 name="key"
                 placeholder="API Key"
                 uuid="32"

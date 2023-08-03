@@ -12,22 +12,22 @@ const CoCreateOrganization = {
         let organization = form.getData(formEl, 'organizations')
         let user = form.getData(formEl, 'users')
 
-        if (!organization || !organization.document)
+        if (!organization || !organization.object)
             return
-        if (!user || !user.document)
+        if (!user || !user.object)
             return
 
-        if (!organization.document._id && !user.document._id) {
-            let documents = await indexeddb.generateDB(organization, user)
-            if (!documents)
+        if (!organization.object._id && !user.object._id) {
+            let objects = await indexeddb.generateDB(organization, user)
+            if (!objects)
                 return
         }
 
-        form.setDocumentId(formEl, organization)
-        form.setDocumentId(formEl, user)
+        form.setObjectId(formEl, organization)
+        form.setObjectId(formEl, user)
 
-        organization = organization.document[0]
-        user = user.document[0]
+        organization = organization.object[0]
+        user = user.object[0]
 
         let organization_id = organization._id
 
@@ -36,7 +36,8 @@ const CoCreateOrganization = {
             crud.socket.create({ organization_id })
         }
 
-        let response = await crud.socket.send('createOrganization', {
+        let response = await crud.socket.send({
+            method: 'createOrganization',
             organization,
             user,
             broadcastBrowser: false,

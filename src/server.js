@@ -41,34 +41,35 @@ class CoCreateOrganization {
                 type: "user",
                 key: user._id,
                 roles: ['user'],
-                email: user.document.email,
-                password: user.document.password || btoa('0000'),
+                email: user.object.email,
+                password: user.object.password || btoa('0000'),
                 user: {
-                    collection: 'users'
+                    array: 'users'
                 }
             }
 
             const Data = {}
+            Data.method = 'create.object'
             Data.database = process.env.organization_id
             Data.organization_id = process.env.organization_id
 
             if (organization) {
-                const response = await this.crud.createDocument({ ...Data, collection: 'organizations', document: organization })
-                this.wsManager.broadcast(this.platformSocket, 'createDocument', response);
+                const response = await this.crud.send({ ...Data, method: 'create.object', array: 'organizations', object: organization })
+                this.wsManager.broadcast(this.platformSocket, response);
             }
             if (user) {
-                const response = await this.crud.createDocument({ ...Data, collection: 'users', document: user })
-                this.wsManager.broadcast(this.platformSocket, 'createDocument', response);
+                const response = await this.crud.send({ ...Data, method: 'create.object', array: 'users', object: user })
+                this.wsManager.broadcast(this.platformSocket, response);
             }
 
             if (userKey) {
-                const response = await this.crud.createDocument({ ...Data, collection: 'keys', document: userKey })
-                this.wsManager.broadcast(this.platformSocket, 'createDocument', response);
+                const response = await this.crud.send({ ...Data, method: 'create.object', array: 'keys', object: userKey })
+                this.wsManager.broadcast(this.platformSocket, response);
             }
 
-            this.wsManager.send(socket, 'createOrganization', data);
+            this.wsManager.send(socket, data);
         } catch (error) {
-            console.log('createDocument error', error);
+            console.log('createObject error', error);
         }
     }
 }

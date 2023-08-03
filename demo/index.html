@@ -38,8 +38,8 @@
                         <input
                             type="text"
                             id="org-name"
-                            collection="organizations"
-                            document_id=""
+                            array="organizations"
+                            object=""
                             name="name"
                             placeholder="Organization Name"
                             class="floating-label" />
@@ -48,8 +48,8 @@
 
                         <input
                             type="text"
-                            collection="users"
-                            document_id=""
+                            array="users"
+                            object=""
                             name="name"
                             placeholder="User Name"
                             class="floating-label" />
@@ -58,8 +58,8 @@
                         <input
                             type="hidden"
                             id="org_id"
-                            collection="organizations"
-                            document_id=""
+                            array="organizations"
+                            object=""
                             name="_id"
                             value=""
                             placeholder="OrganizationId" />
@@ -68,8 +68,8 @@
                         <input
                             type="hidden"
                             id="key"
-                            collection="organizations"
-                            document_id=""
+                            array="organizations"
+                            object=""
                             name="key"
                             placeholder="API Key"
                             uuid="32"
@@ -81,25 +81,25 @@
                             <cocreate-select
                                 sortable
                                 class="floating-label"
-                                collection="organizations"
+                                array="organizations"
                                 name="industry"
                                 placeholder="Industry"
                                 realtime="false"
                                 save="false">
                                 <input
                                     placeholder="Search"
-                                    filter-parent="[collection]" />
+                                    filter-parent="[array]" />
                                 <ul
-                                    collection="industries"
+                                    array="industries"
                                     render-selector="[template]"
                                     class="options overflow:auto">
                                     <li
                                         class="template option"
                                         template
-                                        value="{{document._id}}">
+                                        value="{{object._id}}">
                                         <h4
-                                            collection="industries"
-                                            document_id="{{document._id}}"
+                                            array="industries"
+                                            object="{{object._id}}"
                                             name="name">
                                             industry name
                                         </h4>
@@ -114,8 +114,8 @@
                                 Register
                                 <a
                                     href="index.html"
-                                    pass-collection="modules"
-                                    pass-document_id=""
+                                    pass-array="modules"
+                                    pass-object=""
                                     pass-name="html"
                                     pass_to="render"></a>
                             </button>

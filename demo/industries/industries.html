@@ -58,8 +58,8 @@
                     <a
                         actions="pass, openModal"
                         modal-src="render.html"
-                        pass-collection="modules"
-                        pass-document_id=""
+                        pass-array="modules"
+                        pass-object=""
                         pass_to="builder"
                         modal-width="100%"
                         pass_id="render">
@@ -67,8 +67,8 @@
                             class="display:flex height:18px fill:#505050"
                             src="/assets/svg/palette.svg"></i>
                         <div
-                            pass-collection="modules"
-                            pass-document_id=""
+                            pass-array="modules"
+                            pass-object=""
                             pass_to="render"
                             class="sessionBuilderUI_Id"></div>
                     </a>
@@ -77,8 +77,8 @@
                     <a
                         <a
                         actions="deleteDocument, closeModal"
-                        collection="modules"
-                        document_id=""
+                        array="modules"
+                        object=""
                         pass_id="form-fields"
                         class="btn-modal-close">
                         <i
@@ -90,17 +90,17 @@
         </div>
 
         <div content_id="content">
-            <form collection="industries" class="padding:15px" realtime="false">
+            <form array="industries" class="padding:15px" realtime="false">
                 <h3>Indusrty Creator</h3>
                 <input
-                    document_id=""
+                    object=""
                     pass_id="form-fields"
                     name="name"
                     placeholder="Industry Name"
                     class="floating-label" />
 
                 <textarea
-                    document_id=""
+                    object=""
                     pass_id="form-fields"
                     name="description"
                     placeholder="Description"
