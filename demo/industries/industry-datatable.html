@@ -21,14 +21,14 @@
                         <input
                             type="text"
                             class="floating-label"
-                            filter-name="name"
+                            filter-key="name"
                             filter-closest="table; tbody"
                             placeholder="Industry Name" />
                         <span
                             class="position:absolute bottom:20px right:20px float:right z-index:6">
                             <!-- need a solution to update toggle value="desc|asc" and define and upadte icons... show hide works great but to much html and orderby only has 2 values -->
                             <a
-                                filter-sort-name="name"
+                                filter-sort-key="name"
                                 filter-sort-toggle
                                 filter-closest="table; tbody">
                                 <i></i>
@@ -40,13 +40,13 @@
                         <input
                             type="text"
                             class="floating-label"
-                            filter-name="_id"
+                            filter-key="_id"
                             filter-closest="table; tbody"
                             placeholder="Industry_id" />
                         <span
                             class="position:absolute bottom:20px right:20px float:right z-index:6">
                             <a
-                                filter-sort-name="_id"
+                                filter-sort-key="_id"
                                 value=""
                                 filter-sort-direction="asc"
                                 click-value="desc, asc"
@@ -59,9 +59,9 @@
 
                 <tbody
                     array="industries"
-                    name=""
+                    key=""
                     filter-value=""
-                    filter-sort-name="name"
+                    filter-sort-key="name"
                     filter-sort-direction="asc"
                     render-selector="[template]">
                     <tr
@@ -70,7 +70,7 @@
                         <td class="padding:10px">
                             <div class="min-width:200px">
                                 <div class="icon-wrapper">
-                                    <span pass_id="me1234" name="icon"></span>
+                                    <span pass_id="me1234" key="icon"></span>
                                 </div>
                                 <div>
                                     <a
@@ -84,7 +84,7 @@
                                         <h4
                                             array="{{object.array}}"
                                             pass-object="{{object._id}}"
-                                            name="name">
+                                            key="name">
                                             Name
                                         </h4>
                                         <div
@@ -96,7 +96,7 @@
                                     <h5
                                         array="{{object.array}}"
                                         pass-object="{{object._id}}"
-                                        name="description"></h5>
+                                        key="description"></h5>
                                 </div>
                             </div>
                         </td>
@@ -112,7 +112,7 @@
                                 <b
                                     array="{{object.array}}"
                                     pass-object="{{object._id}}"
-                                    name="_id"
+                                    key="_id"
                                     >Industry Id</b
                                 >
                                 <div

@@ -40,7 +40,7 @@
                             id="org-name"
                             array="organizations"
                             object=""
-                            name="name"
+                            key="name"
                             placeholder="Organization Name"
                             class="floating-label" />
 
@@ -50,7 +50,7 @@
                             type="text"
                             array="users"
                             object=""
-                            name="name"
+                            key="name"
                             placeholder="User Name"
                             class="floating-label" />
 
@@ -60,7 +60,7 @@
                             id="org_id"
                             array="organizations"
                             object=""
-                            name="_id"
+                            key="_id"
                             value=""
                             placeholder="OrganizationId" />
 
@@ -70,7 +70,7 @@
                             id="key"
                             array="organizations"
                             object=""
-                            name="key"
+                            key="key"
                             placeholder="API Key"
                             uuid="32"
                             readonly />
@@ -82,7 +82,7 @@
                                 sortable
                                 class="floating-label"
                                 array="organizations"
-                                name="industry"
+                                key="industry"
                                 placeholder="Industry"
                                 realtime="false"
                                 save="false">
@@ -100,7 +100,7 @@
                                         <h4
                                             array="industries"
                                             object="{{object._id}}"
-                                            name="name">
+                                            key="name">
                                             industry name
                                         </h4>
                                     </li>
@@ -116,7 +116,7 @@
                                     href="index.html"
                                     pass-array="modules"
                                     pass-object=""
-                                    pass-name="html"
+                                    pass-key="html"
                                     pass_to="render"></a>
                             </button>
                         </div>
