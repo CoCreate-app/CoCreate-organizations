@@ -1,6 +1,6 @@
 import Crud from '@cocreate/crud-client';
 import Action from '@cocreate/actions';
-import Form from '@cocreate/form';
+import Elements from '@cocreate/elements';
 
 
 async function generateDB(organization = { object: {} }, user = { object: {} }) {
@@ -101,8 +101,8 @@ async function create(btn) {
     let formEl = btn.closest("form");
     if (!formEl) return;
 
-    let organization = Form.getData(formEl, 'organizations')
-    let user = Form.getData(formEl, 'users')
+    let organization = Elements.getFormData(formEl, 'organizations')
+    let user = Elements.getFormData(formEl, 'users')
 
     if (!organization || !organization.object)
         return
@@ -115,8 +115,8 @@ async function create(btn) {
             return
     }
 
-    Form.setObjectId(formEl, organization)
-    Form.setObjectId(formEl, user)
+    Elements.setTypeValue(formEl, organization)
+    Elements.setTypeValue(formEl, user)
 
     organization = organization.object[0]
     user = user.object[0]
