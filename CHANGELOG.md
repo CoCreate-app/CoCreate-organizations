@@ -1,3 +1,23 @@
+# [1.16.0](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.15.19...v1.16.0) (2023-08-16)
+
+
+### Bug Fixes
+
+* crud attributes renamed ([c8ad6c1](https://github.com/CoCreate-app/CoCreate-organizations/commit/c8ad6c1a2045f2a24ced0dba608b06a5f89fda19))
+* replace -target -selector ([9b52d00](https://github.com/CoCreate-app/CoCreate-organizations/commit/9b52d00874b7da439be63e5a787d79d7162f2095))
+* updated actions callback data object ([0a98309](https://github.com/CoCreate-app/CoCreate-organizations/commit/0a983090903d966909f22e5969aaa064fb33e8f1))
+* updated fetch-limit to filter-limit ([c3b4414](https://github.com/CoCreate-app/CoCreate-organizations/commit/c3b44140a5902f757b38566158936ab25a16369e))
+* webpack.config and package.json make use of mode=production instead of process.env ([c35d271](https://github.com/CoCreate-app/CoCreate-organizations/commit/c35d271cc9e78fcc5c2b3cadf8b6115cf75c694f))
+
+
+### Features
+
+* **client.js:** Add generateDB and create functions ([179b6dd](https://github.com/CoCreate-app/CoCreate-organizations/commit/179b6dd30b12b6c0a34dcb88d6942c44f9c53dd9))
+* name attribute and variable renamed to key ([2af9415](https://github.com/CoCreate-app/CoCreate-organizations/commit/2af9415027d35529232f08c31da0c25535c552c2))
+* renamed CRUD attributes and params ([5e616bf](https://github.com/CoCreate-app/CoCreate-organizations/commit/5e616bf1895bd711afe91272e8670007a3a63560))
+* Update package.json - changed "@cocreate/form" dependency to "@cocreate/elements" ([bbfa9c4](https://github.com/CoCreate-app/CoCreate-organizations/commit/bbfa9c4b90f9722767b6fa41253bcc522df322d9))
+* update template_id to render-selector attribute. update filter attributes to filter selector-attributes ([f180ae3](https://github.com/CoCreate-app/CoCreate-organizations/commit/f180ae38c037945fc8f7d6dbf6d877d503681f51))
+
 ## [1.15.19](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.15.18...v1.15.19) (2023-06-14)
 
 
