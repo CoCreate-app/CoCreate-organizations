@@ -1,3 +1,10 @@
+# [1.17.0](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.16.0...v1.17.0) (2023-08-17)
+
+
+### Features
+
+* bump cocreate dependencies for the latest updates and features ([814ae0d](https://github.com/CoCreate-app/CoCreate-organizations/commit/814ae0da41ff495394fff66b8b3e40dc8cef2bfe))
+
 # [1.16.0](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.15.19...v1.16.0) (2023-08-16)
 
 
