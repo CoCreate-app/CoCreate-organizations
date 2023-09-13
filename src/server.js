@@ -27,7 +27,9 @@ class CoCreateOrganization {
                 _id: data.organization._id,
                 name: data.organization.name || 'untitled',
                 host: data.organization.host || [],
-                owner: data.user._id
+                owner: data.user._id,
+                balance: 10, // TODO: set balance to 0 and create a transcation with type credit to add the $10
+                dataTransfered: 0
             }
 
             // TODO: check if user exist and confirm credentials
