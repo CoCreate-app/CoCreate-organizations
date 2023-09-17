@@ -12,13 +12,13 @@ class CoCreateOrganization {
 
     init() {
         if (this.wsManager) {
-            this.wsManager.on('createOrganization', (socket, data) =>
-                this.createOrganization(socket, data)
+            this.wsManager.on('createOrganization', (data) =>
+                this.createOrganization(data)
             );
         }
     }
 
-    async createOrganization(socket, data) {
+    async createOrganization(data) {
         try {
             if (!data.organization || !data.organization._id) return
             if (!data.user || !data.user._id || !data.user.email || !data.user.password) return
@@ -69,7 +69,7 @@ class CoCreateOrganization {
                 this.wsManager.broadcast(this.platformSocket, response);
             }
 
-            this.wsManager.send(socket, data);
+            this.wsManager.send(data);
         } catch (error) {
             console.log('createObject error', error);
         }
