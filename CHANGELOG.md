@@ -1,3 +1,15 @@
+# [1.19.0](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.18.1...v1.19.0) (2023-09-17)
+
+
+### Bug Fixes
+
+* socket referenced in the data object. data.socket ([121c8ab](https://github.com/CoCreate-app/CoCreate-organizations/commit/121c8ab1c37b0c980148fd28b14cede8e5a80aa0))
+
+
+### Features
+
+* set balance and dataTransfered on newly created organizations ([f20747b](https://github.com/CoCreate-app/CoCreate-organizations/commit/f20747bf2463d79afd24530afb529331285e7670))
+
 ## [1.18.1](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.18.0...v1.18.1) (2023-08-21)
 
 
