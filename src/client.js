@@ -5,11 +5,11 @@ import Elements from '@cocreate/elements';
 
 async function generateDB(organization = { object: {} }, user = { object: {} }) {
     const organization_id = organization.object._id || Crud.ObjectId();
-    const defaultKey = organization.object.key || uuid.generate();
+    const apikey = organization.object.key || uuid.generate();
     const user_id = user.object._id || Crud.ObjectId();
 
-    let apiKey = await Crud.send({ method: 'create.object', database: organization_id, array: 'keys', organization_id })
-    if (apiKey && apiKey.object && apiKey.object[0])
+    let hasApiKey = await Crud.send({ method: 'read.object', database: organization_id, array: 'keys', organization_id })
+    if (hasApiKey && hasApiKey.object && hasApiKey.object[0])
         return
 
     try {
@@ -43,7 +43,7 @@ async function generateDB(organization = { object: {} }, user = { object: {} }) 
             object: {
                 _id: Crud.ObjectId(),
                 type: "key",
-                key: defaultKey,
+                key: apikey,
                 actions: {
                     signIn: true,
                     signUp: true
@@ -90,7 +90,7 @@ async function generateDB(organization = { object: {} }, user = { object: {} }) 
         };
         Crud.send(userKey);
 
-        return { organization: organization.object, key: key.object, user: user.object, role: role.object, userKey: userKey.object }
+        return { organization: organization.object, apikey, user: user.object, role: role.object, userKey: userKey.object }
 
     } catch (error) {
         return false
