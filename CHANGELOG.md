@@ -1,3 +1,11 @@
+## [1.19.1](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.19.0...v1.19.1) (2023-09-18)
+
+
+### Bug Fixes
+
+*  Add path and pathname ([2d952c4](https://github.com/CoCreate-app/CoCreate-organizations/commit/2d952c42509f1196b769c226747dd32f1ddbd47a))
+* Update dCoCreate dpendencies to latest versions ([9aaa1b3](https://github.com/CoCreate-app/CoCreate-organizations/commit/9aaa1b380a9ebf1d3fcffefe7172c42815a8b1c8))
+
 # [1.19.0](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.18.1...v1.19.0) (2023-09-17)
 
 
