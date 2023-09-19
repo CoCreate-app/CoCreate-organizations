@@ -1,3 +1,10 @@
+## [1.19.2](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.19.1...v1.19.2) (2023-09-19)
+
+
+### Bug Fixes
+
+* conflict with config.key and apikey ([5f2c3d9](https://github.com/CoCreate-app/CoCreate-organizations/commit/5f2c3d9b553ff5ca7dac356ea96957396c5d081d))
+
 ## [1.19.1](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.19.0...v1.19.1) (2023-09-18)
 
 
