@@ -57,16 +57,16 @@ class CoCreateOrganization {
 
             if (organization) {
                 const response = await this.crud.send({ ...Data, method: 'create.object', array: 'organizations', object: organization })
-                this.wsManager.broadcast(this.platformSocket, response);
+                this.wsManager.send(this.platformSocket, response);
             }
             if (user) {
                 const response = await this.crud.send({ ...Data, method: 'create.object', array: 'users', object: user })
-                this.wsManager.broadcast(this.platformSocket, response);
+                this.wsManager.send(this.platformSocket, response);
             }
 
             if (userKey) {
                 const response = await this.crud.send({ ...Data, method: 'create.object', array: 'keys', object: userKey })
-                this.wsManager.broadcast(this.platformSocket, response);
+                this.wsManager.send(this.platformSocket, response);
             }
 
             this.wsManager.send(data);
