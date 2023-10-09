@@ -136,7 +136,7 @@ async function getOrganizationFromServiceWorker() {
         const msg = new MessageChannel();
         navigator.serviceWorker.ready
             .then(() => {
-                navigator.serviceWorker.controller.postMessage('getOrganization', [msg.port1]);
+                navigator.serviceWorker.controller.postMessage({ action: 'getOrganization' }, [msg.port1]);
             })
             .catch(reject);
     });
