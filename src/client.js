@@ -1,7 +1,7 @@
 import Crud from '@cocreate/crud-client';
 import Action from '@cocreate/actions';
 import Elements from '@cocreate/elements';
-
+import Config from '@cocreate/config';
 
 async function generateDB(organization = { object: {} }, user = { object: {} }) {
     const organization_id = organization.object._id || Crud.ObjectId();
@@ -97,6 +97,83 @@ async function generateDB(organization = { object: {} }, user = { object: {} }) 
     }
 }
 
+async function get() {
+    let organization_id = await getOrganizationFromServiceWorker()
+    if (!organization_id) {
+        let data = await indexeddb.send({ method: 'read.database' })
+        for (let database of data.database) {
+            let name = database.database.name
+            if (name.match(/^[0-9a-fA-F]{24}$/)) {
+                organization_id = name
+            }
+        }
+    }
+    if (!organization_id)
+        organization_id = await createOrganization()
+
+    if (organization_id)
+        Config.set('organization_id', organization_id)
+
+    return organization_id
+
+}
+
+async function getOrganizationFromServiceWorker() {
+    return new Promise((resolve, reject) => {
+        if (!navigator.serviceWorker)
+            return resolve()
+
+        const handleMessage = (event) => {
+            if (event.data.action === 'getOrganization') {
+                navigator.serviceWorker.removeEventListener('message', handleMessage); // Remove the event listener
+                resolve(event.data.organization_id);
+            }
+        };
+
+        navigator.serviceWorker.addEventListener('message', handleMessage);
+
+        // Send message to Service Worker
+        const msg = new MessageChannel();
+        navigator.serviceWorker.ready
+            .then(() => {
+                navigator.serviceWorker.controller.postMessage('getOrganization', [msg.port1]);
+            })
+            .catch(reject);
+    });
+}
+
+async function createOrganization() {
+    let createOrganization = document.querySelector('[actions*="createOrganization"]')
+
+    if (Crud.socket.organization == 'canceled' || Crud.socket.organization == 'pending') return
+
+    if (!createOrganization && confirm("An organization_id could not be found, if you already have an organization_id add it to this html and refresh the page.\n\nOr click 'OK' create a new organization") == true) {
+        Crud.socket.organization = 'pending'
+        if (indexeddb) {
+            try {
+                // const Organization = await import('@cocreate/organizations')
+
+                let org = { object: {} }
+                let { organization, apikey, user } = await generateDB(org)
+                if (organization && apikey && user) {
+                    Crud.socket.apikey = apikey
+                    Crud.socket.user_id = user._id
+                    Config.set('organization_id', organization._id)
+                    Config.set('apikey', apikey)
+                    Config.set('user_id', user._id)
+                    Crud.socket.organization = true
+                    return organization._id
+                }
+            } catch (error) {
+                console.error('Failed to load the script:', error);
+            }
+        }
+    } else {
+        Crud.socket.organization = 'canceled'
+    }
+}
+
+
 async function create(btn) {
     let formEl = btn.closest("form");
     if (!formEl) return;
@@ -149,4 +226,4 @@ Action.init({
     }
 });
 
-export default { generateDB, create };
+export default { generateDB, create, get };
