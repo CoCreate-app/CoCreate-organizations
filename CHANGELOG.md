@@ -1,3 +1,10 @@
+## [1.21.1](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.21.0...v1.21.1) (2023-10-09)
+
+
+### Bug Fixes
+
+* update wsManager.broadcast to wsManager.send() ([f955cbf](https://github.com/CoCreate-app/CoCreate-organizations/commit/f955cbf1c56834e48e926aa79fc04308fd24efa4))
+
 # [1.21.0](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.20.0...v1.21.0) (2023-09-19)
 
 
