@@ -2,6 +2,8 @@ import Crud from '@cocreate/crud-client';
 import Action from '@cocreate/actions';
 import Elements from '@cocreate/elements';
 import Config from '@cocreate/config';
+import Indexeddb from '@cocreate/indexeddb';
+import uuid from '@cocreate/uuid';
 
 async function generateDB(organization = { object: {} }, user = { object: {} }) {
     const organization_id = organization.object._id || Crud.ObjectId();
@@ -100,9 +102,9 @@ async function generateDB(organization = { object: {} }, user = { object: {} }) 
 async function get() {
     let organization_id = await getOrganizationFromServiceWorker()
     if (!organization_id) {
-        let data = await indexeddb.send({ method: 'read.database' })
+        let data = await Indexeddb.send({ method: 'read.database' })
         for (let database of data.database) {
-            let name = database.database.name
+            let name = database.name
             if (name.match(/^[0-9a-fA-F]{24}$/)) {
                 organization_id = name
             }
@@ -149,10 +151,8 @@ async function createOrganization() {
 
     if (!createOrganization && confirm("An organization_id could not be found, if you already have an organization_id add it to this html and refresh the page.\n\nOr click 'OK' create a new organization") == true) {
         Crud.socket.organization = 'pending'
-        if (indexeddb) {
+        if (Indexeddb) {
             try {
-                // const Organization = await import('@cocreate/organizations')
-
                 let org = { object: {} }
                 let { organization, apikey, user } = await generateDB(org)
                 if (organization && apikey && user) {
