@@ -222,7 +222,7 @@ Action.init({
     name: "createOrganization",
     endEvent: "createdOrganization",
     callback: (action) => {
-        CoCreateOrganization.create(action.element);
+        create(action.element);
     }
 });
 
