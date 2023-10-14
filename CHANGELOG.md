@@ -1,3 +1,11 @@
+## [1.21.6](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.21.5...v1.21.6) (2023-10-14)
+
+
+### Bug Fixes
+
+*  typo ([c88342b](https://github.com/CoCreate-app/CoCreate-organizations/commit/c88342b5128fc472dbe0a39dc3d7ea98141c8236))
+* database.database.name ([88fde84](https://github.com/CoCreate-app/CoCreate-organizations/commit/88fde8463c1d6d5160528065b951da0c38664d2b))
+
 ## [1.21.5](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.21.4...v1.21.5) (2023-10-09)
 
 
