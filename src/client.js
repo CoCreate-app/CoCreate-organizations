@@ -10,10 +10,6 @@ async function generateDB(organization = { object: {} }, user = { object: {} }) 
     const apikey = organization.object.key || uuid.generate();
     const user_id = user.object._id || Crud.ObjectId();
 
-    let hasApiKey = await Crud.send({ method: 'read.object', database: organization_id, array: 'keys', organization_id })
-    if (hasApiKey && hasApiKey.object && hasApiKey.object[0])
-        return
-
     try {
         // Create organization 
         organization.method = 'create.object'
@@ -23,7 +19,7 @@ async function generateDB(organization = { object: {} }, user = { object: {} }) 
         organization.object._id = organization_id
         organization.object.name = organization.object.name || 'untitiled'
         organization.organization_id = organization_id
-        Crud.send(organization);
+        Indexeddb.send(organization);
 
         // Create user
         user.method = 'create.object'
@@ -34,7 +30,7 @@ async function generateDB(organization = { object: {} }, user = { object: {} }) 
         user.object.firstname = user.object.firstname || 'untitiled'
         user.object.lastname = user.object.lastname || 'untitiled'
         user.organization_id = organization_id
-        Crud.send(user);
+        Indexeddb.send(user);
 
         // Create default key
         let key = {
@@ -54,7 +50,7 @@ async function generateDB(organization = { object: {} }, user = { object: {} }) 
             },
             organization_id
         }
-        Crud.send(key);
+        Indexeddb.send(key);
 
         // Create role
         let role_id = Crud.ObjectId();
@@ -71,7 +67,7 @@ async function generateDB(organization = { object: {} }, user = { object: {} }) 
             },
             organization_id
         };
-        Crud.send(role);
+        Indexeddb.send(role);
 
         // Create user key
         let userKey = {
@@ -90,7 +86,7 @@ async function generateDB(organization = { object: {} }, user = { object: {} }) 
             },
             organization_id
         };
-        Crud.send(userKey);
+        Indexeddb.send(userKey);
 
         return { organization: organization.object, apikey, user: user.object, role: role.object, userKey: userKey.object }
 
@@ -144,35 +140,44 @@ async function getOrganizationFromServiceWorker() {
     });
 }
 
-async function createOrganization() {
+let organizationPromise = null;
+async function createOrganizationPromise() {
     let createOrganization = document.querySelector('[actions*="createOrganization"]')
+    if (createOrganization)
+        return Crud.socket.organization = 'canceled'
 
     if (Crud.socket.organization == 'canceled' || Crud.socket.organization == 'pending') return
 
-    if (!createOrganization && confirm("An organization_id could not be found, if you already have an organization_id add it to this html and refresh the page.\n\nOr click 'OK' create a new organization") == true) {
-        Crud.socket.organization = 'pending'
-        if (Indexeddb) {
-            try {
-                let org = { object: {} }
-                let { organization, apikey, user } = await generateDB(org)
-                if (organization && apikey && user) {
-                    Crud.socket.apikey = apikey
-                    Crud.socket.user_id = user._id
-                    Config.set('organization_id', organization._id)
-                    Config.set('apikey', apikey)
-                    Config.set('user_id', user._id)
-                    Crud.socket.organization = true
-                    return organization._id
-                }
-            } catch (error) {
-                console.error('Failed to load the script:', error);
+    const organization_id = prompt("An organization_id could not be found, if you already have an organization_id input it now.\n\nOr leave blank and click 'OK' to create a new organization");
+
+    if (organization_id === null)
+        return Crud.socket.organization = 'canceled'
+
+    Crud.socket.organization = 'pending'
+    if (Indexeddb) {
+        try {
+            let org = { object: {} }
+            if (organization_id)
+                org.object._id = organization_id
+            let { organization, apikey, user } = await generateDB(org)
+            if (organization && apikey && user) {
+                Crud.socket.apikey = apikey
+                Crud.socket.user_id = user._id
+                Config.set('organization_id', organization._id)
+                Config.set('apikey', apikey)
+                Config.set('user_id', user._id)
+                Crud.socket.organization = true
+                return organization._id
             }
+        } catch (error) {
+            console.error('Failed to load the script:', error);
         }
-    } else {
-        Crud.socket.organization = 'canceled'
     }
 }
 
+async function createOrganization() {
+    return organizationPromise || (organizationPromise = createOrganizationPromise());
+}
 
 async function create(btn) {
     let formEl = btn.closest("form");
