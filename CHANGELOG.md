@@ -1,3 +1,10 @@
+# [1.22.0](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.21.6...v1.22.0) (2023-10-16)
+
+
+### Features
+
+* get() retuns promise to limit request to one ([67d59b3](https://github.com/CoCreate-app/CoCreate-organizations/commit/67d59b38bbaa6e80727a1f2327e0ef60896565d2))
+
 ## [1.21.6](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.21.5...v1.21.6) (2023-10-14)
 
 
