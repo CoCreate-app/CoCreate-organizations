@@ -175,6 +175,7 @@ async function createOrganizationPromise() {
     }
 }
 
+
 async function createOrganization() {
     return organizationPromise || (organizationPromise = createOrganizationPromise());
 }
@@ -183,8 +184,8 @@ async function create(btn) {
     let formEl = btn.closest("form");
     if (!formEl) return;
 
-    let organization = Elements.getFormData(formEl, 'organizations')
-    let user = Elements.getFormData(formEl, 'users')
+    let organization = Elements.getData(formEl, 'organizations')
+    let user = Elements.getData(formEl, 'users')
 
     if (!organization || !organization.object)
         return
