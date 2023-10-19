@@ -1,3 +1,10 @@
+## [1.22.1](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.22.0...v1.22.1) (2023-10-19)
+
+
+### Bug Fixes
+
+* getFormData renamed to getData ([dba019c](https://github.com/CoCreate-app/CoCreate-organizations/commit/dba019c295054be92576e0d94b92966109dcd19e))
+
 # [1.22.0](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.21.6...v1.22.0) (2023-10-16)
 
 
