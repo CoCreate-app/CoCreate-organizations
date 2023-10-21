@@ -76,7 +76,7 @@ async function generateDB(organization = { object: {} }, user = { object: {} }) 
             database: organization_id,
             array: 'keys',
             object: {
-                _id: Crud.ObjectId(),
+                _id: Crud.ObjectId().toString(),
                 type: "user",
                 key: user_id,
                 array: 'users', // could be any array
