@@ -6,9 +6,9 @@ import Indexeddb from '@cocreate/indexeddb';
 import uuid from '@cocreate/uuid';
 
 async function generateDB(organization = { object: {} }, user = { object: {} }) {
-    const organization_id = organization.object._id || Crud.ObjectId();
+    const organization_id = organization.object._id || Crud.ObjectId().toString();
     const apikey = organization.object.key || uuid.generate();
-    const user_id = user.object._id || Crud.ObjectId();
+    const user_id = user.object._id || Crud.ObjectId().toString();
 
     try {
         // Create organization 
@@ -39,7 +39,7 @@ async function generateDB(organization = { object: {} }, user = { object: {} }) 
             database: organization_id,
             array: 'keys',
             object: {
-                _id: Crud.ObjectId(),
+                _id: Crud.ObjectId().toString(),
                 type: "key",
                 key: apikey,
                 actions: {
@@ -53,7 +53,7 @@ async function generateDB(organization = { object: {} }, user = { object: {} }) 
         Indexeddb.send(key);
 
         // Create role
-        let role_id = Crud.ObjectId();
+        let role_id = Crud.ObjectId().toString();
         let role = {
             method: 'create.object',
             storage: 'indexeddb',
