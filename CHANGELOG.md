@@ -1,3 +1,11 @@
+# [1.23.0](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.22.1...v1.23.0) (2023-10-22)
+
+
+### Features
+
+* ObjectId() returns an object containg the parts iof the _id along with a toString() function ([46d5c28](https://github.com/CoCreate-app/CoCreate-organizations/commit/46d5c28f3ca21b12477a34f69225e8fc5af63fd1))
+* ObjectId() returns an object containg the parts iof the _id along with a toString() function ([a1976de](https://github.com/CoCreate-app/CoCreate-organizations/commit/a1976de4d1af4af5d07830cc080eecca709d2cc1))
+
 ## [1.22.1](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.22.0...v1.22.1) (2023-10-19)
 
 
