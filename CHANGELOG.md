@@ -1,3 +1,10 @@
+## [1.23.2](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.23.1...v1.23.2) (2023-10-26)
+
+
+### Bug Fixes
+
+* if no org returned from service worker fetch file and get org from header ([03de0dc](https://github.com/CoCreate-app/CoCreate-organizations/commit/03de0dcb0c7bd489d02f041537b6f5fbb7673b53))
+
 ## [1.23.1](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.23.0...v1.23.1) (2023-10-25)
 
 
