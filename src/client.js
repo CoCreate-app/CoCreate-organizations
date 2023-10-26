@@ -106,6 +106,12 @@ async function get() {
             }
         }
     }
+
+    if (!organization_id) {
+        let file = await fetch('/')
+        organization_id = file.headers.get('organization');
+    }
+
     if (!organization_id)
         organization_id = await createOrganization()
 
