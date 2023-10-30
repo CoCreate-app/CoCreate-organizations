@@ -12,7 +12,7 @@ async function generateDB(organization = { object: {} }, user = { object: {} }) 
 
     try {
         // Create organization 
-        organization.method = 'create.object'
+        organization.method = 'object.create'
         organization.storage = 'indexeddb'
         organization.database = organization_id
         organization.array = 'organizations'
@@ -22,7 +22,7 @@ async function generateDB(organization = { object: {} }, user = { object: {} }) 
         Indexeddb.send(organization);
 
         // Create user
-        user.method = 'create.object'
+        user.method = 'object.create'
         user.storage = 'indexeddb'
         user.database = organization_id
         user.array = 'users'
@@ -34,7 +34,7 @@ async function generateDB(organization = { object: {} }, user = { object: {} }) 
 
         // Create default key
         let key = {
-            method: 'create.object',
+            method: 'object.create',
             storage: 'indexeddb',
             database: organization_id,
             array: 'keys',
@@ -55,7 +55,7 @@ async function generateDB(organization = { object: {} }, user = { object: {} }) 
         // Create role
         let role_id = Crud.ObjectId().toString();
         let role = {
-            method: 'create.object',
+            method: 'object.create',
             storage: 'indexeddb',
             database: organization_id,
             array: 'keys',
@@ -71,7 +71,7 @@ async function generateDB(organization = { object: {} }, user = { object: {} }) 
 
         // Create user key
         let userKey = {
-            method: 'create.object',
+            method: 'object.create',
             storage: 'indexeddb',
             database: organization_id,
             array: 'keys',
@@ -98,7 +98,7 @@ async function generateDB(organization = { object: {} }, user = { object: {} }) 
 async function get() {
     let organization_id = await getOrganizationFromServiceWorker()
     if (!organization_id) {
-        let data = await Indexeddb.send({ method: 'read.database' })
+        let data = await Indexeddb.send({ method: 'database.read' })
         for (let database of data.database) {
             let name = database.name
             if (name.match(/^[0-9a-fA-F]{24}$/)) {

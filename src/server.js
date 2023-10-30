@@ -51,21 +51,21 @@ class CoCreateOrganization {
             }
 
             const Data = {}
-            Data.method = 'create.object'
+            Data.method = 'object.create'
             Data.database = process.env.organization_id
             Data.organization_id = process.env.organization_id
 
             if (organization) {
-                const response = await this.crud.send({ ...Data, method: 'create.object', array: 'organizations', object: organization })
+                const response = await this.crud.send({ ...Data, array: 'organizations', object: organization })
                 this.wsManager.send(this.platformSocket, response);
             }
             if (user) {
-                const response = await this.crud.send({ ...Data, method: 'create.object', array: 'users', object: user })
+                const response = await this.crud.send({ ...Data, array: 'users', object: user })
                 this.wsManager.send(this.platformSocket, response);
             }
 
             if (userKey) {
-                const response = await this.crud.send({ ...Data, method: 'create.object', array: 'keys', object: userKey })
+                const response = await this.crud.send({ ...Data, array: 'keys', object: userKey })
                 this.wsManager.send(this.platformSocket, response);
             }
 
