@@ -156,6 +156,8 @@ async function createOrganizationPromise() {
 
     const organization_id = prompt("An organization_id could not be found, if you already have an organization_id input it now.\n\nOr leave blank and click 'OK' to create a new organization");
 
+    if (organization_id)
+        return organization_id
     if (organization_id === null)
         return Crud.socket.organization = 'canceled'
 
