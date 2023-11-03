@@ -1,3 +1,13 @@
+## [1.23.3](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.23.2...v1.23.3) (2023-11-03)
+
+
+### Bug Fixes
+
+* favicon.ico path ([0f45edf](https://github.com/CoCreate-app/CoCreate-organizations/commit/0f45edf7cb85c7ac7ae4b53434193b8ec960e81a))
+* if organization_id entered return organiozation_id withoput generating users, keys, etc. ([4839882](https://github.com/CoCreate-app/CoCreate-organizations/commit/48398828b7606f84f38cad14d04cf553a2459c6c))
+* update dependencies to the lates versions ([4778523](https://github.com/CoCreate-app/CoCreate-organizations/commit/47785236ea0a160cfb8455f63803831e87615d48))
+* update method to use object.update etc ([06e9822](https://github.com/CoCreate-app/CoCreate-organizations/commit/06e9822199e62336bbfc843637e642ef48e3dfc4))
+
 ## [1.23.2](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.23.1...v1.23.2) (2023-10-26)
 
 
