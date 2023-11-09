@@ -1,3 +1,11 @@
+## [1.23.4](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.23.3...v1.23.4) (2023-11-09)
+
+
+### Bug Fixes
+
+* meta name typo ([02c0347](https://github.com/CoCreate-app/CoCreate-organizations/commit/02c0347f01a5b4f04a01ebabd627f1d28f5b3912))
+* update host ([c6bab56](https://github.com/CoCreate-app/CoCreate-organizations/commit/c6bab56cc5b140d9e3281b1aabad8b404e800047))
+
 ## [1.23.3](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.23.2...v1.23.3) (2023-11-03)
 
 
