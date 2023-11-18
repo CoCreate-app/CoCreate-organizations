@@ -188,12 +188,11 @@ async function createOrganization() {
     return organizationPromise || (organizationPromise = createOrganizationPromise());
 }
 
-async function create(btn) {
-    let formEl = btn.closest("form");
-    if (!formEl) return;
+async function create(form) {
+    if (!form) return;
 
-    let organization = Elements.getData(formEl, 'organizations')
-    let user = Elements.getData(formEl, 'users')
+    let organization = Elements.getData(form, 'organizations')
+    let user = Elements.getData(form, 'users')
 
     if (!organization || !organization.object)
         return
@@ -206,8 +205,8 @@ async function create(btn) {
             return
     }
 
-    Elements.setTypeValue(formEl, organization)
-    Elements.setTypeValue(formEl, user)
+    Elements.setTypeValue(form, organization)
+    Elements.setTypeValue(form, user)
 
     organization = organization.object[0]
     user = user.object[0]
@@ -236,7 +235,7 @@ Action.init({
     name: "createOrganization",
     endEvent: "createdOrganization",
     callback: (action) => {
-        create(action.element);
+        create(action.form);
     }
 });
 
