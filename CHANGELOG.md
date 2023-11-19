@@ -1,3 +1,15 @@
+# [1.24.0](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.23.5...v1.24.0) (2023-11-19)
+
+
+### Bug Fixes
+
+* use action.form ([1529f6b](https://github.com/CoCreate-app/CoCreate-organizations/commit/1529f6b31ad1ecdfe38b268ee9f233f7ce1558a8))
+
+
+### Features
+
+* update dependecies for th latest features and bug fixes ([96ffad6](https://github.com/CoCreate-app/CoCreate-organizations/commit/96ffad623c9911a41cee06ff88713aa3d8ba73b6))
+
 ## [1.23.5](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.23.4...v1.23.5) (2023-11-12)
 
 
