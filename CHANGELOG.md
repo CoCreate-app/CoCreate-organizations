@@ -1,3 +1,10 @@
+# [1.26.0](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.25.0...v1.26.0) (2023-11-25)
+
+
+### Features
+
+* upgrade dependencies for latest features and fixes ([28b36de](https://github.com/CoCreate-app/CoCreate-organizations/commit/28b36de627b5e548fbc382a1b1619351fd5bb72c))
+
 # [1.25.0](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.24.0...v1.25.0) (2023-11-25)
 
 
