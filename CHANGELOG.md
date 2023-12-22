@@ -1,3 +1,10 @@
+## [1.26.1](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.26.0...v1.26.1) (2023-12-22)
+
+
+### Bug Fixes
+
+* postMessage undefined ([ae5a9e2](https://github.com/CoCreate-app/CoCreate-organizations/commit/ae5a9e25ad1c771559f6cd08323aa6307a51a645))
+
 # [1.26.0](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.25.0...v1.26.0) (2023-11-25)
 
 
