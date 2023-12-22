@@ -138,11 +138,22 @@ async function getOrganizationFromServiceWorker() {
 
         // Send message to Service Worker
         const msg = new MessageChannel();
-        navigator.serviceWorker.ready
-            .then(() => {
+
+        navigator.serviceWorker.ready.then(registration => {
+            if (navigator.serviceWorker.controller) {
+                // If there's an active controller, send the message
                 navigator.serviceWorker.controller.postMessage({ action: 'getOrganization' }, [msg.port1]);
-            })
-            .catch(reject);
+            } else {
+                // Listen for a new service worker to start controlling the page
+                navigator.serviceWorker.addEventListener('controllerchange', () => {
+                    if (navigator.serviceWorker.controller) {
+                        navigator.serviceWorker.controller.postMessage({ action: 'getOrganization' }, [msg.port1]);
+                    }
+                });
+            }
+        }).catch(error => {
+            console.error(reject);
+        });
     });
 }
 
