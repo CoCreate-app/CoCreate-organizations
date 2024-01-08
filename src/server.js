@@ -52,6 +52,7 @@ class CoCreateOrganization {
 
             const Data = {}
             Data.method = 'object.create'
+            Data.host = data.host
             Data.database = process.env.organization_id
             Data.organization_id = process.env.organization_id
 
