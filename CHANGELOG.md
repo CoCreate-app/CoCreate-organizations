@@ -1,3 +1,15 @@
+# [1.27.0](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.26.1...v1.27.0) (2024-01-08)
+
+
+### Bug Fixes
+
+* applied host to define environment/branch ([09cdf83](https://github.com/CoCreate-app/CoCreate-organizations/commit/09cdf8347f6a753d796eb5f9e6d6288c506106b2))
+
+
+### Features
+
+* bumped CoCreate dependencies to their latest versions ([dff105b](https://github.com/CoCreate-app/CoCreate-organizations/commit/dff105b71b36e3fe98f3ed9fcf823f5e461654cb))
+
 ## [1.26.1](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.26.0...v1.26.1) (2023-12-22)
 
 
