@@ -1,3 +1,10 @@
+## [1.28.1](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.28.0...v1.28.1) (2024-12-22)
+
+
+### Bug Fixes
+
+* filter-query-key ([0950df1](https://github.com/CoCreate-app/CoCreate-organizations/commit/0950df1884c1e6001b258758611bea2b7151da0f))
+
 # [1.28.0](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.27.5...v1.28.0) (2024-11-04)
 
 
