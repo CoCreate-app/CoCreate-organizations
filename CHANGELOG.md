@@ -1,3 +1,10 @@
+## [1.28.2](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.28.1...v1.28.2) (2025-04-11)
+
+
+### Bug Fixes
+
+* dispatch end event on action element rather than document ([dd5ea2a](https://github.com/CoCreate-app/CoCreate-organizations/commit/dd5ea2a43c00418448189369c39f72f83f0206b6))
+
 ## [1.28.1](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.28.0...v1.28.1) (2024-12-22)
 
 
