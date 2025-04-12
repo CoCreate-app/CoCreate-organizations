@@ -1,131 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Organizations | CoCreateJS</title>
+	<head>
+		<title>Organizations | CoCreateJS</title>
 
-        <!-- CoCreate Favicon -->
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="../assets/favicon.ico" />
+		<!-- CoCreate Favicon -->
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../assets/favicon.ico" />
 
-        <style>
-            .speech-bubble:after {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 50%;
-                width: 0;
-                height: 0;
-                border: 23px solid transparent;
-                border-bottom-color: #ffffff;
-                border-top: 0;
-                margin-left: -23px;
-                margin-top: -23px;
-            }
-        </style>
-        <link rel="manifest" href="/manifest.webmanifest" />
-    </head>
-    <body>
-        <div
-            class="main-container justify-content:center align-items:center overflow:auto display:flex flex-wrap:wrap position:absolute width:100% height:100%">
-            <div
-                class="display:flex flex-wrap:wrap align-items:flex-end justify-content:center align-items:center">
-                <div
-                    class="flex-grow:1 height:fit-content width:55% min-width:300px max-width:600px margin:10px">
-                    <form realtime="false">
-                        <input
-                            type="text"
-                            id="org-name"
-                            array="organizations"
-                            object=""
-                            key="name"
-                            placeholder="Organization Name"
-                            class="floating-label" />
+		<style>
+			.speech-bubble:after {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 50%;
+				width: 0;
+				height: 0;
+				border: 23px solid transparent;
+				border-bottom-color: #ffffff;
+				border-top: 0;
+				margin-left: -23px;
+				margin-top: -23px;
+			}
+		</style>
+		<link rel="manifest" href="/manifest.webmanifest" />
+	</head>
+	<body>
+		<div
+			class="main-container justify-content:center align-items:center overflow:auto display:flex flex-wrap:wrap position:absolute width:100% height:100%">
+			<div
+				class="display:flex flex-wrap:wrap align-items:flex-end justify-content:center align-items:center">
+				<div
+					class="flex-grow:1 height:fit-content width:55% min-width:300px max-width:600px margin:10px">
+					<form realtime="false">
+						<input
+							type="text"
+							id="org-name"
+							array="organizations"
+							object=""
+							key="name"
+							placeholder="Organization Name"
+							class="floating-label" />
 
-                        <p>User Information</p>
+						<p>User Information</p>
 
-                        <input
-                            type="text"
-                            array="users"
-                            object=""
-                            key="name"
-                            placeholder="User Name"
-                            class="floating-label" />
+						<input
+							type="text"
+							array="users"
+							object=""
+							key="name"
+							placeholder="User Name"
+							class="floating-label" />
 
-                        <!-- Organiztion_id  -->
-                        <input
-                            type="hidden"
-                            id="org_id"
-                            array="organizations"
-                            object=""
-                            key="_id"
-                            value=""
-                            placeholder="OrganizationId" />
+						<!-- Organiztion_id  -->
+						<input
+							type="hidden"
+							id="org_id"
+							array="organizations"
+							object=""
+							key="_id"
+							value=""
+							placeholder="OrganizationId" />
 
-                        <!-- API key  -->
-                        <input
-                            type="hidden"
-                            id="key"
-                            array="organizations"
-                            object=""
-                            key="key"
-                            placeholder="API Key"
-                            uuid="32"
-                            readonly />
+						<!-- API key  -->
+						<input
+							type="hidden"
+							id="key"
+							array="organizations"
+							object=""
+							key="key"
+							placeholder="API Key"
+							uuid="32"
+							readonly />
 
-                        <div
-                            class="padding:25px background:gainsboro background:#444@dark text-align:left">
-                            <!-- Industry select -->
-                            <cocreate-select
-                                sortable
-                                class="floating-label"
-                                array="organizations"
-                                key="industry"
-                                placeholder="Industry"
-                                realtime="false"
-                                save="false">
-                                <input
-                                    placeholder="Search"
-                                    filter-parent="[array]" />
-                                <ul
-                                    array="industries"
-                                    render-selector="[template]"
-                                    class="options overflow:auto">
-                                    <li
-                                        class="template option"
-                                        template
-                                        value="{{object._id}}">
-                                        <h4
-                                            array="industries"
-                                            object="{{object._id}}"
-                                            key="name">
-                                            industry name
-                                        </h4>
-                                    </li>
-                                </ul>
-                            </cocreate-select>
+						<div
+							class="padding:25px background:gainsboro background:#444@dark text-align:left">
+							<!-- Industry select -->
+							<cocreate-select
+								sortable
+								class="floating-label"
+								array="organizations"
+								key="industry"
+								placeholder="Industry"
+								realtime="false"
+								save="false">
+								<input
+									placeholder="Search"
+									filter-query="$parent [array]" />
+								<ul
+									array="industries"
+									render-query="[template]"
+									class="options overflow:auto">
+									<li
+										class="template option"
+										template
+										value="{{object._id}}">
+										<h4
+											array="industries"
+											object="{{object._id}}"
+											key="name">
+											industry name
+										</h4>
+									</li>
+								</ul>
+							</cocreate-select>
 
-                            <button
-                                type="button"
-                                class="outline red-white"
-                                actions="runIndustry">
-                                Register
-                                <a
-                                    href="index.html"
-                                    state-array="modules"
-                                    state-object=""
-                                    state-key="html"
-                                    state_to="render"></a>
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+							<button
+								type="button"
+								class="outline red-white"
+								actions="runIndustry">
+								Register
+								<a
+									href="index.html"
+									state-array="modules"
+									state-object=""
+									state-key="html"
+									state_to="render"></a>
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
 
-        <!--<script src="../dist/CoCreate-organizations.js"></script>-->
-        <script src="https://CoCreate.app/dist/CoCreate.js"></script>
-    </body>
+		<!--<script src="../dist/CoCreate-organizations.js"></script>-->
+		<script src="https://CoCreate.app/dist/CoCreate.js"></script>
+	</body>
 </html>
