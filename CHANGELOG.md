@@ -1,3 +1,13 @@
+## [1.28.3](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.28.2...v1.28.3) (2025-04-30)
+
+
+### Bug Fixes
+
+* added css-loader ([dbe904b](https://github.com/CoCreate-app/CoCreate-organizations/commit/dbe904bbad632e7bcd9acf78c9528c584b81d6bc))
+* update query attributes ([1ebbead](https://github.com/CoCreate-app/CoCreate-organizations/commit/1ebbead42dea7e7baad8904cfa822858bcc3c08c))
+* updated cocreate modules versions ([6b6a910](https://github.com/CoCreate-app/CoCreate-organizations/commit/6b6a910d0c1c6c633ae3da618ba21c04ea69ead8))
+* webpack.config and devdependencies ([038dc18](https://github.com/CoCreate-app/CoCreate-organizations/commit/038dc18db4cdf8fa28fb833531cf4c73e85ccfd1))
+
 ## [1.28.2](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.28.1...v1.28.2) (2025-04-11)
 
 
