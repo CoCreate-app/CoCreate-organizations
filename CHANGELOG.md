@@ -1,3 +1,11 @@
+## [1.28.5](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.28.4...v1.28.5) (2025-09-03)
+
+
+### Bug Fixes
+
+* improve organization creation logic and error handling ([bfed09d](https://github.com/CoCreate-app/CoCreate-organizations/commit/bfed09df186993dccef4164674ac430fe4aec17b))
+* streamline organization creation validation and error handling ([4e94111](https://github.com/CoCreate-app/CoCreate-organizations/commit/4e94111529c50be01f96424e5428c14b0d0e4b36))
+
 ## [1.28.4](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.28.3...v1.28.4) (2025-05-01)
 
 
