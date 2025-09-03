@@ -1,80 +1,97 @@
 class CoCreateOrganization {
-    constructor(crud) {
-        this.wsManager = crud.wsManager
-        this.crud = crud
-        this.platformSocket = {
-            config: {
-                organization_id: process.env.organization_id,
-            }
-        }
-        this.init()
-    }
+	constructor(crud) {
+		this.wsManager = crud.wsManager;
+		this.crud = crud;
+		this.platformSocket = {
+			config: {
+				organization_id: process.env.organization_id
+			}
+		};
+		this.init();
+	}
 
-    init() {
-        if (this.wsManager) {
-            this.wsManager.on('createOrganization', (data) =>
-                this.createOrganization(data)
-            );
-        }
-    }
+	init() {
+		if (this.wsManager) {
+			this.wsManager.on("createOrganization", (data) =>
+				this.createOrganization(data)
+			);
+		}
+	}
 
-    async createOrganization(data) {
-        try {
-            if (!data.organization || !data.organization._id) return
-            if (!data.user || !data.user._id || !data.user.email || !data.user.password) return
+	async createOrganization(data) {
+		try {
+			const errors = [];
 
-            const organization = {
-                _id: data.organization._id,
-                name: data.organization.name || 'untitled',
-                host: data.organization.host || [],
-                owner: data.user._id,
-                balance: 10, // TODO: set balance to 0 and create a transcation with type credit to add the $10
-                dataTransfered: 0
-            }
+			if (!data.organization || !data.organization._id) return;
+			if (
+				!data.user ||
+				!data.user._id ||
+				!data.user.email ||
+				!data.user.password
+			)
+				return;
 
-            // TODO: check if user exist and confirm credentials
-            const user = {
-                _id: data.user._id,
-                firstname: data.user.firtname || 'Admin',
-                lastname: data.user.lastname || ''
-            }
+			let { organization, user, key } = data;
 
-            const userKey = {
-                type: "user",
-                key: user._id,
-                roles: ['user'],
-                email: user.object.email,
-                password: user.object.password || btoa('0000'),
-                user: {
-                    array: 'users'
-                }
-            }
+			if (
+				!organization.host ||
+				!organization.host[0] ||
+				!organization.host[0].name
+			)
+				return;
 
-            const Data = {}
-            Data.method = 'object.create'
-            Data.host = data.host
-            Data.database = process.env.organization_id
-            Data.organization_id = process.env.organization_id
+			const Data = {};
+			Data.method = "object.create";
+			Data.host = organization.host[0].name;
+			Data.database = organization._id;
+			Data.organization_id = organization._id;
 
-            if (organization) {
-                const response = await this.crud.send({ ...Data, array: 'organizations', object: organization })
-                this.wsManager.send(this.platformSocket, response);
-            }
-            if (user) {
-                const response = await this.crud.send({ ...Data, array: 'users', object: user })
-                this.wsManager.send(this.platformSocket, response);
-            }
+			if (organization) {
+				const response = await this.crud.send({
+					...Data,
+					array: "organizations",
+					object: organization
+				});
+				if (response.error) {
+					errors.push(response.error);
+				}
+			}
+			if (user) {
+				const response = await this.crud.send({
+					...Data,
+					array: "users",
+					object: user
+				});
+				if (response.error) {
+					errors.push(response.error);
+				}
+			}
 
-            if (userKey) {
-                const response = await this.crud.send({ ...Data, array: 'keys', object: userKey })
-                this.wsManager.send(this.platformSocket, response);
-            }
+			if (key) {
+				const response = await this.crud.send({
+					...Data,
+					array: "keys",
+					object: key
+				});
+				if (response.error) {
+					errors.push(response.error);
+				}
+			}
 
-            this.wsManager.send(data);
-        } catch (error) {
-            console.log('createObject error', error);
-        }
-    }
+			if (errors.length) {
+				data.error = errors;
+			} else {
+				data.success = true;
+			}
+
+			this.wsManager.send(data);
+		} catch (error) {
+			if (data.socket) {
+				this.crud.errorHandler(data, error);
+				this.wsManager.send(data);
+			}
+		}
+	}
 }
 
 module.exports = CoCreateOrganization;
