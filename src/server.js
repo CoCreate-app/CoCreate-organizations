@@ -20,25 +20,39 @@ class CoCreateOrganization {
 
 	async createOrganization(data) {
 		try {
-			const errors = [];
-
-			if (!data.organization || !data.organization._id) return;
-			if (
-				!data.user ||
-				!data.user._id ||
-				!data.user.email ||
-				!data.user.password
-			)
-				return;
-
-			let { organization, user, key } = data;
+			const { organization, user, key } = data;
 
 			if (
+				!organization ||
+				!organization._id ||
 				!organization.host ||
 				!organization.host[0] ||
 				!organization.host[0].name
-			)
-				return;
+			) {
+				this.errorHandler(
+					data,
+					"invalid_organization: missing required organization fields"
+				);
+			}
+
+			if (!user || !user._id || !user.email || !user.password) {
+				this.errorHandler(
+					data,
+					"invalid_user: missing required user fields"
+				);
+			}
+
+			if (!key || !Array.isArray(key) || key.length !== 3) {
+				this.errorHandler(
+					data,
+					"invalid_key: An array of 3 keys is required with type key, user and role."
+				);
+			}
+
+			// If there are validation errors, include them in the response and send immediately
+			if (data.success === false) {
+				return this.wsManager.send(data);
+			}
 
 			const Data = {};
 			Data.method = "object.create";
@@ -53,7 +67,7 @@ class CoCreateOrganization {
 					object: organization
 				});
 				if (response.error) {
-					errors.push(response.error);
+					this.errorHandler(data, response.error);
 				}
 			}
 			if (user) {
@@ -63,7 +77,7 @@ class CoCreateOrganization {
 					object: user
 				});
 				if (response.error) {
-					errors.push(response.error);
+					this.errorHandler(data, response.error);
 				}
 			}
 
@@ -74,23 +88,26 @@ class CoCreateOrganization {
 					object: key
 				});
 				if (response.error) {
-					errors.push(response.error);
+					this.errorHandler(data, response.error);
 				}
 			}
 
-			if (errors.length) {
-				data.error = errors;
-			} else {
+			if (data.success !== false) {
 				data.success = true;
 			}
 
 			this.wsManager.send(data);
 		} catch (error) {
 			if (data.socket) {
-				this.crud.errorHandler(data, error);
+				this.errorHandler(data, error);
 				this.wsManager.send(data);
 			}
 		}
+	}
+
+    errorHandler(data, error) {
+        data.success = false;
+        this.crud.errorHandler(data, error);
 	}
 }
 
