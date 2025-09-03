@@ -5,102 +5,71 @@ import Config from "@cocreate/config";
 import Indexeddb from "@cocreate/indexeddb";
 import uuid from "@cocreate/uuid";
 
-async function generateDB(
-	organization = { object: {} },
-	user = { object: {} }
-) {
-	const organization_id =
-		organization.object._id || Crud.ObjectId().toString();
-	const apikey = organization.object.key || uuid.generate();
-	const user_id = user.object._id || Crud.ObjectId().toString();
-
+async function generateDB(organization = {}, user = {}, key = []) {
 	try {
 		// Create organization
-		organization.method = "object.create";
-		organization.storage = "indexeddb";
-		organization.database = organization_id;
-		organization.array = "organizations";
-		organization.object._id = organization_id;
-		organization.object.name = organization.object.name || "untitiled";
-		organization.organization_id = organization_id;
-		Indexeddb.send(organization);
+		organization._id = organization._id || Crud.ObjectId().toString();
+		organization.name = organization.name || "untitiled";
 
 		// Create user
-		user.method = "object.create";
-		user.storage = "indexeddb";
-		user.database = organization_id;
-		user.array = "users";
-		user.object._id = user_id;
-		user.object.firstname = user.object.firstname || "untitiled";
-		user.object.lastname = user.object.lastname || "untitiled";
-		user.organization_id = organization_id;
-		Indexeddb.send(user);
+		user._id = user._id || Crud.ObjectId().toString();
+		user.firstname = user.firstname || "untitiled";
+		user.lastname = user.lastname || "untitiled";
 
 		// Create default key
-		let key = {
-			method: "object.create",
-			storage: "indexeddb",
-			database: organization_id,
-			array: "keys",
-			object: {
-				_id: Crud.ObjectId().toString(),
-				type: "key",
-				key: apikey,
-				actions: {
-					signIn: true,
-					signUp: true
-				},
-				default: true
+		let defaultKey = {
+			_id: Crud.ObjectId().toString(),
+			type: "key",
+			key: uuid.generate(),
+			actions: {
+				signIn: true,
+				signUp: true
 			},
-			organization_id
+			default: true
 		};
-		Indexeddb.send(key);
 
 		// Create role
 		let role_id = Crud.ObjectId().toString();
 		let role = {
-			method: "object.create",
-			storage: "indexeddb",
-			database: organization_id,
-			array: "keys",
-			object: {
-				_id: role_id,
-				type: "role",
-				name: "admin",
-				admin: "true"
-			},
-			organization_id
+			_id: role_id,
+			type: "role",
+			name: "admin",
+			admin: "true"
 		};
-		Indexeddb.send(role);
 
 		// Create user key
 		let userKey = {
-			method: "object.create",
-			storage: "indexeddb",
-			database: organization_id,
-			array: "keys",
-			object: {
-				_id: Crud.ObjectId().toString(),
-				type: "user",
-				key: user_id,
-				array: "users", // could be any array
-				roles: [role_id],
-				email: user.object.email,
-				password: user.object.password || btoa("0000")
-			},
-			organization_id
+			_id: Crud.ObjectId().toString(),
+			type: "user",
+			key: user._id,
+			array: "users", // could be any array
+			roles: [role_id],
+			email: user.email,
+			password: user.password || btoa("0000")
 		};
-		Indexeddb.send(userKey);
 
 		return {
-			organization: organization.object,
-			apikey,
-			user: user.object,
-			role: role.object,
-			userKey: userKey.object
+			organization,
+			user,
+			key: [defaultKey, userKey, role]
 		};
 	} catch (error) {
 		return false;
+	}
+}
+
+function saveLocally(objects) {
+	const organization_id = objects.organization._id;
+	for (let key of Object.keys(objects)) {
+		let data = {
+			method: "object.create",
+			storage: "indexeddb",
+			database: organization_id,
+			array: key + "s",
+			object: objects[key],
+			organization_id
+		};
+		Indexeddb.send(data);
 	}
 }
 
@@ -202,12 +171,12 @@ async function createOrganizationPromise() {
 		try {
 			let org = { object: {} };
 			if (organization_id) org.object._id = organization_id;
-			let { organization, apikey, user } = await generateDB(org);
+			let { organization, user, key } = await generateDB(org);
 			if (organization && apikey && user) {
-				Crud.socket.apikey = apikey;
+				Crud.socket.apikey = key[0];
 				Crud.socket.user_id = user._id;
 				Config.set("organization_id", organization._id);
-				Config.set("apikey", apikey);
+				Config.set("apikey", key[0]);
 				Config.set("user_id", user._id);
 				Crud.socket.organization = true;
 				return organization._id;
@@ -229,24 +198,39 @@ async function create(action) {
 	let form = action.form;
 	if (!form) return;
 
-	let organization = Elements.getData(form, "organizations");
-	let user = Elements.getData(form, "users");
+	let data = await Elements.getData(form);
 
-	if (!organization || !organization.object) return;
-	if (!user || !user.object) return;
-
-	if (!organization.object._id && !user.object._id) {
-		let objects = await generateDB(organization, user);
-		if (!objects) return;
+	let organization, user;
+	if (Array.isArray(data)) {
+		for (const item of data) {
+			if (item.array === "organizations") {
+				organization = item;
+			}
+			if (item.array === "users") {
+				user = item;
+			}
+			if (organization && user) {
+				break;
+			}
+		}
 	}
 
-	Elements.setTypeValue(form, organization);
-	Elements.setTypeValue(form, user);
+	organization.method = "object.read";
+	organization = await Crud.send(organization);
 
-	organization = organization.object[0];
-	user = user.object[0];
+	user.method = "object.read";
+	user = await Crud.send(user);
 
-	let organization_id = organization._id;
+	if (organization && organization.object && organization.object[0]) {
+		organization = organization.object[0];
+	}
+	if (user && user.object && user.object[0]) {
+		user = user.object[0];
+	}
+
+	let objects = await generateDB(organization, user);
+
+	let organization_id = organization._id || objects.organization._id;
 
 	if (Crud.socket.organization !== true) {
 		Crud.socket.organization = true;
@@ -255,10 +239,8 @@ async function create(action) {
 
 	let response = await Crud.socket.send({
 		method: "createOrganization",
-		organization,
-		user,
-		broadcastBrowser: false,
-		organization_id
+		...objects,
+		broadcastBrowser: false
 	});
 
 	action.element.dispatchEvent(
