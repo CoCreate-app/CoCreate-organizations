@@ -57,7 +57,7 @@ class CoCreateOrganization {
 			const Data = {};
 			Data.method = "object.create";
 			Data.host = organization.host[0].name;
-			Data.database = organization._id;
+			Data.database = [organization._id, "dev", "test"];
 			Data.organization_id = organization._id;
 
 			if (organization) {

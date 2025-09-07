@@ -22,10 +22,43 @@ async function generateDB(organization = {}, user = {}, key = []) {
 			type: "key",
 			key: uuid.generate(),
 			actions: {
-				signIn: true,
-				signUp: true
+				object: {
+					"*": {
+						users: {
+							"_id.$eq": "$user_id"
+						}
+					},
+					read: {
+						$array: ["ai", "blog-posts"]
+					}
+				},
+				checkSession: "true",
+				signIn: "true",
+				signUp: "true",
+				acceptInvite: "true",
+				forgotPassword: "true",
+				resetPassword: "true",
+				updateUserStatus: "true",
+				isUnique: "true",
+				inviteUser: "true"
 			},
 			default: true
+		};
+
+		// Create File key
+		let fileKey = {
+			_id: Crud.ObjectId().toString(),
+			type: "key",
+			key: uuid.generate(),
+			actions: {
+				object: {
+					"*": {
+						$array: {
+							files: true
+						}
+					}
+				}
+			}
 		};
 
 		// Create role
@@ -51,7 +84,7 @@ async function generateDB(organization = {}, user = {}, key = []) {
 		return {
 			organization,
 			user,
-			key: [defaultKey, userKey, role]
+			key: [defaultKey, fileKey, userKey, role]
 		};
 	} catch (error) {
 		return false;
@@ -171,14 +204,16 @@ async function createOrganizationPromise() {
 		try {
 			let org = { object: {} };
 			if (organization_id) org.object._id = organization_id;
-			let { organization, user, key } = await generateDB(org);
-			if (organization && apikey && user) {
-				Crud.socket.apikey = key[0];
+			let { organization, fileKey, user, key } = await generateDB(org);
+			if (organization && key && user) {
+				Crud.socket.apikey = key[0].key;
 				Crud.socket.user_id = user._id;
 				Config.set("organization_id", organization._id);
-				Config.set("apikey", key[0]);
+				Config.set("apikey", key[0].key);
 				Config.set("user_id", user._id);
 				Crud.socket.organization = true;
+				saveLocally;
+				({ organization, user, key, fileKey });
 				return organization._id;
 			}
 		} catch (error) {
