@@ -1,3 +1,10 @@
+# [1.29.0](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.28.5...v1.29.0) (2025-09-07)
+
+
+### Features
+
+* enhance generateDB to include file key and update createOrganization logic ([143e1b2](https://github.com/CoCreate-app/CoCreate-organizations/commit/143e1b2be97ad2d519041d6cc6fedb401bbb42ec))
+
 ## [1.28.5](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.28.4...v1.28.5) (2025-09-03)
 
 
