@@ -1,3 +1,10 @@
+# [1.30.0](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.29.0...v1.30.0) (2025-09-20)
+
+
+### Features
+
+* add createEnvironment function and enhance createEnvironments handling ([d8e28f9](https://github.com/CoCreate-app/CoCreate-organizations/commit/d8e28f9ef032783f73e31a1a811643cb49a3c32e))
+
 # [1.29.0](https://github.com/CoCreate-app/CoCreate-organizations/compare/v1.28.5...v1.29.0) (2025-09-07)
 
 
