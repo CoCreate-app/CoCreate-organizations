@@ -15,6 +15,9 @@ class CoCreateOrganization {
 			this.wsManager.on("createOrganization", (data) =>
 				this.createOrganization(data)
 			);
+			this.wsManager.on("createEnvironments", (data) =>
+				this.createEnvironments(data)
+			);
 		}
 	}
 
@@ -42,10 +45,10 @@ class CoCreateOrganization {
 				);
 			}
 
-			if (!key || !Array.isArray(key) || key.length !== 3) {
+			if (!key || !Array.isArray(key) || key.length < 4) {
 				this.errorHandler(
 					data,
-					"invalid_key: An array of 3 keys is required with type key, user and role."
+					"invalid_key: An array of 4 keys is required with type key, user and role."
 				);
 			}
 
@@ -55,12 +58,13 @@ class CoCreateOrganization {
 			}
 
 			const Data = {};
-			Data.method = "object.create";
+			Data.method = "object.update";
 			Data.host = organization.host[0].name;
-			Data.database = [organization._id, "dev", "test"];
+			Data.database = [organization._id];
 			Data.organization_id = organization._id;
-
+			Data.upsert = true;
 			if (organization) {
+				organization.organization_id = organization._id;
 				const response = await this.crud.send({
 					...Data,
 					array: "organizations",
@@ -71,6 +75,7 @@ class CoCreateOrganization {
 				}
 			}
 			if (user) {
+				user.organization_id = organization._id;
 				const response = await this.crud.send({
 					...Data,
 					array: "users",
@@ -82,6 +87,9 @@ class CoCreateOrganization {
 			}
 
 			if (key) {
+				key.forEach(k => {
+					k.organization_id = organization._id;
+				});
 				const response = await this.crud.send({
 					...Data,
 					array: "keys",
@@ -90,6 +98,91 @@ class CoCreateOrganization {
 				if (response.error) {
 					this.errorHandler(data, response.error);
 				}
+			}
+
+			if (data.success !== false) {
+				data.success = true;
+			}
+
+			this.wsManager.send(data);
+		} catch (error) {
+			if (data.socket) {
+				this.errorHandler(data, error);
+				this.wsManager.send(data);
+			}
+		}
+	}
+
+	async createEnvironments(data) {
+		try {
+			let { organization, hostname } = data;
+
+			if (!organization) {
+				this.errorHandler(
+					data,
+					"Missing required field: 'organization'. Please provide the organization object to create an organization."
+				);
+			}
+			if (!hostname) {
+				this.errorHandler(
+					data,
+					"Missing required field: 'hostname'. Please provide the hostname to create an organization."
+				);
+			}
+
+			// If there are validation errors, include them in the response and send immediately
+			if (data.success === false) {
+				return this.wsManager.send(data);
+			}
+
+			const Data = {};
+			Data.method = "object.read";
+			Data.host = hostname;
+			Data.organization_id = organization;
+			Data.$filter = { limit: 0 };
+
+			let organizations = await this.crud.send({
+				...Data,
+				array: "organizations",
+				object: []
+			});
+
+			if (organizations.error) {
+				this.errorHandler(data, organizations.error);
+			}
+
+			let users = await this.crud.send({
+				...Data,
+				array: "users",
+				object: []
+			});
+
+			if (users.error) {
+				this.errorHandler(data, users.error);
+			}
+
+			let keys = await this.crud.send({
+				...Data,
+				array: "keys",
+				object: []
+			});
+
+			if (keys.error) {
+				this.errorHandler(data, keys.error);
+			}
+
+			for (let host of hostname) {
+				organizations.method = "object.create";
+				organizations.host = host;
+				organizations = await this.crud.send(organizations);
+
+				users.method = "object.create";
+				users.host = host;
+				users = await this.crud.send(users);
+
+				keys.method = "object.create";
+				keys.host = host;
+				keys = await this.crud.send(keys);
 			}
 
 			if (data.success !== false) {

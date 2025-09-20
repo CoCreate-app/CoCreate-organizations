@@ -285,11 +285,47 @@ async function create(action) {
 	);
 }
 
+async function createEnvironment(action) {
+	let form = action.form;
+	if (!form) return;
+
+	let organization = form.querySelector("#organization");
+	if (organization) {
+		organization = organization.value;
+	}
+
+	let hostname = form.querySelector("#hostname");
+	if (hostname) {
+		hostname = hostname.value;
+		hostname = ["dev." + hostname, "test." + hostname];
+	}
+
+	let response = await Crud.socket.send({
+		method: "createEnvironments",
+		organization,
+		hostname,
+		broadcastBrowser: false
+	});
+
+	action.element.dispatchEvent(
+		new CustomEvent("createdEnvironments", {
+			detail: response
+		})
+	);
+}
+
 Action.init({
 	name: "createOrganization",
 	endEvent: "createdOrganization",
 	callback: (action) => {
 		create(action);
+	}
+});
+Action.init({
+	name: "createEnvironments",
+	endEvent: "createdEnvironments",
+	callback: (action) => {
+		createEnvironment(action);
 	}
 });
 
